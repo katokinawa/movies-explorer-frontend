@@ -3,10 +3,10 @@ import "./Header.css";
 function Header() {
   return (
     <header className="header page__header">
-      <div className="logo"></div>
-      <div class="sidebar">
+      <div className="header__logo"></div>
+      <div class="header__sidebar">
         <p class="subtitle header__subtitle">Регистрация</p>
-        <div className="button">
+        <div className="header__button">
           <p class="subtitle header__subtitle_black">Войти</p>
         </div>
       </div>

@@ -9,7 +9,8 @@ import Portfolio from './Portfolio/Portfolio'
 function Main() {
   return (
   <main className="content">
-    {/* <Promo />
+    <Promo />
+    {/* 
     <NavTab />
     <AboutProject />
     <Techs />
