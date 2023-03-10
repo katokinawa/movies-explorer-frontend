@@ -10,9 +10,9 @@ function Main() {
   return (
   <main className="content">
     <Promo />
+    <AboutProject />
     {/* 
     <NavTab />
-    <AboutProject />
     <Techs />
     <AboutMe />
     <Portfolio /> */}
