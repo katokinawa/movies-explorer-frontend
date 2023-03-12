@@ -29,20 +29,46 @@
 
 .undertitle-line {
   width: 284px;
-  margin: 27px 0 21px;
+  margin: 27px 0 0;
   border-top: 2px solid #000;
 }
 
 @media screen and (min-width: 767px) {
   .undertitle-line {
     width: 668px;
-    margin: 20px 0 70px;
+    margin: 20px 0 0;
   }
 }
 
 @media screen and (min-width: 1279px) {
   .undertitle-line {
     width: 1140px;
-    margin: 22px 0 70px;
+    margin: 22px 0 0;
+  }
+}
+
+.main-title {
+  margin: 68px 0 0;
+  width: 284px;
+  color: #000;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.04em;
+}
+
+@media screen and (min-width: 767px) {
+  .main-title {
+    margin: 90px 0 0;
+    width: 668px;
+    font-size: 22px;
+    line-height: 27px;
+  }
+}
+
+@media screen and (min-width: 1279px) {
+  .main-title {
+    margin: 110px 0 0;
+    width: 1140px;
   }
 }

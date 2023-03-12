@@ -12,9 +12,9 @@ function Main() {
       <Promo />
       <AboutProject />
       <Techs />
-      {/* 
-      <NavTab />
       <AboutMe />
+            {/* 
+      <NavTab />
       <Portfolio /> */}
     </main>
   );
