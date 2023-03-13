@@ -1,25 +1,25 @@
 .portfolio {
-  min-height: 1198px;
+  min-height: 373px;
   width: 292px;
   margin: 0 auto;
 }
 
 @media screen and (min-width: 767px) {
   .portfolio {
-    min-height: 994px;
+    min-height: 469px;
     width: 668px;
   }
 }
 
 @media screen and (min-width: 1279px) {
   .portfolio {
-    min-height: 1079px;
+    min-height: 425px;
     width: 1140px;
   }
 }
 
 .portfolio__main-title {
-  margin: 0 0 29px;
+  margin: 0 0 31px;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
@@ -57,7 +57,7 @@
 
 .portfolio__undertitle-line {
   border-top: 2px solid #e6e6e6;
-  margin: 11px 0 8px;
+  margin: 9px 0 8px;
 }
 
 @media screen and (min-width: 767px) {
@@ -89,8 +89,7 @@
 
 .strelka {
   width: 16px;
-  height: 13px;
-  margin: 12px 5px 0 0;
+  height: 12px;
   background-image: url(../../../images/strelka.svg);
   background-size: contain;
   background-repeat: no-repeat;
@@ -100,7 +99,14 @@
 
 @media screen and (min-width: 767px) {
   .strelka {
-    width: 18px;
-    min-height: 28px;
+    width: 21px;
+    height: 17px;
+  }
+}
+
+@media screen and (min-width: 1279px) {
+  .strelka {
+    width: 24px;
+    height: 18px;
   }
 }
