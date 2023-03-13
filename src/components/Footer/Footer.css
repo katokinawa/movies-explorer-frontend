@@ -110,3 +110,8 @@
     top: 136px;
   }
 }
+
+.footer__link {
+  text-decoration: none;
+  color: #000;
+}
