@@ -13,9 +13,10 @@ function Main() {
       <AboutProject />
       <Techs />
       <AboutMe />
+      <Portfolio />
             {/* 
       <NavTab />
-      <Portfolio /> */}
+ */}
     </main>
   );
 }
