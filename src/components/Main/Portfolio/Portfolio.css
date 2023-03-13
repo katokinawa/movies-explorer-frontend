@@ -95,6 +95,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   cursor: pointer;
+  background-color: transparent;
 }
 
 @media screen and (min-width: 767px) {
