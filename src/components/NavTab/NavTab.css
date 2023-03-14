@@ -1,4 +1,4 @@
-.header__sidebar {
+.navtab__sidebar {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -7,12 +7,12 @@
   }
   
   @media screen and (min-width: 767px) {
-    .header__sidebar {
+    .navtab__sidebar {
       gap: 30px;
     }
   }
 
-  .header__subtitle {
+  .navtab__subtitle {
     font-size: 10px;
     font-weight: 500;
     line-height: 16px;
@@ -20,12 +20,12 @@
   }
   
   @media screen and (min-width: 767px) {
-    .header__subtitle {
+    .navtab__subtitle {
       font-size: 12px;
     }
   }
 
-  .header__subtitle_black {
+  .navtab__text-button {
     font-size: 10px;
     font-weight: 500;
     line-height: 16px;
@@ -34,13 +34,13 @@
   }
   
   @media screen and (min-width: 767px) {
-    .header__subtitle_black {
+    .navtab__text-button {
       font-size: 12px;
       margin: 8px 0;
     }
   }
 
-  .header__button {
+  .navtab__button {
     width: 54px;
     min-height: 26px;
     background-color: #2be080;
@@ -50,7 +50,7 @@
   }
   
   @media screen and (min-width: 767px) {
-    .header__button {
+    .navtab__button {
       width: 76px;
       min-height: 32px;
     }
