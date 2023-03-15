@@ -5,9 +5,7 @@ function NavTab() {
     <section className="navtab">
       <div className="navtab__sidebar">
         <p className="subtitle navtab__subtitle">Регистрация</p>
-        <div className="navtab__button">
-          <p className="subtitle navtab__text-button">Войти</p>
-        </div>
+        <p className="subtitle navtab__button">Войти</p>
       </div>
     </section>
   );

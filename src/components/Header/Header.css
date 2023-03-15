@@ -10,7 +10,8 @@
   width: 38px;
   min-height: 38px;
   background-image: url(../../images/logo.svg);
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   cursor: pointer;
 }
 
