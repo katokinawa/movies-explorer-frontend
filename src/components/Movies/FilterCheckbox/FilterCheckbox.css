@@ -1,12 +1,13 @@
 .filter-checkbox {
   position: relative;
+  cursor: pointer;
 }
+
 .filter-checkbox__invisible-checkbox {
   position: absolute;
   width: 1px; /* если у элемента не будет размеров, некоторые браузеры посчитают, что его вообще нет */
   height: 1px;
   display: none;
-  overflow: hidden; /* без этого свойства тоже сработает, но так наверняка. Оно скрывает элементы, выходящие за границы родителя */
   clip-path: inset(0 0 0 0);
 }
 
