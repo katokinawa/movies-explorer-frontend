@@ -215,7 +215,7 @@
 }
 
 @media screen and (min-width: 767px) {
-  .about-project__graphic-text{
+  .about-project__graphic-text {
     font-size: 14px;
     line-height: 17px;
   }

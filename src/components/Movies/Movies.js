@@ -1,7 +1,7 @@
 import "./Movies.css";
 import SearchForm from "./SearchForm/SearchForm";
 import Preloader from "./Preloader/Preloader";
-import MoviesCardList from "./MoviesCardList/MoviesCardList";
+import MoviesCardList from "../MoviesCardList/MoviesCardList";
 
 function Movies() {
   return (
@@ -9,7 +9,9 @@ function Movies() {
       <SearchForm />
       <MoviesCardList />
       <section className="movies_button-wrapper">
-        <button className="movies_button" type="button">Ещё</button>
+        <button className="movies_button" type="button">
+          Ещё
+        </button>
       </section>
     </section>
   );

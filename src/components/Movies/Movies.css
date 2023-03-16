@@ -6,8 +6,8 @@
 }
 
 @media screen and (min-width: 1279px) {
-    .movies_button-wrapper {
-        min-height: 116px;
+  .movies_button-wrapper {
+    min-height: 116px;
   }
 }
 
