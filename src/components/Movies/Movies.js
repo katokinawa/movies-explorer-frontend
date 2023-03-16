@@ -8,6 +8,9 @@ function Movies() {
     <section className="movies">
       <SearchForm />
       <MoviesCardList />
+      <section className="movies_button-wrapper">
+        <button className="movies_button" type="button">Ещё</button>
+      </section>
     </section>
   );
 }
