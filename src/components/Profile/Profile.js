@@ -22,7 +22,6 @@ function Profile() {
             required
           />
         </div>
-        <div className="profile__undertitle-line"></div>
         <div className="profile__input-wrapper">
           <p className="subtitle profile__subtitle">E-mail</p>
           <label htmlFor="email"></label>
