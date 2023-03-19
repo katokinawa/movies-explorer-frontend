@@ -126,7 +126,7 @@
 }
 
 .register__button-wrapper {
-  margin: 14px;
+  margin: 14px 0 0;
   display: flex;
   justify-content: center;
 }
