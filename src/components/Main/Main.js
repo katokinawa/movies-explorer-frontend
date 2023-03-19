@@ -6,6 +6,7 @@ import AboutMe from "./AboutMe/AboutMe";
 import Portfolio from "./Portfolio/Portfolio";
 import Movies from "../Movies/Movies";
 import Profile from "../Profile/Profile"
+import Register from "../Register/Register"
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
@@ -14,8 +15,7 @@ import Footer from "../Footer/Footer";
 function Main() {
   return (
     <main className="content">
-      <Header />
-      <Profile />
+      <Register />
       {/* <Promo />
       <AboutProject />
       <Techs />
