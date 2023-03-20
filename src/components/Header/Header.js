@@ -1,22 +1,23 @@
 import "./Header.css";
+import { NavLink } from "react-router-dom";
 
 function Header() {
   return (
     <header className="header page__header">
-      <div className="header__logo"></div>
+      <NavLink to="/" className="header__logo"></NavLink>
       <div className="header__sidebar">
-        <button className="subtitle header__subtitle header__subtitle-font_weight">
+        <NavLink to="/movies" className="subtitle header__subtitle header__subtitle-font_weight">
           Фильмы
-        </button>
-        <button className="subtitle header__subtitle">
+        </NavLink>
+        <NavLink to="/saved-movies" className="subtitle header__subtitle">
           Сохранённые фильмы
-        </button>
-        <button className="subtitle header__subtitle-signup">
+        </NavLink>
+        <NavLink to="/signup" className="subtitle header__subtitle-signup">
           Регистрация
-        </button>
-        <button className="subtitle header__button-login">Войти</button>
+        </NavLink>
+        <NavLink to="/signin" className="subtitle header__button-login">Войти</NavLink>
         <div className="header__account-wrapper">
-          <button className="subtitle header__button-account">Аккаунт</button>
+          <NavLink to="/profile" className="subtitle header__button-account">Аккаунт</NavLink>
           <div className="header__icon-account"></div>
         </div>
       </div>

@@ -48,7 +48,7 @@
   @media screen and (min-width: 767px) {
     .login__head-wrapper {
       display: flex;
-      align-items: start;
+      align-items: flex-start;
       width: 396px;
     }
   }
