@@ -31,7 +31,7 @@ function Footer() {
           </li>
         </ul>
         <p className="subtitle footer__subtitle footer__copyright">
-          © 2022. Даниил Белогур
+          © {new Date().getFullYear()}. Даниил Белогур
         </p>
       </nav>
     </footer>
