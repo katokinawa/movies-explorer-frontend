@@ -1,5 +1,6 @@
 import "./App.css";
 import * as React from "react";
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Main from "../Main/Main";
 import Movies from "../Movies/Movies";
@@ -10,14 +11,17 @@ import Login from "../Login/Login";
 import SavedMovies from "../SavedMovies/SavedMovies";
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+
   return (
     <div className="body">
       <div className="page">
         <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/movies" element={<Movies />} />
-          <Route path="/saved-movies" element={<SavedMovies />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route isLoggedIn={isLoggedIn} path="/" element={<Main />} />
+          <Route isLoggedIn={isLoggedIn} path="/movies" element={<Movies />} />
+          <Route isLoggedIn={isLoggedIn} path="/saved-movies" element={<SavedMovies />} />
+          <Route isLoggedIn={isLoggedIn} path="/profile" element={<Profile />} />
           <Route path="/signin" element={<Login />} />
           <Route path="/signup" element={<Register />} />
           <Route path="*" element={<Error />} />

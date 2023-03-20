@@ -1,12 +1,14 @@
 import "./Profile.css";
+import Header from "../Header/Header";
 
-function Profile() {
+function Profile(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
 
   return (
     <section className="profile">
+      <Header isLoggedIn={!props.isLoggedIn} />
       <h1 className="title profile__title">Привет, Даниил!</h1>
       <form onSubmit={handleSubmit} className="profile__form" noValidate>
         <div className="profile__input-wrapper">

@@ -1,4 +1,5 @@
 import "./Login.css";
+import { Link, NavLink } from "react-router-dom";
 
 function Login() {
   const handleSubmit = (e) => {
@@ -8,7 +9,7 @@ function Login() {
   return (
     <section className="login">
       <div className="login__head-wrapper">
-        <div className="login__logo"></div>
+        <Link to="/" className="login__logo"></Link>
         <h1 className="title login__title">Рады видеть!</h1>
       </div>
       <form onSubmit={handleSubmit} className="login__form" noValidate>
@@ -54,9 +55,9 @@ function Login() {
           <p className="subtitle login__subtitle-answer login__subtitle-color_grey">
             Ещё не зарегистрированы?
           </p>
-          <button type="text" name="edit" className="login__button-color_green">
+          <NavLink to="/signup" className="subtitle login__button-color_green">
             Регистрация
-          </button>
+          </NavLink>
         </div>
       </form>
     </section>

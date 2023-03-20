@@ -1,5 +1,4 @@
 import "./Main.css";
-import { Routes, Route } from "react-router-dom";
 import Promo from "./Promo/Promo";
 import AboutProject from "./AboutProject/AboutProject";
 import Techs from "./Techs/Techs";
@@ -8,10 +7,10 @@ import Portfolio from "./Portfolio/Portfolio";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
-function Main() {
+function Main(props) {
   return (
     <main className="content">
-      <Header colorGrey="header__color_grey" />
+      <Header isLoggedIn={props.isLoggedIn} colorGrey="header__color_grey" />
       <Promo />
       <AboutProject />
       <Techs />

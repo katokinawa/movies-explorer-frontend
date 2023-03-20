@@ -1,4 +1,5 @@
 import "./Register.css";
+import { Link, NavLink } from "react-router-dom";
 
 function Register() {
   const handleSubmit = (e) => {
@@ -8,7 +9,7 @@ function Register() {
   return (
     <section className="register">
       <div className="register__head-wrapper">
-        <div className="register__logo"></div>
+        <Link to="/" className="register__logo"></Link>
         <h1 className="title register__title">Добро пожаловать!</h1>
       </div>
       <form onSubmit={handleSubmit} className="register__form" noValidate>
@@ -69,13 +70,12 @@ function Register() {
           <p className="subtitle register__subtitle-answer register__subtitle-color_grey">
             Уже зарегистрированы?
           </p>
-          <button
-            type="text"
-            name="edit"
-            className="register__button-color_green"
+          <NavLink
+            to="/signin"
+            className="subtitle register__button-color_green"
           >
             Войти
-          </button>
+          </NavLink>
         </div>
       </form>
     </section>

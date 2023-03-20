@@ -1,14 +1,13 @@
 import "./Movies.css";
 import SearchForm from "./SearchForm/SearchForm";
-import Preloader from "./Preloader/Preloader";
-import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import Header from "../Header/Header";
-import Footer from "../Footer/Footer"
+import MoviesCardList from "../MoviesCardList/MoviesCardList";
+import Footer from "../Footer/Footer";
 
-function Movies() {
+function Movies(props) {
   return (
     <section className="movies">
-      <Header />
+      <Header isLoggedIn={!props.isLoggedIn} />
       <SearchForm />
       <MoviesCardList />
       <section className="movies_button-wrapper">

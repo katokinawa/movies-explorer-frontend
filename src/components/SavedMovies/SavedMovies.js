@@ -4,10 +4,10 @@ import SearchForm from "../Movies/SearchForm/SearchForm";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer"
 
-function SavedMovies() {
+function SavedMovies(props) {
   return (
     <ul className="saved-movies">
-      <Header />
+      <Header isLoggedIn={!props.isLoggedIn} />
       <SearchForm />
       <MoviesCardList />
       <section className="movies_button-wrapper">
