@@ -1,10 +1,12 @@
 import "./MoviesCardList.css";
 import MoviesCard from "../MoviesCard/MoviesCard";
 
-function MoviesCardList() {
+function MoviesCardList(props) {
   return (
-    <ul className="movies-card__list">
-      <MoviesCard />
+    <ul className="movies-card-list">
+      {props.movies.map((mov) => (
+        <MoviesCard key={mov._id} movies={mov} />
+      ))}
     </ul>
   );
 }

@@ -1,4 +1,4 @@
-.movies-card__list {
+.movies-card-list {
   padding: 0;
   margin: 0;
   min-height: 1240px;
@@ -6,17 +6,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
 }
 
 @media screen and (min-width: 767px) {
-  .movies-card__list {
+  .movies-card-list {
     min-height: 1188px;
     padding: 20px 0 0;
+    gap: 40px;
   }
 }
 
 @media screen and (min-width: 1279px) {
-  .movies-card__list {
+  .movies-card-list {
     min-height: 1178px;
     padding: 30px 0 0;
   }

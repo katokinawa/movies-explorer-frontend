@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 function Navigation(props) {
   return (
     <nav className={`navigation ${props.isOpen ? "navigation_opened" : ""}`}>
+      <button onClick={() => props.setIsOpen(false)} className="navigation__close-button"></button>
       <ul className="navigation__sidebar">
         <li>
           <NavLink
@@ -21,7 +22,7 @@ function Navigation(props) {
             to="/movies"
             className={({ isActive }) =>
               isActive
-                ? "subtitle navigation__subtitle navigation__subtitle-font_weight"
+                ? "subtitle navigation__subtitle navigation__link-is-active"
                 : "subtitle navigation__subtitle"
             }
           >

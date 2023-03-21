@@ -52,8 +52,9 @@
   }
 }
 
-.navigation__subtitle-font_weight {
-  font-weight: 500;
+.navigation__link-is-active {
+  padding-bottom: 7px;
+  border-bottom: 2px solid;
 }
 
 .navigation__subtitle_hidden {
@@ -86,11 +87,25 @@
 }
 
 .navigation__account-wrapper {
-  margin: 100px 0 0;
+  margin: 419px 0 0;
   display: flex;
   align-items: center;
   flex-direction: row;
   gap: 17px;
+}
+
+.navigation__close-button {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  width: 33px;
+  min-height: 33px;
+  background-image: url(../../images/close-button.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .navigation__button-account {

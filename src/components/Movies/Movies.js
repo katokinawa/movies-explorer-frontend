@@ -4,12 +4,12 @@ import Header from "../Header/Header";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import Footer from "../Footer/Footer";
 
-function Movies(props) {
+function Movies({movies, isLoggedIn}) {
   return (
     <section className="movies">
-      <Header isLoggedIn={!props.isLoggedIn} />
+      <Header isLoggedIn={!isLoggedIn} />
       <SearchForm />
-      <MoviesCardList />
+      <MoviesCardList movies={movies} />
       <section className="movies_button-wrapper">
         <button className="movies_button" type="button">
           Ещё
