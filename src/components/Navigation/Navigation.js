@@ -3,8 +3,19 @@ import { NavLink } from "react-router-dom";
 
 function Navigation(props) {
   return (
-    <nav className={`navigation ${props.isOpen ? 'navigation_opened' : ''}`}>
+    <nav className={`navigation ${props.isOpen ? "navigation_opened" : ""}`}>
       <ul className="navigation__sidebar">
+        <li>
+          <NavLink
+            to="/"
+            className={(props.isOpen)
+                ? "subtitle navigation__subtitle"
+                : "subtitle navigation__subtitle navigation__subtitle_hidden"
+            }
+          >
+            Главная
+          </NavLink>
+        </li>
         <li>
           <NavLink
             to="/movies"

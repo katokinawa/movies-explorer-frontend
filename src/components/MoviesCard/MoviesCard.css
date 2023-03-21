@@ -44,6 +44,7 @@
 .movies-card__image {
   width: 300px;
   height: 168px;
+  z-index: 1;
 }
 
 @media screen and (min-width: 767px) {
