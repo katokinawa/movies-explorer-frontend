@@ -4,12 +4,13 @@ import SearchForm from "../Movies/SearchForm/SearchForm";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
-function SavedMovies(props) {
+function SavedMovies({ isLoggedIn, movies }) {
   return (
     <section className="saved-movies">
-      <Header isLoggedIn={!props.isLoggedIn} />
+      <Header isLoggedIn={!isLoggedIn} />
       <SearchForm />
-      <MoviesCardList />
+      <MoviesCardList movies={movies} />
+      <section className="saved-movies__space"></section>
       <Footer />
     </section>
   );

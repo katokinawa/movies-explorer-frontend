@@ -1,5 +1,5 @@
 import "./Header.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import Navigation from "../Navigation/Navigation";
 import { useState } from "react";
 import Burger from "../Burger/Burger";
@@ -9,19 +9,12 @@ function Header(props) {
 
   return (
     <header
-      className={
-        props.isLoggedIn
-          ? "header page__header"
-          : `header page__header ${props.colorGrey}`
-      }
+      className={props.isLoggedIn ? "header" : `header header_color_grey`}
     >
-      <NavLink to="/" className="header__logo"></NavLink>
+      <Link to="/" className="header__logo"></Link>
       {props.isLoggedIn && <Burger isOpen={isOpen} setIsOpen={setIsOpen} />}
       {props.isLoggedIn ? (
-        <Navigation
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-        />
+        <Navigation isOpen={isOpen} setIsOpen={setIsOpen} />
       ) : (
         <ul className="header__sidebar">
           <li>

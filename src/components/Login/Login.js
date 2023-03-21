@@ -1,5 +1,5 @@
 import "./Login.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Login() {
   const handleSubmit = (e) => {
@@ -55,9 +55,9 @@ function Login() {
           <p className="subtitle login__subtitle-answer login__subtitle-color_grey">
             Ещё не зарегистрированы?
           </p>
-          <NavLink to="/signup" className="subtitle login__button-color_green">
+          <Link to="/signup" className="subtitle login__button-color_green">
             Регистрация
-          </NavLink>
+          </Link>
         </div>
       </form>
     </section>
