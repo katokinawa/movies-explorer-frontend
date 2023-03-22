@@ -5,13 +5,13 @@
   align-items: center;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .login {
     min-height: 1024px;
   }
 }
 
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .login {
     min-height: 700px;
   }
@@ -27,13 +27,13 @@
   margin: 55px 0 0;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .login__logo {
     margin: 232px 0 0;
   }
 }
 
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .login__logo {
     margin: 69px 0 0;
   }
@@ -45,7 +45,7 @@
   align-items: center;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .login__head-wrapper {
     display: flex;
     align-items: flex-start;
@@ -61,13 +61,13 @@
   line-height: 29px;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .login__title {
     margin: 39px 0 41px;
   }
 }
 
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .login__title {
     margin: 41px 0 40px;
   }
@@ -112,13 +112,13 @@
   padding: 0 0 10px;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .login__input-password {
     width: 396px;
   }
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .login__input {
     width: 396px;
   }
@@ -131,14 +131,14 @@
   gap: 7px;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .login__button-wrapper {
     margin: 15px 0 0;
     gap: 6px;
   }
 }
 
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .login__button-wrapper {
     margin: 15px 0 0;
   }
@@ -158,7 +158,7 @@
   margin: 280px 0 0;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .login__button {
     margin: 194px 0 0;
     font-weight: 500;
@@ -179,7 +179,7 @@
   line-height: 15px;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .login-button-color-green {
     font-size: 14px;
     line-height: 17px;
@@ -192,7 +192,7 @@
   line-height: 15px;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .login__subtitle-answer {
     font-size: 14px;
     line-height: 17px;

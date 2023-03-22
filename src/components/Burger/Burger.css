@@ -10,14 +10,14 @@
   place-self: center end;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .burger-button {
     width: 42px;
     min-height: 41px;
   }
 }
 
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .burger-button {
     display: none;
   }

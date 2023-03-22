@@ -8,7 +8,7 @@
   right: -100%;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .navigation {
     opacity: 0;
     background-color: transparent;
@@ -20,7 +20,7 @@
   }
 }
 
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .navigation {
     width: 0;
     height: 0;
@@ -56,14 +56,14 @@
   gap: 24px;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .navigation__sidebar {
     margin: 156px 0 0;
     gap: 30px;
   }
 }
 
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .navigation__sidebar {
     position: relative;
     display: flex;
@@ -83,7 +83,7 @@
   background-color: transparent;
 }
 
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .navigation__subtitle {
     font-weight: 400;
     font-size: 13px;
@@ -117,7 +117,7 @@
   justify-content: center;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .navigation__button-login {
     font-size: 12px;
     width: 76px;
@@ -133,7 +133,7 @@
   gap: 17px;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .navigation__account-wrapper {
     margin: 589px 0 0;
   }
@@ -153,14 +153,14 @@
   cursor: pointer;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .navigation__close-button {
     top: 22px;
     right: 22px;
   }
 }
 
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .navigation__close-button {
     display: none;
   }
@@ -190,7 +190,7 @@
   border-radius: 4px;
 }
 
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .navigation__movies {
     position: absolute;
     top: -147px;
@@ -198,7 +198,7 @@
   }
 }
 
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .navigation__save-movies {
     width: 142px;
     position: absolute;
@@ -207,7 +207,7 @@
   }
 }
 
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .navigation__account-wrapper {
     margin: 0;
     position: absolute;

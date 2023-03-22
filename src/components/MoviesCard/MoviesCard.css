@@ -9,20 +9,20 @@
   align-items: center;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .movies-card-item {
     min-width: 708px;
     min-height: 134px;
   }
 }
 
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .movies-card-item {
     min-width: 1140px;
   }
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .movies-card-item {
     min-height: 134px;
   }
@@ -35,7 +35,7 @@
   z-index: 1;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .movies-card-image {
     width: 220px;
     height: 122px;
@@ -55,7 +55,7 @@
   color: #000;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .movies-card-title {
     bottom: 89px;
     left: 22px;
@@ -74,7 +74,7 @@
   color: #a0a0a0;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .movies-card-subtitle {
     bottom: 63px;
     left: 22px;
@@ -96,7 +96,7 @@
   cursor: pointer;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .movies-card-like-button {
     bottom: 22px;
     left: 22px;

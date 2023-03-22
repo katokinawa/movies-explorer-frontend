@@ -5,13 +5,13 @@
   align-items: center;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .search-form {
     min-height: 268px;
   }
 }
 
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .search-form {
     min-height: 222px;
   }
@@ -24,14 +24,14 @@
   margin: 80px 0 0;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .search-form__wrapper {
     position: relative;
     margin: 70px 0 0;
   }
 }
 
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .search-form__wrapper {
     margin: 60px 0 0;
   }
@@ -41,7 +41,7 @@
   display: none;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .search-form__loupe-img {
     margin: 25px 0 0 25px;
     display: block;
@@ -62,14 +62,14 @@
   border-radius: 9px;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .search-form__form {
     width: 708px;
     margin: 7px 0 45px;
   }
 }
 
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .search-form__form {
     width: 1140px;
     margin: 10px 0 45px;
@@ -83,7 +83,7 @@
   color: #000;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .search-form__subtitle {
     place-self: center;
     grid-area: text;
@@ -104,7 +104,7 @@
   background-color: #fdfdfd;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .search-form__input {
     width: 369px;
     margin: 0 14px;
@@ -114,7 +114,7 @@
   }
 }
 
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .search-form__input {
     width: 782px;
   }
@@ -136,7 +136,7 @@
   display: none;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .vertical-line {
     display: block;
     margin: 16px 0 0 18px;
@@ -151,7 +151,7 @@
   gap: 13px;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .checkbox-wrapper {
     position: absolute;
     top: 33px;
@@ -159,7 +159,7 @@
   }
 }
 
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .checkbox-wrapper {
     top: 36px;
     right: 30px;
@@ -172,14 +172,14 @@
   margin: 43px 0 0;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .underform-line {
     width: 708px;
     margin: 64px 0 0;
   }
 }
 
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .underform-line {
     width: 1140px;
     margin: 24px 0 0;
