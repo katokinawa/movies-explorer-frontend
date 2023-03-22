@@ -18,6 +18,11 @@
   }
 }
 
+.portfolio__list {
+  margin: 0;
+  padding: 0;
+}
+
 .portfolio__main-title {
   margin: 0 0 31px;
   font-weight: 400;
@@ -55,23 +60,15 @@
   }
 }
 
-.portfolio__undertitle-line {
-  border-top: 2px solid #e6e6e6;
-  margin: 9px 0 8px;
-}
-
-@media screen and (min-width: 768px) {
-  .portfolio__undertitle-line {
-    margin: 9px 0 9px;
-  }
-}
-
 .portfolio__text-wrapper {
   width: 292px;
   min-height: 48px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 2px solid #e6e6e6;
+  padding: 0 0 9px;
+  margin: 0 0 9px;
 }
 
 @media screen and (min-width: 768px) {
