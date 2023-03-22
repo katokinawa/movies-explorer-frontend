@@ -5,6 +5,12 @@
   align-items: center;
 }
 
+@media screen and (min-width: 767px) {
+  .search-form {
+    min-height: 268px;
+  }
+}
+
 @media screen and (min-width: 1279px) {
   .search-form {
     min-height: 222px;
@@ -60,7 +66,7 @@
 @media screen and (min-width: 767px) {
   .search-form__form {
     width: 708px;
-    margin: 10px 0 45px;
+    margin: 7px 0 45px;
   }
 }
 
@@ -149,7 +155,7 @@
 @media screen and (min-width: 767px) {
   .checkbox-wrapper {
     position: absolute;
-    top: 36px;
+    top: 33px;
     right: 237px;
   }
 }

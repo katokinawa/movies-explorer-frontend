@@ -1,5 +1,5 @@
 .promo {
-  min-height: 636px;
+  min-height: 638px;
   background: #5c5c5c;
   display: flex;
   flex-direction: column;
@@ -119,13 +119,13 @@
 }
 
 .promo__button {
-  width: 129px;
-  min-height: 36px;
+  width: 126px;
+  padding: 10px 0 0;
+  min-height: 25px;
   opacity: 0.6;
   background-color: #5c5c5c;
   border: 1px solid #ffffff;
   border-radius: 3px;
-
   margin: 80px 0 30px;
   text-align: center;
   cursor: pointer;

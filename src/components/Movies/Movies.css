@@ -27,6 +27,7 @@
 
 @media screen and (min-width: 768px) {
   .movies-button {
+    margin: 81px 0 0;
     width: 320px;
   }
 }
