@@ -28,7 +28,6 @@
   .search-form__wrapper {
     position: relative;
     margin: 70px 0 0;
-    width: 1140px;
   }
 }
 
@@ -156,7 +155,7 @@
   .checkbox-wrapper {
     position: absolute;
     top: 33px;
-    right: 237px;
+    right: 20px;
   }
 }
 
