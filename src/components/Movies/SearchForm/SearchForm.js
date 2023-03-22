@@ -20,7 +20,7 @@ function SearchForm() {
           <div className="vertical-line"></div>
         </form>
 
-        <div className="search-from__checkbox-wrapper">
+        <div className="checkbox-wrapper">
           <FilterCheckbox />
           <p className="subtitle search-form__subtitle">Короткометражки</p>
         </div>

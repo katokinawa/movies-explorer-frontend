@@ -1,5 +1,5 @@
 import "./Register.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Register() {
   const handleSubmit = (e) => {
@@ -14,7 +14,7 @@ function Register() {
       </div>
       <form onSubmit={handleSubmit} className="register__form" noValidate>
         <div className="register__input-wrapper">
-          <p className="subtitle register__subtitle register__subtitle-color_grey">
+          <p className="subtitle register-subtitle register-subtitle-color-grey">
             Имя
           </p>
           <label htmlFor="username"></label>
@@ -29,7 +29,7 @@ function Register() {
           />
         </div>
         <div className="register__input-wrapper">
-          <p className="subtitle register__subtitle register__subtitle-color_grey">
+          <p className="subtitle register-subtitle register-subtitle-color-grey">
             E-mail
           </p>
           <label htmlFor="email"></label>
@@ -44,7 +44,7 @@ function Register() {
           />
         </div>
         <div className="register__input-wrapper">
-          <p className="subtitle register__subtitle register__subtitle-color_grey">
+          <p className="subtitle register-subtitle register-subtitle-color-grey">
             Пароль
           </p>
           <label htmlFor="password"></label>
@@ -59,7 +59,7 @@ function Register() {
           />
           <span
             id="password-error"
-            className="password-error popup__error"
+            className="password-error register__error"
           ></span>
         </div>
 
@@ -67,15 +67,15 @@ function Register() {
           Зарегистрироваться
         </button>
         <div className="register__button-wrapper">
-          <p className="subtitle register__subtitle-answer register__subtitle-color_grey">
+          <p className="subtitle register-subtitle-answer register-subtitle-color-grey">
             Уже зарегистрированы?
           </p>
-          <NavLink
+          <Link
             to="/signin"
-            className="subtitle register__button-color_green"
+            className="subtitle register-button-color-green"
           >
             Войти
-          </NavLink>
+          </Link>
         </div>
       </form>
     </section>

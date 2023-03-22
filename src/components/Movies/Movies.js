@@ -10,8 +10,8 @@ function Movies({ movies, isLoggedIn }) {
       <Header isLoggedIn={!isLoggedIn} />
       <SearchForm />
       <MoviesCardList movies={movies} />
-      <section className="movies_button-wrapper">
-        <button className="movies_button" type="button">
+      <section className="movies-button-wrapper">
+        <button className="movies-button" type="button">
           Ещё
         </button>
       </section>

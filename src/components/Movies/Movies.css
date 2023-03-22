@@ -1,4 +1,4 @@
-.movies_button-wrapper {
+.movies-button-wrapper {
   min-height: 186px;
   display: flex;
   flex-direction: column;
@@ -6,12 +6,12 @@
 }
 
 @media screen and (min-width: 1279px) {
-  .movies_button-wrapper {
+  .movies-button-wrapper {
     min-height: 116px;
   }
 }
 
-.movies_button {
+.movies-button {
   margin: 70px 0 0;
   font-weight: 500;
   font-size: 12px;
@@ -26,13 +26,13 @@
 }
 
 @media screen and (min-width: 768px) {
-  .movies_button {
+  .movies-button {
     width: 320px;
   }
 }
 
 @media screen and (min-width: 1279px) {
-  .movies_button {
+  .movies-button {
     margin: 60px 0 80px;
   }
 }

@@ -14,7 +14,7 @@ function Login() {
       </div>
       <form onSubmit={handleSubmit} className="login__form" noValidate>
         <div className="login__input-wrapper">
-          <p className="subtitle login__subtitle login__subtitle-color_grey">
+          <p className="subtitle login__subtitle login-subtitle-color-grey">
             E-mail
           </p>
           <label htmlFor="email"></label>
@@ -29,7 +29,7 @@ function Login() {
           />
         </div>
         <div className="login__input-wrapper">
-          <p className="subtitle login__subtitle login__subtitle-color_grey">
+          <p className="subtitle login__subtitle login-subtitle-color-grey">
             Пароль
           </p>
           <label htmlFor="password"></label>
@@ -44,7 +44,7 @@ function Login() {
           />
           <span
             id="password-error"
-            className="password-error popup__error"
+            className="password-error login__error"
           ></span>
         </div>
 
@@ -52,10 +52,10 @@ function Login() {
           Войти
         </button>
         <div className="login__button-wrapper">
-          <p className="subtitle login__subtitle-answer login__subtitle-color_grey">
+          <p className="subtitle login__subtitle-answer login-subtitle-color-grey">
             Ещё не зарегистрированы?
           </p>
-          <Link to="/signup" className="subtitle login__button-color_green">
+          <Link to="/signup" className="subtitle login-button-color-green">
             Регистрация
           </Link>
         </div>

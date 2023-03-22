@@ -14,19 +14,19 @@ function MoviesCard(props) {
   }
 
   return (
-    <li className="movies-card__item">
+    <li className="movies-card-item">
       <img
         src={props.movies.image}
         loading="lazy"
         alt={props.movies.nameRU}
-        className="movies-card__image"
+        className="movies-card-image"
       ></img>
-      <h2 className="title movies-card__title">{props.movies.nameRU}</h2>
-      <p className="subtitle movies-card__subtitle">
+      <h2 className="title movies-card-title">{props.movies.nameRU}</h2>
+      <p className="subtitle movies-card-subtitle">
         {numberToHoursMinute(props.movies.duration)}
       </p>
       <button
-        className="movies-card__like-button movies-card__like-active"
+        className="movies-card-like-button movies-card-like-active"
       ></button>
     </li>
   );
