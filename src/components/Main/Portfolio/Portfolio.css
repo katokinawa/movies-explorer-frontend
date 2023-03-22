@@ -1,20 +1,22 @@
 .portfolio {
   min-height: 295px;
-  width: 292px;
-  margin: 0 auto;
+  min-width: 292px;
+  padding: 0 14px 0;
 }
 
 @media screen and (min-width: 768px) {
   .portfolio {
     min-height: 390px;
-    width: 668px;
+    min-width: 668px;
+    padding: 0 50px 0;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .portfolio {
     min-height: 425px;
-    width: 1140px;
+    min-width: 1140px;
+    padding: 0 70px 0;
   }
 }
 
@@ -61,7 +63,7 @@
 }
 
 .portfolio__text-wrapper {
-  width: 292px;
+  min-width: 292px;
   min-height: 48px;
   display: flex;
   align-items: center;
@@ -74,18 +76,18 @@
 @media screen and (min-width: 768px) {
   .portfolio__text-wrapper {
     min-height: 70px;
-    width: 668px;
+    min-width: 668px;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .portfolio__text-wrapper {
-    width: 1140px;
+    min-width: 1140px;
   }
 }
 
 .strelka {
-  width: 16px;
+  min-width: 16px;
   height: 12px;
   background-image: url(../../../images/strelka.svg);
   background-size: contain;
@@ -96,14 +98,14 @@
 
 @media screen and (min-width: 768px) {
   .strelka {
-    width: 21px;
+    min-width: 21px;
     height: 17px;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .strelka {
-    width: 24px;
+    min-width: 24px;
     height: 18px;
   }
 }

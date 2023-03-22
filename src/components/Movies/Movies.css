@@ -16,7 +16,7 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 15px;
-  width: 240px;
+  min-width: 240px;
   min-height: 36px;
   border: 1px solid #e8e8e8;
   border-radius: 5px;
@@ -28,7 +28,7 @@
 @media screen and (min-width: 768px) {
   .movies-button {
     margin: 81px 0 0;
-    width: 320px;
+    min-width: 320px;
   }
 }
 

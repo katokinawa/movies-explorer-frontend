@@ -65,12 +65,12 @@
   font-weight: 400;
   font-size: 11px;
   line-height: 13px;
-  width: 223px;
+  min-width: 223px;
 }
 
 @media screen and (min-width: 768px) {
   .profile__input {
-    width: 373px;
+    min-width: 373px;
   }
 }
 

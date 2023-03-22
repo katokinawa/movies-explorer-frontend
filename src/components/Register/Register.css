@@ -18,7 +18,7 @@
 }
 
 .register__logo {
-  width: 38px;
+  min-width: 38px;
   min-height: 38px;
   background-image: url(../../images/logo.svg);
   background-size: contain;
@@ -49,7 +49,7 @@
   .register__head-wrapper {
     display: flex;
     align-items: flex-start;
-    width: 396px;
+    min-width: 396px;
   }
 }
 
@@ -94,7 +94,7 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
-  width: 260px;
+  min-width: 260px;
   border-bottom: 1px solid #e8e8e8;
   padding: 0 0 10px;
 }
@@ -107,20 +107,20 @@
   font-weight: 400;
   font-size: 7px;
   line-height: 17px;
-  width: 260px;
+  min-width: 260px;
   border-bottom: 1px solid #e8e8e8;
   padding: 0 0 10px;
 }
 
 @media screen and (min-width: 768px) {
   .register__input-password {
-    width: 396px;
+    min-width: 396px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .register__input {
-    width: 396px;
+    min-width: 396px;
   }
 }
 
@@ -151,7 +151,7 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 15px;
-  width: 260px;
+  min-width: 260px;
   min-height: 45px;
   border-radius: 3px;
   background: #2be080;
@@ -164,7 +164,7 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
-    width: 396px;
+    min-width: 396px;
   }
 }
 

@@ -45,7 +45,7 @@
   .search-form__loupe-img {
     margin: 25px 0 0 25px;
     display: block;
-    width: 22px;
+    min-width: 22px;
     height: 22px;
     background-image: url(../../../images/loupe.svg);
     background-size: cover;
@@ -54,7 +54,7 @@
 
 .search-form__form {
   display: flex;
-  width: 300px;
+  min-width: 300px;
   min-height: 72px;
   background: #fdfdfd;
   margin: 0 0 45px;
@@ -64,14 +64,14 @@
 
 @media screen and (min-width: 768px) {
   .search-form__form {
-    width: 708px;
+    min-width: 708px;
     margin: 7px 0 45px;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .search-form__form {
-    width: 1140px;
+    min-width: 1140px;
     margin: 10px 0 45px;
   }
 }
@@ -93,7 +93,7 @@
 }
 
 .search-form__input {
-  width: 226px;
+  min-width: 226px;
   margin: 0 0 4px 17px;
   font-weight: 400;
   font-size: 14px;
@@ -106,7 +106,7 @@
 
 @media screen and (min-width: 768px) {
   .search-form__input {
-    width: 369px;
+    min-width: 369px;
     margin: 0 14px;
     font-weight: 400;
     font-size: 18px;
@@ -116,12 +116,12 @@
 
 @media screen and (min-width: 1280px) {
   .search-form__input {
-    width: 782px;
+    min-width: 782px;
   }
 }
 
 .search-form__submit-button {
-  width: 34px;
+  min-width: 34px;
   height: 34px;
   background-image: url(../../../images/submit.svg);
   background-size: cover;
@@ -140,7 +140,7 @@
   .vertical-line {
     display: block;
     margin: 16px 0 0 18px;
-    width: 1px;
+    min-width: 1px;
     height: 40px;
     background: #cbcbcb;
   }
@@ -167,21 +167,21 @@
 }
 
 .underform-line {
-  width: 300px;
+  min-width: 300px;
   border-top: 2px solid #e8e8e8;
   margin: 43px 0 0;
 }
 
 @media screen and (min-width: 768px) {
   .underform-line {
-    width: 708px;
+    min-width: 708px;
     margin: 64px 0 0;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .underform-line {
-    width: 1140px;
+    min-width: 1140px;
     margin: 24px 0 0;
   }
 }
