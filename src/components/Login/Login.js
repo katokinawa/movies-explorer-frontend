@@ -9,7 +9,7 @@ function Login() {
   return (
     <section className="login">
       <div className="login__head-wrapper">
-        <Link to="/" className="login__logo"></Link>
+        <Link to="/" className="login__logo button-animation-graphic"></Link>
         <h1 className="title login__title">Рады видеть!</h1>
       </div>
       <form onSubmit={handleSubmit} className="login__form" noValidate>
@@ -48,14 +48,14 @@ function Login() {
           ></span>
         </div>
 
-        <button type="submit" name="edit" className="title login__button">
+        <button type="submit" name="edit" className="title login__button button-animation">
           Войти
         </button>
         <div className="login__button-wrapper">
           <p className="subtitle login__subtitle-answer login-subtitle-color-grey">
             Ещё не зарегистрированы?
           </p>
-          <Link to="/signup" className="subtitle login-button-color-green">
+          <Link to="/signup" className="subtitle login-button-color-green button-animation">
             Регистрация
           </Link>
         </div>

@@ -9,7 +9,7 @@ function Register() {
   return (
     <section className="register">
       <div className="register__head-wrapper">
-        <Link to="/" className="register__logo"></Link>
+        <Link to="/" className="register__logo button-animation-graphic"></Link>
         <h1 className="title register__title">Добро пожаловать!</h1>
       </div>
       <form onSubmit={handleSubmit} className="register__form">
@@ -59,7 +59,7 @@ function Register() {
           />
         </div>
 
-        <button type="submit" name="edit" className="title register__button">
+        <button type="submit" name="edit" className="title register__button button-animation">
           Зарегистрироваться
         </button>
         <div className="register__button-wrapper">
@@ -68,7 +68,7 @@ function Register() {
           </p>
           <Link
             to="/signin"
-            className="subtitle register-button-color-green"
+            className="subtitle register-button-color-green button-animation"
           >
             Войти
           </Link>

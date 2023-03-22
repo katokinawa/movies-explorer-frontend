@@ -8,7 +8,7 @@ function Error() {
       <p className="subtitle error__subtitle">Страница не найдена</p>
       <button
         onClick={() => history(-1)}
-        className="subtitle error-text-green"
+        className="subtitle error-text-green button-animation"
       >
         Назад
       </button>

@@ -6,7 +6,7 @@ function Navigation({ isOpen, setIsOpen }) {
     <nav className={`navigation ${isOpen ? "navigation_opened" : ""}`}>
       <button
         onClick={() => setIsOpen(false)}
-        className="navigation__close-button"
+        className="navigation__close-button button-animation-graphic"
       ></button>
       <ul className="navigation__sidebar">
         <li>
@@ -14,7 +14,7 @@ function Navigation({ isOpen, setIsOpen }) {
             to="/"
             className={
               isOpen
-                ? "subtitle navigation__subtitle"
+                ? "subtitle navigation__subtitle button-animation-graphic"
                 : "subtitle navigation__subtitle navigation__subtitle_hidden"
             }
           >
@@ -26,8 +26,8 @@ function Navigation({ isOpen, setIsOpen }) {
             to="/movies"
             className={({ isActive }) =>
               isActive
-                ? "subtitle navigation__subtitle navigation__link-is-active"
-                : "subtitle navigation__subtitle"
+                ? "subtitle navigation__subtitle navigation__link-is-active button-animation-graphic"
+                : "subtitle navigation__subtitle button-animation-graphic"
             }
           >
             Фильмы
@@ -38,15 +38,15 @@ function Navigation({ isOpen, setIsOpen }) {
             to="/saved-movies"
             className={({ isActive }) =>
               isActive
-                ? "subtitle navigation__subtitle navigation__link-is-active"
-                : "subtitle navigation__subtitle"
+                ? "subtitle navigation__subtitle navigation__link-is-active button-animation-graphic"
+                : "subtitle navigation__subtitle button-animation-graphic"
             }
           >
             Сохранённые фильмы
           </NavLink>
         </li>
         <li className="navigation__account-wrapper">
-          <Link to="/profile" className="subtitle navigation__button-account">
+          <Link to="/profile" className="subtitle navigation__button-account button-animation-graphic button-animation-graphic">
             Аккаунт
           </Link>
           <div className="navigation__icon-account"></div>
