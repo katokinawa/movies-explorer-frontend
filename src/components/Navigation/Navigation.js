@@ -11,6 +11,7 @@ function Navigation({ isOpen, setIsOpen }) {
       <ul className="navigation__sidebar">
         <li>
           <NavLink
+            onClick={() => setIsOpen(false)}
             to="/"
             className={
               isOpen
@@ -23,6 +24,7 @@ function Navigation({ isOpen, setIsOpen }) {
         </li>
         <li className="navigation__movies">
           <NavLink
+            onClick={() => setIsOpen(false)}
             to="/movies"
             className={({ isActive }) =>
               isActive
@@ -35,6 +37,7 @@ function Navigation({ isOpen, setIsOpen }) {
         </li>
         <li className="navigation__save-movies">
           <NavLink
+            onClick={() => setIsOpen(false)}
             to="/saved-movies"
             className={({ isActive }) =>
               isActive
@@ -46,7 +49,11 @@ function Navigation({ isOpen, setIsOpen }) {
           </NavLink>
         </li>
         <li className="navigation__account-wrapper">
-          <Link to="/profile" className="subtitle navigation__button-account button-animation-graphic button-animation-graphic">
+          <Link
+            onClick={() => setIsOpen(false)}
+            to="/profile"
+            className="subtitle navigation__button-account button-animation-graphic button-animation-graphic"
+          >
             Аккаунт
           </Link>
           <div className="navigation__icon-account"></div>
