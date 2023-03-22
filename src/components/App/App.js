@@ -18,14 +18,14 @@ function App() {
 
   const location = useLocation();
 
-
-  const isHeaderVisible = ['/'];
+  const isMainHeaderVisible = ['/', ];
+  const isOtherHeaderVisible = ['/movies', '/saved-movies' ];
   const isFooterVisible = ['/', '/movies', '/saved-movies'];
 
   return (
     <div className="body">
       <div className="page">
-      {(isHeaderVisible.includes(location.pathname) ? <Header /> : <Header isLoggedIn={isLoggedIn} />)}
+      {(isMainHeaderVisible.includes(location.pathname) ? <Header /> : isOtherHeaderVisible.includes(location.pathname) ? <Header isLoggedIn={isLoggedIn} /> : '')}
         <Routes>
           <Route path="/" element={<Main />} />
           <Route

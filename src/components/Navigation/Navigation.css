@@ -194,7 +194,7 @@
   .navigation__movies {
     position: absolute;
     top: -147px;
-    right: 435px;
+    right: 1005px;
   }
 }
 
@@ -203,7 +203,7 @@
     min-width: 142px;
     position: absolute;
     top: -147px;
-    right: 276px;
+    right: 845px;
   }
 }
 
@@ -212,6 +212,6 @@
     margin: 0;
     position: absolute;
     top: -154px;
-    right: -570px;
+    right: 0px;
   }
 }

@@ -4,7 +4,7 @@
 
 .page {
   min-width: 320px;
-  max-min-width: 1280px;
+  max-width: 1280px;
   margin: 0 auto;
   font-family: "Inter", "Arial", "Helvetica", sans-serif;
 }
@@ -49,7 +49,6 @@
 }
 
 .main-title {
-  margin: 68px 0 0;
   min-width: 284px;
   color: #000;
   font-weight: 400;
