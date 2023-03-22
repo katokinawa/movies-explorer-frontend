@@ -12,7 +12,7 @@ function Login() {
         <Link to="/" className="login__logo button-animation-graphic"></Link>
         <h1 className="title login__title">Рады видеть!</h1>
       </div>
-      <form onSubmit={handleSubmit} className="login__form" noValidate>
+      <form onSubmit={handleSubmit} className="login__form">
         <div className="login__input-wrapper">
           <p className="subtitle login__subtitle login-subtitle-color-grey">
             E-mail

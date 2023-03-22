@@ -8,7 +8,7 @@ function Profile({ isLoggedIn }) {
   return (
     <section className="profile">
       <h1 className="title profile__title">Привет, Даниил!</h1>
-      <form onSubmit={handleSubmit} className="profile__form" noValidate>
+      <form onSubmit={handleSubmit} className="profile__form">
         <div className="profile__input-wrapper">
           <p className="subtitle profile__subtitle">Имя</p>
           <label htmlFor="username"></label>
