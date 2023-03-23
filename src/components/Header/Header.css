@@ -11,7 +11,8 @@
 @media screen and (min-width: 768px) {
   .header {
     min-width: 708px;
-    padding: 18px 30px;
+    padding: 20px 30px;
+    display: flex;
   }
 }
 
@@ -27,7 +28,7 @@
 }
 
 .header__logo {
-  min-width: 38px;
+  width: 38px;
   min-height: 38px;
   background-image: url(../../images/logo.svg);
   background-size: contain;
