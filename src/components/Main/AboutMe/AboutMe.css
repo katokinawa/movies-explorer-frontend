@@ -19,10 +19,11 @@
 
 .img-student {
   margin: 59px 0 0;
-  width: 292px;
+  min-width: 292px;
   min-height: 352px;
   background-image: url(../../../images/student.jpg);
   background-size: cover;
+  background-position: center;
   cursor: pointer;
   border-radius: 10px;
 }
@@ -31,6 +32,7 @@
   .img-student {
     margin: 0;
     grid-area: img;
+    place-self: start end;
     width: 255px;
     min-height: 307px;
   }
@@ -116,7 +118,7 @@
     gap: 0;
     column-gap: 49px;
     display: grid;
-    grid-template-columns: 364px 255px;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 56px 38px 195px;
     grid-template-areas:
       "title img"
