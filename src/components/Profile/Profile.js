@@ -6,7 +6,7 @@ function Profile({ isLoggedIn }) {
   };
 
   return (
-    <section className="profile">
+    <main className="profile">
       <h1 className="title profile__title">Привет, Даниил!</h1>
       <form onSubmit={handleSubmit} className="profile__form">
         <div className="profile__input-wrapper">
@@ -49,7 +49,7 @@ function Profile({ isLoggedIn }) {
           </button>
         </div>
       </form>
-    </section>
+    </main>
   );
 }
 

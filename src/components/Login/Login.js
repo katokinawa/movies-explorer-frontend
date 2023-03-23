@@ -7,7 +7,7 @@ function Login() {
   };
 
   return (
-    <section className="login">
+    <main className="login">
       <div className="login__head-wrapper">
         <Link to="/" className="login__logo button-animation-graphic"></Link>
         <h1 className="title login__title">Рады видеть!</h1>
@@ -60,7 +60,7 @@ function Login() {
           </Link>
         </div>
       </form>
-    </section>
+    </main>
   );
 }
 

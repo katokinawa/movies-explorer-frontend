@@ -105,7 +105,6 @@
 
 .movies-card-like-button:hover {
   background-image: url(../../images/close-button.svg);
-  transform: scale(1.4);
 }
 
 

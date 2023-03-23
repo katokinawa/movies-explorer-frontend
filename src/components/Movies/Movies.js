@@ -3,7 +3,7 @@ import SearchForm from "./SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 function Movies({ movies }) {
   return (
-    <section className="movies">
+    <main className="movies">
       <SearchForm />
       <MoviesCardList movies={movies} />
       <section className="movies-button-wrapper button-animation">
@@ -11,7 +11,7 @@ function Movies({ movies }) {
           Ещё
         </button>
       </section>
-    </section>
+    </main>
   );
 }
 
