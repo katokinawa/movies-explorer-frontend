@@ -1,0 +1,113 @@
+.movies-card-item {
+  position: relative;
+  list-style-type: none;
+  min-height: 232px;
+  max-width: 320px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .movies-card-item {
+    min-width: 708px;
+    min-height: 134px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .movies-card-item {
+    min-width: 1140px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .movies-card-item {
+    min-height: 134px;
+  }
+}
+
+.movies-card-image {
+  display: block;
+  min-width: 300px;
+  height: 168px;
+  z-index: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .movies-card-image {
+    min-width: 220px;
+    height: 122px;
+    position: absolute;
+    top: 6px;
+    right: 7px;
+  }
+}
+
+.movies-card-title {
+  position: absolute;
+  bottom: 35px;
+  left: 12px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #000;
+}
+
+@media screen and (min-width: 768px) {
+  .movies-card-title {
+    bottom: 89px;
+    left: 22px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+.movies-card-subtitle {
+  position: absolute;
+  bottom: 13px;
+  left: 12px;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  color: #a0a0a0;
+}
+
+@media screen and (min-width: 768px) {
+  .movies-card-subtitle {
+    bottom: 63px;
+    left: 22px;
+  }
+}
+
+.movies-card-like-button {
+  position: absolute;
+  bottom: 36px;
+  right: 16px;
+  background-color: #f9f9f9;
+  min-width: 14px;
+  min-height: 12px;
+  border: none;
+  outline: none;
+  background-image: url(../../images/like-deactive.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .movies-card-like-button {
+    bottom: 22px;
+    left: 22px;
+  }
+}
+
+.movies-card-like-button:hover {
+  background-image: url(../../images/close-button.svg);
+}
+
+
+.movies-card-like-active {
+  background-image: url(../../images/like-active.svg);
+}

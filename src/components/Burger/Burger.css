@@ -1,0 +1,28 @@
+.burger-button {
+  min-width: 38px;
+  min-height: 38px;
+  background-image: url(../../images/burger.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  place-self: center end;
+}
+
+@media screen and (min-width: 768px) {
+  .burger-button {
+    min-width: 42px;
+    min-height: 41px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .burger-button {
+    display: none;
+  }
+}
+
+.burgen-button__hidden {
+  display: none;
+}

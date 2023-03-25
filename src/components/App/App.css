@@ -1,0 +1,84 @@
+.body {
+  background: #fff;
+}
+
+.page {
+  min-width: 320px;
+  max-width: 1280px;
+  margin: 0 auto;
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+}
+
+@media screen and (min-width: 768px) {
+  .page {
+    min-width: 768px;
+  }
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+.subtitle {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  text-decoration: none;
+}
+
+.undertitle-line {
+  min-width: 284px;
+  margin: 27px 0 0;
+  border-top: 2px solid #000;
+}
+
+@media screen and (min-width: 768px) {
+  .undertitle-line {
+    min-width: 668px;
+    margin: 20px 0 0;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .undertitle-line {
+    min-width: 1140px;
+    margin: 22px 0 0;
+  }
+}
+
+.main-title {
+  min-width: 284px;
+  color: #000;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.04em;
+}
+
+@media screen and (min-width: 768px) {
+  .main-title {
+    margin: 90px 0 0;
+    min-width: 668px;
+    font-size: 22px;
+    line-height: 27px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .main-title {
+    margin: 110px 0 0;
+    min-width: 1140px;
+  }
+}
+
+.button-animation:hover {
+  color: #000;
+  transition: color 0.8s linear;
+}
+
+.button-animation-graphic:hover {
+  opacity: 0.4;
+  transition: opacity 0.8s linear;
+}

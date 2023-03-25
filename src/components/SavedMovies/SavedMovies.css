@@ -1,0 +1,15 @@
+.saved-movies__space {
+  min-height: 160px;
+}
+
+@media screen and (min-width: 768px) {
+  .saved-movies__space {
+    min-height: 170px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .saved-movies__space {
+    min-height: 150px;
+  }
+}
