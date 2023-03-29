@@ -1,18 +1,25 @@
 import "./SearchForm.css";
 import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
+import { useRef } from "react";
 
-function SearchForm() {
+function SearchForm({ onSubmit }) {
+  const input = useRef();
+
+  function handleSearch(e) {
+    e.preventDefault()
+    onSubmit(input.current.value)
+  }
   return (
     <section className="search-form">
       <div className="search-form__wrapper">
-        <form className="search-form__form">
+        <form onSubmit={handleSearch} className="search-form__form">
           <div className="search-form__loupe-img"></div>
           <label htmlFor="search"></label>
           <input
-            id="search"
             placeholder="Фильм"
             type="text"
             name="search"
+            ref={input}
             className="search-form__input"
             required
           />

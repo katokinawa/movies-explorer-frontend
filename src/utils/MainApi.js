@@ -1,4 +1,4 @@
-const BASE_URL = "https://84.201.172.98/";
+const BASE_URL = "https://84.201.172.98";
 
 function checkRes(res) {
   return res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`);
