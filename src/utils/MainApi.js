@@ -46,13 +46,3 @@ export const getUser = () => {
     },
   }).then(checkRes);
 };
-
-export const deleteToken = () => {
-    return fetch(`${BASE_URL}/api/signout`, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    }).then(checkRes);
-  };

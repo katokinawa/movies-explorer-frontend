@@ -1,6 +1,7 @@
 import "./MoviesCard.css";
 
 function MoviesCard(props) {
+
   function numberToHoursMinute(duration) {
     let result;
     let time = props.movies.duration;
