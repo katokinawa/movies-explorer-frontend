@@ -1,13 +1,10 @@
 import "./MoviesCardList.css";
 import MoviesCard from "../MoviesCard/MoviesCard";
-import Preloader from "../Movies/Preloader/Preloader"
 
-function MoviesCardList({ movies, isLoading }) {
+function MoviesCardList({ movies }) {
   return (
-    isLoading ?
-    <Preloader /> :
     <ul className="movies-card-list">
-      {movies.map((mov) => (
+      {movies && movies.map((mov) => (
         <MoviesCard key={mov.movieId} movies={mov} />
       ))}
     </ul>
