@@ -14,46 +14,15 @@ import SavedMovies from "../SavedMovies/SavedMovies";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import * as api from "../../utils/MainApi";
-import * as MoviesApi from "../../utils/MoviesApi";
 
 function App() {
   // Функциональные константы
   const history = useNavigate();
   const location = useLocation();
-  const BASE_URL = "https://api.nomoreparties.co/";
 
   // Хуки
-  const [loggedIn, setLoggedIn] = useState(true); // Хардкод на true
+  const [loggedIn, setLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
-  const [movies, setMovies] = useState([]);
-
-  // Блок с фильтром
-  useEffect(() => {
-    MoviesApi.getMovies()
-      .then((movies) => {
-        const allMovies = movies.map((movie) => {
-          return {
-            movieId: movie.id,
-            country: movie.country,
-            director: movie.director,
-            duration: movie.duration,
-            year: movie.year,
-            description: movie.description,
-            trailerLink: movie.trailerLink,
-            nameRU: movie.nameRU,
-            nameEN: movie.nameEN,
-            image: BASE_URL + movie.image.url,
-            thumbnail: BASE_URL + movie.image.formats.thumbnail.url,
-          };
-        });
-        return allMovies;
-      })
-      .then((movies) => {
-        const rawMovies = JSON.stringify(movies);
-        localStorage.setItem("allMovies", rawMovies);
-      })
-      .catch((err) => err);
-  }, []);
 
   // БЛОК С ЛОГИНОМ, РЕГИСТРАЦИЕЙ, РЕДАКТИРОВАНИЕМ ПРОФИЛЯ
   const isMainHeaderVisible = ["/"];
@@ -78,6 +47,8 @@ function App() {
     api
       .register(data)
       .then(() => {
+        handleLogin(data);
+        setLoggedIn(true);
         history("/movies");
       })
       .catch((err) => err);
@@ -99,7 +70,7 @@ function App() {
         if (res.token) {
           localStorage.setItem("jwt", res.token);
           setLoggedIn(true);
-          history("/");
+          history("/movies");
         }
       })
       .catch((err) => err);
@@ -127,20 +98,12 @@ function App() {
             <Route path="/" element={<Main />} />
             <Route
               path="/movies"
-              element={
-                <ProtectedRoute
-                  loggedIn={loggedIn}
-                  element={Movies}
-                />
-              }
+              element={<ProtectedRoute loggedIn={loggedIn} element={Movies} />}
             />
             <Route
               path="/saved-movies"
               element={
-                <ProtectedRoute
-                  loggedIn={loggedIn}
-                  element={SavedMovies}
-                />
+                <ProtectedRoute loggedIn={loggedIn} element={SavedMovies} />
               }
             />
             <Route
