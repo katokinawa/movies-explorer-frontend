@@ -1,27 +1,18 @@
 import "./Login.css";
+import useFormWithValidation from "../../utils/useFormWithValidation";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect } from "react";
 
-function Login({onLogin}) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleSetEmail = (e) => {
-    setEmail(e.target.value);
-  };
-  const handleSetPassword = (e) => {
-    setPassword(e.target.value);
-  };
+function Login({ onLogin, message, errorColor, setMessage }) {
+  const { values, handleChange, errors, isValid } = useFormWithValidation();
+  
+  useEffect(() => {
+    setMessage('')
+  }, []) 
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!email || !password) {
-      return;
-    }
-    onLogin({
-      email: email,
-      password: password,
-    });
+    onLogin(values);
   };
 
   return (
@@ -38,17 +29,19 @@ function Login({onLogin}) {
           <label htmlFor="email"></label>
           <input
             id="email"
-            type="text"
+            type="email"
             name="email"
-            value={email}
-            onChange={handleSetEmail}
+            value={values.email || ""}
+            onChange={handleChange}
             className="email login__input email-input"
             minLength="2"
             maxLength="40"
             required
           />
+          <span className="login__error">{errors.email || ""}</span>
         </div>
-        <div className="login__input-wrapper">
+
+        <div className="login__input-wrapper login__input-password-margin">
           <p className="subtitle login__subtitle login-subtitle-color-grey">
             Пароль
           </p>
@@ -57,23 +50,29 @@ function Login({onLogin}) {
             id="password"
             type="password"
             name="password"
-            value={password}
-            onChange={handleSetPassword}
+            value={values.password || ""}
+            onChange={handleChange}
             className="password login__input-password password-input"
             minLength="2"
             maxLength="40"
             required
           />
-          <span
-            id="password-error"
-            className="password-error login__error"
-          ></span>
+          <span className="login__error">{errors.password || ""}</span>
         </div>
-
+        <p
+          className={
+            errorColor
+              ? "subtitle login__error login__error-red"
+              : "subtitle login__error login__error login__error-green"
+          }
+        >
+          {message}
+        </p>
         <button
           type="submit"
           name="login"
           className="title login__button button-animation"
+          disabled={!isValid}
         >
           Войти
         </button>

@@ -2,7 +2,7 @@ function checkRes(res) {
   return res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`);
 }
 
-export const register = ({ name, email, password }) => {
+export const register = ({name, email, password}) => {
   return fetch(`/api/signup`, {
     method: "POST",
     headers: {
@@ -13,7 +13,7 @@ export const register = ({ name, email, password }) => {
   }).then(checkRes);
 };
 
-export const login = ({ email, password }) => {
+export const login = ({email, password}) => {
   return fetch(`/api/signin/`, {
     method: "POST",
     headers: {
@@ -24,9 +24,9 @@ export const login = ({ email, password }) => {
   }).then(checkRes);
 };
 
-export const updateProfile = ({ name, email }) => {
-  return fetch(`/me/`, {
-    method: "POST",
+export const updateProfile = ({name, email}) => {
+  return fetch(`/api/users/me/`, {
+    method: "PATCH",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",

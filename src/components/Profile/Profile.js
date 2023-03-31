@@ -1,32 +1,36 @@
 import "./Profile.css";
-import { useState } from "react";
+import useFormWithValidation from "../../utils/useFormWithValidation";
+import { useEffect } from "react";
 
-function Profile({ updateProfile, logout }) {
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("")
+function Profile({ updateProfile, logout, user, message, errorColor }) {
+  const { values, setValues, handleChange, errors, isValid, setIsValid } =
+  useFormWithValidation();
 
-  const handleSetName = (e) => {
-    setName(e.target.value);
-  };
+  useEffect(() => {
+    if (user) {
+      setValues({
+        name: user.name,
+        email: user.email,
+      });
+    }
+  }, [user, setValues]);
 
-  const handleSetEmail = (e) => {
-    setEmail(e.target.value);
-  };
+  useEffect(() => {
+    if (user.name === values.name && user.email === values.email) {
+      setIsValid(false);
+    }
+  }, [user, setIsValid, values]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!email || !name) {
-      return;
-    }
-    updateProfile({
-      name: name,
-      email: email,
-    });
+    updateProfile(values);
   };
 
   return (
     <main className="profile">
-      <h1 className="title profile__title">Привет, Даниил!</h1>
+      <h1 className="title profile__title">
+        Привет{user.name ? ", " + user.name : ""}!
+      </h1>
       <form onSubmit={handleSubmit} className="profile__form">
         <div className="profile__input-wrapper">
           <p className="subtitle profile__subtitle">Имя</p>
@@ -35,31 +39,40 @@ function Profile({ updateProfile, logout }) {
             id="username"
             type="text"
             name="name"
-            value={name}
-            onChange={handleSetName}
+            value={values.name}
+            onChange={handleChange}
             className="username profile__input username-input"
             minLength="2"
             maxLength="40"
             required
           />
+          <span className="profile__error">{errors.password || ""}</span>
         </div>
-        <div className="profile__input-wrapper">
+
+        <div className="profile__input-wrapper profile__input-wrapper-margin">
           <p className="subtitle profile__subtitle">E-mail</p>
           <label htmlFor="email"></label>
           <input
             id="email"
-            type="text"
+            type="email"
             name="email"
-            value={email}
-            onChange={handleSetEmail}
-            className="email profile__input email-input"
+            value={values.email}
+            onChange={handleChange}
+            className="email profile__input profile__input-border email-input"
             minLength="2"
             maxLength="40"
             required
           />
+          <span className="profile__error">{errors.password || ""}</span>
         </div>
+        <p className={errorColor ? "subtitle profile__error profile__error-red" : "subtitle profile__error profile__error-green"}>{message}</p>
         <div className="profile__button-wrapper">
-          <button type="submit" name="edit" className="profile__button button-animation-graphic">
+          <button
+            type="submit"
+            disabled={!isValid}
+            name="edit"
+            className="profile__button button-animation-graphic"
+          >
             Редактировать
           </button>
           <button
