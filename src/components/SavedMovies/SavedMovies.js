@@ -1,8 +1,10 @@
 import "./SavedMovies.css";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import SearchForm from "../Movies/SearchForm/SearchForm";
+import { useEffect } from "react";
 
 function SavedMovies({ movies }) {
+
   return (
     <main className="saved-movies">
       <SearchForm />

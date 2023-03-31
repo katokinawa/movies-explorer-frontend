@@ -1,11 +1,9 @@
-const BASE_URL = "https://api.katokinawa.movies.nomoredomains.work";
-
 function checkRes(res) {
   return res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`);
 }
 
 export const register = ({ name, email, password }) => {
-  return fetch(`${BASE_URL}/api/signup`, {
+  return fetch(`/api/signup`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -16,7 +14,7 @@ export const register = ({ name, email, password }) => {
 };
 
 export const login = ({ email, password }) => {
-  return fetch(`${BASE_URL}/api/signin/`, {
+  return fetch(`/api/signin/`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -27,7 +25,7 @@ export const login = ({ email, password }) => {
 };
 
 export const updateProfile = ({ name, email }) => {
-  return fetch(`${BASE_URL}/me/`, {
+  return fetch(`/me/`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -38,8 +36,18 @@ export const updateProfile = ({ name, email }) => {
 };
 
 export const getUser = () => {
-  return fetch(`${BASE_URL}/api/users/me/`, {
+  return fetch(`/api/users/me/`, {
     method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  }).then(checkRes);
+};
+
+export const deleteToken = () => {
+  return fetch(`/api/signout/`, {
+    method: "POST",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
