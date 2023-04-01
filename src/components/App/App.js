@@ -22,24 +22,32 @@ function App() {
 
   // Хуки
   const [currentUser, setCurrentUser] = useState({});
+  const [message, setMessage] = useState("");
+  const [errorColor, setErrorColor] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   // БЛОК С ЛОГИНОМ, РЕГИСТРАЦИЕЙ, РЕДАКТИРОВАНИЕМ ПРОФИЛЯ
   const isMainHeaderVisible = ["/"];
   const isOtherHeaderVisible = ["/movies", "/saved-movies", "/profile"];
   const isFooterVisible = ["/", "/movies", "/saved-movies"];
-  const [message, setMessage] = useState("");
-  const [errorColor, setErrorColor] = useState(false)
+
   useEffect(() => {
+    checkToken();
+  }, [loggedIn]);
+
+  function checkToken() {
     const token = localStorage.getItem("jwt");
     if (token) {
       api
         .getUser()
         .then((res) => {
+          setLoggedIn(true);
           setCurrentUser(res);
+          history(location.pathname);
         })
         .catch((err) => err);
     }
-  }, []);
+  }
 
   function handleRegister(data) {
     api
@@ -47,10 +55,10 @@ function App() {
       .then(() => {
         handleLogin(data);
       })
-      .catch((err) => {
+      .catch(() => {
         setErrorColor(true);
-        setMessage(err)
-      })
+        setMessage("Что-то пошло не так...");
+      });
   }
 
   function handeUpdateProfile(data) {
@@ -63,7 +71,10 @@ function App() {
           setMessage("");
         }, 2000);
       })
-      .catch((err) => setMessage(err));
+      .catch(() => {
+        setErrorColor(true);
+        setMessage("Что-то пошло не так...");
+      });
   }
 
   function handleLogin(data) {
@@ -72,17 +83,18 @@ function App() {
       .then((res) => {
         if (res.token) {
           localStorage.setItem("jwt", res.token);
+          setLoggedIn(true);
+          setErrorColor(false);
           setMessage("Успешный вход!");
           setTimeout(() => {
             history("/movies");
-            setErrorColor(false);
             setMessage("");
           }, 1000);
         }
       })
-      .catch((err) => {
+      .catch(() => {
         setErrorColor(true);
-        setMessage(err);
+        setMessage("Что-то пошло не так...");
       });
   }
 
@@ -98,9 +110,9 @@ function App() {
       <div className="page">
         <CurrentUserContext.Provider value={currentUser}>
           {isMainHeaderVisible.includes(location.pathname) ? (
-            <Header loggedIn={false} />
+            <Header/>
           ) : isOtherHeaderVisible.includes(location.pathname) ? (
-            <Header loggedIn={true} />
+            <Header loggedIn={loggedIn} />
           ) : (
             ""
           )}
@@ -108,12 +120,22 @@ function App() {
             <Route path="/" element={<Main />} />
             <Route
               path="/movies"
-              element={<ProtectedRoute user={currentUser} element={Movies} />}
+              element={
+                <ProtectedRoute
+                  loggedIn={loggedIn}
+                  user={currentUser}
+                  element={Movies}
+                />
+              }
             />
             <Route
               path="/saved-movies"
               element={
-                <ProtectedRoute user={currentUser} element={SavedMovies} />
+                <ProtectedRoute
+                  loggedIn={loggedIn}
+                  user={currentUser}
+                  element={SavedMovies}
+                />
               }
             />
             <Route
@@ -122,6 +144,7 @@ function App() {
                 <ProtectedRoute
                   element={Profile}
                   user={currentUser}
+                  loggedIn={loggedIn}
                   message={message}
                   errorColor={errorColor}
                   logout={handleLogout}
@@ -131,12 +154,24 @@ function App() {
             />
             <Route
               path="/signin"
-              element={<Login message={message} setMessage={setMessage} errorColor={errorColor} onLogin={handleLogin} />}
+              element={
+                <Login
+                  message={message}
+                  setMessage={setMessage}
+                  errorColor={errorColor}
+                  onLogin={handleLogin}
+                />
+              }
             />
             <Route
               path="/signup"
               element={
-                <Register message={message} setMessage={setMessage} errorColor={errorColor} onRegister={handleRegister} />
+                <Register
+                  message={message}
+                  setMessage={setMessage}
+                  errorColor={errorColor}
+                  onRegister={handleRegister}
+                />
               }
             />
             <Route path="*" element={<Error />} />
