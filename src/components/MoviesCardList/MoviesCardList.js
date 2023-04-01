@@ -1,10 +1,11 @@
 import "./MoviesCardList.css";
 import MoviesCard from "../MoviesCard/MoviesCard";
 
-function MoviesCardList({ movies, moviesNumber }) {
+function MoviesCardList({ movies }) {
+  console.log(movies)
   return (
     <ul className="movies-card-list">
-      {movies && movies.slice(0, moviesNumber).map((mov) => (
+      {movies.map((mov) => (
         <MoviesCard key={mov.movieId} movies={mov} />
       ))}
     </ul>

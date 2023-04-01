@@ -1,13 +1,14 @@
 import "./SearchForm.css";
 import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 function SearchForm({ onSubmit }) {
-  const input = useRef();
+  const searchValue = useRef();
 
   function handleSearch(e) {
     e.preventDefault()
-    onSubmit(input.current.value)
+    localStorage.setItem('searchValue', searchValue.current.value);
+    onSubmit(localStorage.getItem('searchValue'))
   }
   return (
     <section className="search-form">
@@ -16,10 +17,10 @@ function SearchForm({ onSubmit }) {
           <div className="search-form__loupe-img"></div>
           <label htmlFor="search"></label>
           <input
-            placeholder="Фильм"
+            placeholder={localStorage.getItem('searchValue')}
             type="text"
             name="search"
-            ref={input}
+            ref={searchValue}
             className="search-form__input"
             required
           />
