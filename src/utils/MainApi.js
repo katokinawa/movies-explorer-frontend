@@ -54,3 +54,46 @@ export const deleteToken = () => {
     },
   }).then(checkRes);
 };
+
+export const getUserMovie = () => {
+  return fetch(`/api/movies/`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  }).then(checkRes);
+};
+
+export const likeMovie = (movie) => {
+  return fetch(`/api/movies/`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      movieId: movie.movieId,
+      country: movie.country,
+      director: movie.director,
+      duration: movie.duration,
+      year: movie.year,
+      description: movie.description,
+      trailerLink: movie.trailerLink,
+      nameRU: movie.nameRU,
+      nameEN: movie.nameEN,
+      image: movie.image,
+      thumbnail: movie.thumbnail,
+    }),
+  }).then(checkRes);
+};
+
+export const dislikeMovie = (movieId) => {
+  return fetch(`/api/movies/${movieId}`, {
+    method: "DELETE",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  }).then(checkRes);
+};

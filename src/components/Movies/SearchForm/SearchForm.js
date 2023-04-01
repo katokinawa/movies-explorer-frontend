@@ -1,6 +1,6 @@
 import "./SearchForm.css";
 import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 function SearchForm({ onSubmit }) {
   const searchValue = useRef();

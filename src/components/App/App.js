@@ -25,6 +25,7 @@ function App() {
   const [message, setMessage] = useState("");
   const [errorColor, setErrorColor] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
+  const [liked, setLikedMovies] = useState(null);
 
   // БЛОК С ЛОГИНОМ, РЕГИСТРАЦИЕЙ, РЕДАКТИРОВАНИЕМ ПРОФИЛЯ
   const isMainHeaderVisible = ["/"];
@@ -98,10 +99,46 @@ function App() {
       });
   }
 
+  function handleLike(movie) {
+    api
+      .likeMovie(movie)
+      .then((res) => {
+        setLikedMovies([...liked, res]);
+      })
+      .catch(() => {
+        setMessage("Что-то пошло не так...");
+      });
+  }
+
+  function handleDislike(movieForDelete) {
+    Promise.resolve(
+      liked.find((movies) => {
+        return movies.movieId === movieForDelete.movieId;
+      })
+    )
+      .then((res) => {
+        if (res !== undefined && res._id) {
+          return res._id;
+        } else {
+          setMessage("Что-то пошло не так...");
+        }
+      })
+      .then((res) => {
+        api.dislikeMovie(res).then((res) => {
+          liked.filter((movies) => movies._id !== res._id);
+        });
+      })
+      .catch(() => {
+        setMessage("Что-то пошло не так...");
+      });
+  }
+
   function handleLogout() {
     localStorage.removeItem("moviesFiltered");
     localStorage.removeItem("movFilterDuration");
     localStorage.removeItem("searchValue");
+    localStorage.removeItem("checkboxState");
+    localStorage.removeItem("saveMovies");
     localStorage.removeItem("checkboxState");
     api.deleteToken();
     localStorage.removeItem("jwt");
@@ -128,7 +165,11 @@ function App() {
                 <ProtectedRoute
                   loggedIn={loggedIn}
                   user={currentUser}
+                  liked={liked}
+                  setLikedMovies={setLikedMovies}
                   element={Movies}
+                  onLikeMovies={handleLike}
+                  onDislikeMovies={handleDislike}
                 />
               }
             />
@@ -138,6 +179,7 @@ function App() {
                 <ProtectedRoute
                   loggedIn={loggedIn}
                   user={currentUser}
+                  liked={liked}
                   element={SavedMovies}
                 />
               }
