@@ -26,7 +26,7 @@ function App() {
   const [errorColor, setErrorColor] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
   const [liked, setLikedMovies] = useState([]);
-  console.log(liked);
+  
   // БЛОК С ЛОГИНОМ, РЕГИСТРАЦИЕЙ, РЕДАКТИРОВАНИЕМ ПРОФИЛЯ
   const isMainHeaderVisible = ["/"];
   const isOtherHeaderVisible = ["/movies", "/saved-movies", "/profile"];
