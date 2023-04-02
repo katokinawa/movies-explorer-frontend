@@ -11,7 +11,10 @@ function Movies({
   onLikeMovies,
   onDislikeMovies,
   liked,
+  moviesListNumber,
   setLikedMovies,
+  addMore,
+  setMoviesListNumber,
 }) {
   const [result, setResult] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -19,8 +22,8 @@ function Movies({
   const BASE_URL = "https://api.nomoreparties.co/";
 
   useEffect(() => {
-    localStorage.getItem("checkbox");
     localStorage.getItem("movieSearchValue");
+    localStorage.removeItem("checkbox");
     localStorage.removeItem("savedMovieSearchValue");
   });
 
@@ -139,6 +142,30 @@ function Movies({
     }, "1000");
   }
 
+  const handleShowMore = () => {
+    if (localStorage.getItem("moviesFiltered")) {
+      setResult((movies) => [
+        ...movies,
+        ...JSON.parse(localStorage.getItem("moviesFiltered")).slice(
+          movies.length,
+          movies.length + addMore
+        ),
+      ]);
+    }
+
+    if (localStorage.getItem("movFilterDuration")) {
+      setResult((movies) => [
+        ...movies,
+        ...JSON.parse(localStorage.getItem("movFilterDuration")).slice(
+          movies.length,
+          movies.length + addMore
+        ),
+      ]);
+    }
+
+    setMoviesListNumber((newMoviesListNumber) => newMoviesListNumber + addMore);
+  };
+
   return (
     <main className="movies">
       <SearchForm
@@ -152,15 +179,19 @@ function Movies({
           onLikeMovies={onLikeMovies}
           onDislikeMovies={onDislikeMovies}
           movies={result}
+          moviesListNumber={moviesListNumber}
           liked={liked}
+          addMore={addMore}
         />
       ) : (
         <p className="subtitle movies__subtitle">{info}</p>
       )}
 
-      {!isLoading && result.length > 3 ? (
+      {!isLoading && (result.length > moviesListNumber) ? (
         <section className="movies-button-wrapper button-animation">
-          <button className="movies-button">Ещё</button>
+          <button className="movies-button" onClick={handleShowMore}>
+            Ещё
+          </button>
         </section>
       ) : (
         <section className="movies__space"></section>

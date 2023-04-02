@@ -26,11 +26,42 @@ function App() {
   const [errorColor, setErrorColor] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
   const [liked, setLikedMovies] = useState([]);
-  
+  const [moviesListNumber, setMoviesListNumber] = useState(Number());
+  const [addMore, setAddMore] = useState(Number());
+
   // БЛОК С ЛОГИНОМ, РЕГИСТРАЦИЕЙ, РЕДАКТИРОВАНИЕМ ПРОФИЛЯ
   const isMainHeaderVisible = ["/"];
   const isOtherHeaderVisible = ["/movies", "/saved-movies", "/profile"];
   const isFooterVisible = ["/", "/movies", "/saved-movies"];
+
+  function haandleResize() {
+    if (window.innerWidth < 480) {
+      setAddMore(5);
+      setMoviesListNumber(5);
+    } else if (window.innerWidth < 768) {
+      setAddMore(7);
+      setMoviesListNumber(7);
+    } else {
+      setAddMore(7);
+      setMoviesListNumber(7);
+    }
+  }
+
+  let timeOutHandler;
+
+  function onResize() {
+    clearTimeout(timeOutHandler);
+    timeOutHandler = setTimeout(haandleResize, 1000);
+  }
+
+  useEffect(() => {
+    checkToken();
+    window.addEventListener('resize', onResize);
+    haandleResize();
+    return () => {
+      window.removeEventListener('resize', onResize);
+    }
+  }, []);
 
   useEffect(() => {
     checkToken();
@@ -133,6 +164,8 @@ function App() {
       });
   }
 
+
+
   function handleLogout() {
     localStorage.removeItem("moviesFiltered");
     localStorage.removeItem("movFilterDuration");
@@ -166,8 +199,11 @@ function App() {
                   loggedIn={loggedIn}
                   user={currentUser}
                   liked={liked}
+                  moviesListNumber={moviesListNumber}
                   setLikedMovies={setLikedMovies}
+                  addMore={addMore}
                   element={Movies}
+                  setMoviesListNumber={setMoviesListNumber}
                   onLikeMovies={handleLike}
                   onDislikeMovies={handleDislike}
                 />
@@ -181,6 +217,7 @@ function App() {
                   user={currentUser}
                   liked={liked}
                   setLikedMovies={setLikedMovies}
+                  setAddMore={setAddMore}
                   onLikeMovies={handleLike}
                   onDislikeMovies={handleDislike}
                   element={SavedMovies}

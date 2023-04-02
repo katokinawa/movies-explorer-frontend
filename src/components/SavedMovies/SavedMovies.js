@@ -11,6 +11,7 @@ function SavedMovies({
   onDislikeMovies,
   setLikedMovies,
   liked,
+  moviesListNumber,
 }) {
   const [info, setInfo] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -107,6 +108,7 @@ function SavedMovies({
           liked={result ? result : liked}
           onLikeMovies={onLikeMovies}
           onDislikeMovies={onDislikeMovies}
+          moviesListNumber={moviesListNumber}
         />
       ) : (
         <p className="subtitle movies__subtitle">{info}</p>
