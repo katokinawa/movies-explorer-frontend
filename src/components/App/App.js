@@ -56,11 +56,11 @@ function App() {
 
   useEffect(() => {
     checkToken();
-    window.addEventListener('resize', onResize);
+    window.addEventListener("resize", onResize);
     haandleResize();
     return () => {
-      window.removeEventListener('resize', onResize);
-    }
+      window.removeEventListener("resize", onResize);
+    };
   }, []);
 
   useEffect(() => {
@@ -163,8 +163,6 @@ function App() {
         setMessage("Что-то пошло не так...");
       });
   }
-
-
 
   function handleLogout() {
     localStorage.removeItem("moviesFiltered");

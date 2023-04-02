@@ -11,7 +11,7 @@ function FilterCheckbox() {
           type="checkbox"
           checked={checked}
           onChange={(e) => {
-            localStorage.setItem('checkboxState', e.target.checked)
+            localStorage.setItem("checkboxState", e.target.checked);
             setChecked(e.target.checked);
           }}
           className="filter-checkbox__invisible-checkbox"

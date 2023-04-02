@@ -187,7 +187,7 @@ function Movies({
         <p className="subtitle movies__subtitle">{info}</p>
       )}
 
-      {!isLoading && (result.length > moviesListNumber) ? (
+      {!isLoading && result.length > moviesListNumber ? (
         <section className="movies-button-wrapper button-animation">
           <button className="movies-button" onClick={handleShowMore}>
             Ещё

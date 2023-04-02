@@ -10,6 +10,6 @@ export const getMovies = () => {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
-    }
+    },
   }).then(checkRes);
 };

@@ -112,7 +112,7 @@
 
 .profile__button:disabled {
   color: #666666;
-  opacity: .5;
+  opacity: 0.5;
   cursor: default;
 }
 
@@ -172,7 +172,7 @@
 }
 
 .profile__error-red {
-  color: #EE3465;
+  color: #ee3465;
 }
 
 .profile__error-green {

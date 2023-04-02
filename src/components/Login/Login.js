@@ -5,10 +5,10 @@ import { useEffect } from "react";
 
 function Login({ onLogin, message, errorColor, setMessage }) {
   const { values, handleChange, errors, isValid } = useFormWithValidation();
-  
+
   useEffect(() => {
-    setMessage('')
-  }, []) 
+    setMessage("");
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
