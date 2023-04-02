@@ -179,6 +179,7 @@ function Movies({
           onLikeMovies={onLikeMovies}
           onDislikeMovies={onDislikeMovies}
           movies={result}
+          buttonType='liked'
           moviesListNumber={moviesListNumber}
           liked={liked}
           addMore={addMore}

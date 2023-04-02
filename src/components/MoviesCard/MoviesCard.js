@@ -1,18 +1,34 @@
-import { useEffect } from "react";
 import "./MoviesCard.css";
+import { useState } from "react";
 
-function MoviesCard(props) {
-  let isLiked;
+function MoviesCard({
+  movies,
+  liked,
+  buttonType,
+  onDislikeMovies,
+  onLikeMovies,
+}) {
+  const isLiked = liked.some((i) => i.movieId === movies.movieId);
 
-  if (props.liked === null) {
-    return;
-  } else {
-    isLiked = props.liked.some((i) => i.movieId === props.movies.movieId);
+  const [likeStatus, setLikeStatus] = useState(false);
+
+  function handleLikeStatus(e) {
+    e.preventDefault();
+    setLikeStatus(true);
+    if (buttonType === "liked" && !isLiked) {
+      onLikeMovies(movies)
+        .catch((err) => err)
+        .finally(() => setLikeStatus(false));
+    } else {
+      onDislikeMovies(movies)
+        .catch((err) => err)
+        .finally(() => setLikeStatus(false));
+    }
   }
 
   function numberToHoursMinute(duration) {
     let result;
-    let time = props.movies.duration;
+    let time = movies.duration;
     let minute = time % 60;
     let hours = (time - minute) / 60;
 
@@ -22,36 +38,41 @@ function MoviesCard(props) {
     return result;
   }
 
-  function handleLikeMovie() {
-    props.onLikeMovies(props.movies);
-  }
-
-  function handleDislikeMovie() {
-    props.onDislikeMovies(props.movies);
-  }
-
   return (
     <li className="movies-card-item">
       <img
-        src={props.movies.image}
+        src={movies.image}
         loading="lazy"
-        alt={props.movies.nameRU}
+        alt={movies.nameRU}
         className="movies-card-image"
       ></img>
-      <h2 className="title movies-card-title">{props.movies.nameRU}</h2>
+      <h2 className="title movies-card-title">{movies.nameRU}</h2>
       <p className="subtitle movies-card-subtitle">
-        {numberToHoursMinute(props.movies.duration)}
+        {numberToHoursMinute(movies.duration)}
       </p>
-      {isLiked ? (
+      {buttonType === "liked" && (
         <button
-          onClick={handleDislikeMovie}
-          className="movies-card-like-button movies-card-like-active button-animation-graphic"
-        ></button>
-      ) : (
+          type="button"
+          onClick={handleLikeStatus}
+          className={
+            isLiked
+              ? "movies-card-like-active button-animation-graphic"
+              : "movies-card-like-button button-animation-graphic"
+          }
+          isDisabled={likeStatus}
+        />
+      )}
+      {buttonType === "disliked" && (
         <button
-          onClick={handleLikeMovie}
-          className="movies-card-like-button button-animation-graphic"
-        ></button>
+          type="button"
+          onClick={handleLikeStatus}
+          className={
+            isLiked
+              ? "movies-card-like-active button-animation-graphic"
+              : "movies-card-like-button button-animation-graphic"
+          }
+          isDisabled={likeStatus}
+        />
       )}
     </li>
   );

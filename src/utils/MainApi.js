@@ -72,19 +72,7 @@ export const likeMovie = (movie) => {
       Accept: "application/json",
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      movieId: movie.movieId,
-      country: movie.country,
-      director: movie.director,
-      duration: movie.duration,
-      year: movie.year,
-      description: movie.description,
-      trailerLink: movie.trailerLink,
-      nameRU: movie.nameRU,
-      nameEN: movie.nameEN,
-      image: movie.image,
-      thumbnail: movie.thumbnail,
-    }),
+    body: JSON.stringify(movie),
   }).then(checkRes);
 };
 

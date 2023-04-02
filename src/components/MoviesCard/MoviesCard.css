@@ -103,10 +103,34 @@
   }
 }
 
-.movies-card-like-button:hover {
+
+
+.movies-card-like-active:hover {
   background-image: url(../../images/close-button.svg);
 }
 
-.movies-card-like-active {
+.movies-card-like-button:hover {
   background-image: url(../../images/like-active.svg);
+}
+
+.movies-card-like-active {
+  position: absolute;
+  bottom: 36px;
+  right: 16px;
+  background-color: #f9f9f9;
+  min-width: 14px;
+  min-height: 12px;
+  border: none;
+  outline: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  background-image: url(../../images/like-active.svg);
+}
+
+@media screen and (min-width: 768px) {
+  .movies-card-like-active {
+    bottom: 22px;
+    left: 22px;
+  }
 }

@@ -7,6 +7,7 @@ function MoviesCardList({
   onDislikeMovies,
   liked,
   moviesListNumber,
+  buttonType
 }) {
   return (
     <ul className="movies-card-list">
@@ -14,9 +15,10 @@ function MoviesCardList({
         <MoviesCard
           key={mov.id}
           movies={mov}
-          onLikeMovies={onLikeMovies}
-          onDislikeMovies={onDislikeMovies}
           liked={liked}
+          buttonType={buttonType}
+          onDislikeMovies={onDislikeMovies}
+          onLikeMovies={onLikeMovies}
         />
       ))}
     </ul>
