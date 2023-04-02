@@ -2,6 +2,7 @@ import "./MoviesCardList.css";
 import MoviesCard from "../MoviesCard/MoviesCard";
 
 function MoviesCardList({ movies, onLikeMovies, onDislikeMovies, liked }) {
+  
   return (
     <ul className="movies-card-list">
       {movies.map((mov) => (

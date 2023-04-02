@@ -5,7 +5,7 @@ function MoviesCard(props) {
   let isLiked;
 
   if (props.liked === null) {
-    return (isLiked = false);
+    return;
   } else {
     isLiked = props.liked.some((i) => i.movieId === props.movies.movieId);
   }
