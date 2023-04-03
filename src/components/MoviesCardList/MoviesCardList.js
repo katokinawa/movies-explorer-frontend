@@ -7,7 +7,7 @@ function MoviesCardList({
   onDislikeMovies,
   liked,
   moviesListNumber,
-  buttonType
+  buttonType,
 }) {
   return (
     <ul className="movies-card-list">

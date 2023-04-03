@@ -52,7 +52,7 @@ function SearchForm({ onSubmit }) {
         </form>
 
         <div className="checkbox-wrapper">
-          <FilterCheckbox />
+          <FilterCheckbox onSubmit={onSubmit} />
           <p className="subtitle search-form__subtitle">Короткометражки</p>
         </div>
       </div>

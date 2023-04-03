@@ -40,12 +40,14 @@ function MoviesCard({
 
   return (
     <li className="movies-card-item">
-      <img
-        src={movies.image}
-        loading="lazy"
-        alt={movies.nameRU}
-        className="movies-card-image"
-      ></img>
+      <a rel="noreferrer" href={movies.trailerLink} target="_blank">
+        <img
+          src={movies.image}
+          loading="lazy"
+          alt={movies.nameRU}
+          className="movies-card-image"
+        ></img>
+      </a>
       <h2 className="title movies-card-title">{movies.nameRU}</h2>
       <p className="subtitle movies-card-subtitle">
         {numberToHoursMinute(movies.duration)}

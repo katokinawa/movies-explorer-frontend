@@ -31,7 +31,12 @@ function App() {
 
   // БЛОК С ЛОГИНОМ, РЕГИСТРАЦИЕЙ, РЕДАКТИРОВАНИЕМ ПРОФИЛЯ
   const isMainHeaderVisible = ["/"];
-  const isOtherHeaderVisible = ["/movies", "/saved-movies", "/profile", `${loggedIn && location.pathname === "/" ? "/" : ''}`];
+  const isOtherHeaderVisible = [
+    "/movies",
+    "/saved-movies",
+    "/profile",
+    `${loggedIn && location.pathname === "/" ? "/" : ""}`,
+  ];
   const isFooterVisible = ["/", "/movies", "/saved-movies"];
 
   function haandleResize() {
