@@ -1,13 +1,25 @@
+import { useEffect } from "react";
 import "./FilterCheckbox.css";
-import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
-function FilterCheckbox({onSubmit}) {
-  const [checked, setChecked] = useState(localStorage.getItem("checkboxState") === "true" ? true : false)
+function FilterCheckbox({ onSubmit, setChecked, checked }) {
+  useEffect(() => {
+    localStorage.setItem("checkboxState", checked);
+  });
+
   const location = useLocation();
 
+  function onChangeCheckbox(e) {
+    localStorage.setItem("checkboxState", e.target.checked);
+    setChecked(e.target.checked);
+    handleOnSubmit();
+  }
+
   function handleOnSubmit() {
-    if(localStorage.getItem("movieSearchValue") || localStorage.getItem("savedMovieSearchValue")) {
+    if (
+      localStorage.getItem("movieSearchValue") ||
+      localStorage.getItem("savedMovieSearchValue")
+    ) {
       onSubmit(
         location.pathname === "/movies"
           ? localStorage.getItem("movieSearchValue")
@@ -22,11 +34,7 @@ function FilterCheckbox({onSubmit}) {
         <input
           type="checkbox"
           checked={checked}
-          onChange={(e) => {
-            localStorage.setItem("checkboxState", e.target.checked);
-            setChecked(e.target.checked);
-            handleOnSubmit();
-          }}
+          onChange={onChangeCheckbox}
           className="filter-checkbox__invisible-checkbox"
         />
         <div className="filter-checkbox__visible-checkbox">

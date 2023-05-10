@@ -6,25 +6,26 @@ import * as api from "../../utils/MainApi";
 import { useState, useEffect } from "react";
 
 function SavedMovies({
-  loggedIn,
   onLikeMovies,
   onDislikeMovies,
   setLikedMovies,
   liked,
   moviesListNumber,
+  setChecked,
+  checked,
 }) {
   const [info, setInfo] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState([]);
 
   useEffect(() => {
-    localStorage.removeItem("checkbox");
+    setChecked(false);
     localStorage.removeItem("savedMovieSearchValue");
     setResult(false);
   }, []);
 
   useEffect(() => {
-    if (loggedIn) {
+    if (liked) {
       setIsLoading(true);
       api
         .getUserMovie()
@@ -39,7 +40,7 @@ function SavedMovies({
           );
         });
     }
-  }, [loggedIn]);
+  }, [setLikedMovies, setInfo, setIsLoading]);
 
   function onSubmit(value) {
     setIsLoading(true);
@@ -99,7 +100,11 @@ function SavedMovies({
 
   return (
     <main className="saved-movies">
-      <SearchForm onSubmit={onSubmit} />
+      <SearchForm
+        onSubmit={onSubmit}
+        setChecked={setChecked}
+        checked={checked}
+      />
       {isLoading ? (
         <Preloader />
       ) : info === "" ? (

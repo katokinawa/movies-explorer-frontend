@@ -5,6 +5,7 @@ import Preloader from "../Movies/Preloader/Preloader";
 import * as MoviesApi from "../../utils/MoviesApi";
 import * as api from "../../utils/MainApi";
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 function Movies({
   loggedIn,
@@ -15,47 +16,50 @@ function Movies({
   setLikedMovies,
   addMore,
   setMoviesListNumber,
+  setChecked,
+  checked,
 }) {
+  const location = useLocation();
   const [result, setResult] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [info, setInfo] = useState("");
   const BASE_URL = "https://api.nomoreparties.co/";
 
   useEffect(() => {
-    localStorage.getItem("movieSearchValue");
-    localStorage.removeItem("checkbox");
+    setChecked(false);
     localStorage.removeItem("savedMovieSearchValue");
-  });
+  }, []);
 
   useEffect(() => {
-    if (info === "Ничего не найдено") {
-      localStorage.removeItem("movieSearchValue");
-    } else {
-      if (localStorage.getItem("movieSearchValue")) {
-        setResult(
-          localStorage.getItem("moviesFiltered") === null
-            ? JSON.parse(localStorage.getItem("movFilterDuration")) || []
-            : JSON.parse(localStorage.getItem("moviesFiltered")) || []
-        );
-      }
+    if (localStorage.getItem("movieSearchValue")) {
+      onSubmit(localStorage.getItem("movieSearchValue"));
+      setResult(
+        localStorage.getItem("moviesFiltered") === null
+          ? JSON.parse(localStorage.getItem("movFilterDuration")) || []
+          : JSON.parse(localStorage.getItem("moviesFiltered")) || []
+      );
     }
-  }, [info]);
+  }, []);
 
   // Блок с сохранёнными фильмами
   useEffect(() => {
-    if (loggedIn) {
+    if (liked) {
+      setIsLoading(true);
       api
         .getUserMovie()
         .then((likeMovies) => {
           setLikedMovies(likeMovies);
+          setIsLoading(false);
+          setInfo("");
         })
-        .catch(() =>
+        .catch(() => {
+          setIsLoading(false);
           setInfo(
             "Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз"
-          )
-        );
+          );
+        });
     }
-  }, [loggedIn]);
+  }, [setLikedMovies, setInfo, setIsLoading]);
 
   // Блок с фильтром
   useEffect(() => {
@@ -81,6 +85,9 @@ function Movies({
         })
         .then((movies) => {
           localStorage.setItem("arrMovies", JSON.stringify(movies));
+          if (!localStorage.getItem("movieSearchValue")) {
+            setInfo("Страница поиска фильмов, пожалуйста, введите запрос");
+          }
         })
         .catch(() => {
           setInfo(
@@ -93,8 +100,10 @@ function Movies({
   function onSubmit(value) {
     setIsLoading(true);
     setInfo("");
+    localStorage.getItem("movieSearchValue");
     localStorage.removeItem("moviesFiltered");
     localStorage.removeItem("movFilterDuration");
+    localStorage.removeItem("savedMovieSearchValue");
     const checkbox = localStorage.getItem("checkboxState");
     const movies = JSON.parse(localStorage.getItem("arrMovies"));
 
@@ -170,7 +179,8 @@ function Movies({
     <main className="movies">
       <SearchForm
         onSubmit={onSubmit}
-        placeholderMovies={localStorage.getItem("searchValue")}
+        setChecked={setChecked}
+        checked={checked}
       />
       {isLoading ? (
         <Preloader />
@@ -179,7 +189,7 @@ function Movies({
           onLikeMovies={onLikeMovies}
           onDislikeMovies={onDislikeMovies}
           movies={result}
-          buttonType='liked'
+          buttonType="liked"
           moviesListNumber={moviesListNumber}
           liked={liked}
           addMore={addMore}
@@ -188,7 +198,9 @@ function Movies({
         <p className="subtitle movies__subtitle">{info}</p>
       )}
 
-      {!isLoading && result.length > moviesListNumber ? (
+      {!isLoading &&
+      location.pathname === "/movies" &&
+      result.length > moviesListNumber > 0 ? (
         <section className="movies-button-wrapper button-animation">
           <button className="movies-button" onClick={handleShowMore}>
             Ещё
