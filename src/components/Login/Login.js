@@ -1,9 +1,18 @@
 import "./Login.css";
+import useFormWithValidation from "../../utils/useFormWithValidation";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
-function Login() {
+function Login({ onLogin, message, errorColor, setMessage }) {
+  const { values, handleChange, errors, isValid } = useFormWithValidation();
+
+  useEffect(() => {
+    setMessage("");
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    onLogin(values);
   };
 
   return (
@@ -20,15 +29,19 @@ function Login() {
           <label htmlFor="email"></label>
           <input
             id="email"
-            type="text"
+            type="email"
             name="email"
+            value={values.email || ""}
+            onChange={handleChange}
             className="email login__input email-input"
             minLength="2"
             maxLength="40"
             required
           />
+          <span className="login__error">{errors.email || ""}</span>
         </div>
-        <div className="login__input-wrapper">
+
+        <div className="login__input-wrapper login__input-password-margin">
           <p className="subtitle login__subtitle login-subtitle-color-grey">
             Пароль
           </p>
@@ -37,25 +50,40 @@ function Login() {
             id="password"
             type="password"
             name="password"
+            value={values.password || ""}
+            onChange={handleChange}
             className="password login__input-password password-input"
             minLength="2"
             maxLength="40"
             required
           />
-          <span
-            id="password-error"
-            className="password-error login__error"
-          ></span>
+          <span className="login__error">{errors.password || ""}</span>
         </div>
-
-        <button type="submit" name="edit" className="title login__button button-animation">
+        <p
+          className={
+            errorColor
+              ? "subtitle login__error login__error-red"
+              : "subtitle login__error login__error login__error-green"
+          }
+        >
+          {message}
+        </p>
+        <button
+          type="submit"
+          name="login"
+          className="title login__button button-animation"
+          disabled={!isValid}
+        >
           Войти
         </button>
         <div className="login__button-wrapper">
           <p className="subtitle login__subtitle-answer login-subtitle-color-grey">
             Ещё не зарегистрированы?
           </p>
-          <Link to="/signup" className="subtitle login-button-color-green button-animation">
+          <Link
+            to="/signup"
+            className="subtitle login-button-color-green button-animation"
+          >
             Регистрация
           </Link>
         </div>

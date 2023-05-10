@@ -112,6 +112,10 @@
   padding: 0 0 10px;
 }
 
+.login__input-password-margin {
+  margin: 0;
+}
+
 @media screen and (min-width: 768px) {
   .login__input-password {
     min-width: 396px;
@@ -155,12 +159,19 @@
   min-height: 45px;
   border-radius: 3px;
   background: #2be080;
-  margin: 280px 0 0;
+  margin: 305px 0 0;
+}
+
+.login__button:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  opacity: 0.5;
+  cursor: default;
 }
 
 @media screen and (min-width: 768px) {
   .login__button {
-    margin: 194px 0 0;
+    margin: 215px 0 0;
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
@@ -201,4 +212,37 @@
 
 .login-subtitle-color-grey {
   color: #a0a0a0;
+}
+
+.login__error {
+  width: 260px;
+}
+
+@media screen and (min-width: 768px) {
+  .login__error {
+    width: 396px;
+  }
+}
+
+.login__error {
+  width: 260px;
+  color: #000;
+  display: block;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+@media screen and (min-width: 768px) {
+  .login__error {
+    width: 396px;
+  }
+}
+
+.login__error-red {
+  color: #ee3465;
+}
+
+.login__error-green {
+  color: #2be080;
 }
