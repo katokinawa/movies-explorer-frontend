@@ -2,11 +2,14 @@ import "./Profile.css";
 import useFormWithValidation from "../../utils/useFormWithValidation";
 import { useEffect } from "react";
 
-function Profile({ updateProfile, logout, user, message, errorColor }) {
+function Profile({ updateProfile, logout, user, message, loggedIn, errorColor, checkToken }) {
   const { values, setValues, handleChange, errors, isValid, setIsValid } =
     useFormWithValidation();
-
-  useEffect(() => {
+    useEffect(() => {
+      checkToken();
+    }, [loggedIn]);
+  
+    useEffect(() => {
     if (user) {
       setValues({
         name: user.name,
@@ -40,7 +43,7 @@ function Profile({ updateProfile, logout, user, message, errorColor }) {
             type="text"
             name="name"
             pattern="[- А-Яа-яA-Za-zёЁ]+$"
-            value={values.name}
+            value={values.name || ''}
             onChange={handleChange}
             className="username profile__input username-input"
             minLength="2"
@@ -57,7 +60,7 @@ function Profile({ updateProfile, logout, user, message, errorColor }) {
             id="email"
             type="email"
             name="email"
-            value={values.email}
+            value={values.email || ''}
             onChange={handleChange}
             className="email profile__input profile__input-border email-input"
             minLength="2"

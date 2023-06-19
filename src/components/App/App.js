@@ -19,7 +19,6 @@ function App() {
   // Функциональные константы
   const history = useNavigate();
   const location = useLocation();
-
   // Хуки
   const [checked, setChecked] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
@@ -102,7 +101,8 @@ function App() {
   function handeUpdateProfile(data) {
     api
       .updateProfile(data)
-      .then(() => {
+      .then((res) => {
+        setCurrentUser(res);
         setMessage("Данные обновлены.");
         setTimeout(() => {
           setErrorColor(false);
@@ -121,10 +121,10 @@ function App() {
       .then((res) => {
         if (res.token) {
           localStorage.setItem("jwt", res.token);
-          setLoggedIn(true);
           setErrorColor(false);
           setMessage("Успешный вход!");
           setTimeout(() => {
+            setLoggedIn(true);
             history("/movies");
             setMessage("");
           }, 1000);
@@ -143,7 +143,7 @@ function App() {
         setLikedMovies([...liked, res]);
       })
       .catch(() => {
-        throw(new Error("Что-то пошло не так..."));
+        throw new Error("Что-то пошло не так...");
       });
   }
 
@@ -154,7 +154,7 @@ function App() {
         if (res !== undefined && res._id) {
           return res._id;
         } else {
-          throw(new Error("Что-то пошло не так..."));
+          throw new Error("Что-то пошло не так...");
         }
       })
       .then((res) => {
@@ -166,15 +166,23 @@ function App() {
         });
       })
       .catch(() => {
-        throw(new Error("Что-то пошло не так..."));
+        throw new Error("Что-то пошло не так...");
       });
   }
 
   function handleLogout() {
-    localStorage.clear();
-    api.deleteToken();
-    localStorage.removeItem("jwt");
-    history("/signin");
+    api
+      .deleteToken()
+      .then(() => {
+        setCurrentUser({})
+        setLoggedIn(false);
+        localStorage.clear();
+        localStorage.removeItem("jwt");
+        history("/");
+      })
+      .catch(() => {
+        throw new Error("Что-то пошло не так...");
+      });
   }
   // Разметка
   return (
@@ -236,32 +244,47 @@ function App() {
                   message={message}
                   errorColor={errorColor}
                   logout={handleLogout}
+                  checkToken={checkToken}
                   updateProfile={handeUpdateProfile}
                 />
               }
             />
-            <Route
-              path="/signin"
-              element={
-                <Login
-                  message={message}
-                  setMessage={setMessage}
-                  errorColor={errorColor}
-                  onLogin={handleLogin}
-                />
-              }
-            />
-            <Route
-              path="/signup"
-              element={
-                <Register
-                  message={message}
-                  setMessage={setMessage}
-                  errorColor={errorColor}
-                  onRegister={handleRegister}
-                />
-              }
-            />
+            {loggedIn ? (
+              <Route
+                path="/signin"
+                element={<ProtectedRoute element={Login} />}
+              />
+            ) : (
+              <Route
+                path="/signin"
+                element={
+                  <Login
+                    message={message}
+                    setMessage={setMessage}
+                    errorColor={errorColor}
+                    onLogin={handleLogin}
+                  />
+                }
+              />
+            )}
+            {loggedIn ? (
+              <Route
+                path="/signup"
+                element={<ProtectedRoute element={Register} />}
+              />
+            ) : (
+              <Route
+                path="/signup"
+                element={
+                  <Register
+                    message={message}
+                    setMessage={setMessage}
+                    errorColor={errorColor}
+                    onRegister={handleRegister}
+                  />
+                }
+              />
+            )}
             <Route path="*" element={<Error />} />
           </Routes>
           {isFooterVisible.includes(location.pathname) && <Footer />}
