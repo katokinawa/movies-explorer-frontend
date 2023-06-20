@@ -14,7 +14,7 @@
 
 ## Для развёртывания и полноценной функциональности проекта необходимо:
 - Node.js (18.16.0 LTS-версия).
-- Бэкенд-сервер, который находится в соседнем репозитории [https://github.com/katokinawa/movies-explorer-api](https://github.com/katokinawa/movies-explorer-api).
+- Бэкенд-сервер, который находится в соседнем репозитории [Обозреватель фильмов API](https://github.com/katokinawa/movies-explorer-api).
 
 ## Ссылка на макет:
 https://disk.yandex.ru/d/8HVb6NN883inUw
