@@ -17,7 +17,6 @@ function Profile() {
             type="text"
             name="name"
             className="username profile__input username-input"
-            placeholder="Имя"
             minLength="2"
             maxLength="40"
             required
@@ -31,8 +30,7 @@ function Profile() {
             id="email"
             type="text"
             name="email"
-            className="email profile__input username-input"
-            placeholder="E-mail"
+            className="email profile__input email-input"
             minLength="2"
             maxLength="40"
             required
