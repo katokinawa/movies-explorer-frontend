@@ -1,6 +1,6 @@
 .aboutme {
   min-height: 833px;
-  padding: 0 18px 0;
+  padding: 0 15px 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -33,7 +33,7 @@
     margin: 0;
     grid-area: img;
     place-self: start end;
-    width: 255px;
+    min-width: 255px;
     min-height: 307px;
   }
 }

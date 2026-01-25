@@ -135,7 +135,7 @@
   .navigation__account-wrapper {
     margin: 0;
     position: absolute;
-    right: -190px;
+    right: 0px;
     top: 3px;
   }
 }
@@ -185,11 +185,27 @@
   border-radius: 4px;
 }
 
+@media screen and (min-width: 768px) {
+  .navigation__movies {
+    position: absolute;
+    top: 9px;
+    left: -290px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .navigation__save-movies {
+    position: absolute;
+    top: 9px;
+    left: -217px;
+  }
+}
+
 @media screen and (min-width: 1280px) {
   .navigation__movies {
     position: absolute;
     top: 9px;
-    left: 44px;
+    left: -487px;
   }
 }
 
@@ -197,6 +213,6 @@
   .navigation__save-movies {
     position: absolute;
     top: 9px;
-    left: 114px;
+    left: -417px;
   }
 }
