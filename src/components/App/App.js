@@ -18,8 +18,8 @@ function App() {
 
   const location = useLocation();
 
-  const isMainHeaderVisible = ['/', ];
-  const isOtherHeaderVisible = ['/movies', '/saved-movies' ];
+  const isMainHeaderVisible = ['/'];
+  const isOtherHeaderVisible = ['/movies', '/saved-movies', '/profile'];
   const isFooterVisible = ['/', '/movies', '/saved-movies'];
 
   return (

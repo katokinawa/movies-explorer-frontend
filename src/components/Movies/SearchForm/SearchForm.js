@@ -5,7 +5,7 @@ function SearchForm() {
   return (
     <section className="search-form">
       <div className="search-form__wrapper">
-        <form className="search-form__form" noValidate>
+        <form className="search-form__form">
           <div className="search-form__loupe-img"></div>
           <label htmlFor="search"></label>
           <input
