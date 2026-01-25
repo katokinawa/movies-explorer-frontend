@@ -6,7 +6,6 @@
   position: fixed;
   top: 0;
   right: -100%;
-  overflow: hidden;
 }
 
 @media screen and (min-width: 767px) {
