@@ -7,6 +7,7 @@ import Portfolio from "./Portfolio/Portfolio";
 import Movies from "../Movies/Movies";
 import Profile from "../Profile/Profile"
 import Register from "../Register/Register"
+import Error from "../Error/Error"
 import Login from "../Login/Login"
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
@@ -16,14 +17,7 @@ import Footer from "../Footer/Footer";
 function Main() {
   return (
     <main className="content">
-      <Login />
-      {/* <Promo />
-      <AboutProject />
-      <Techs />
-      <AboutMe />
-      <Portfolio />
-      <Movies />
-      <Footer /> */}
+      <Error />
     </main>
   );
 }
