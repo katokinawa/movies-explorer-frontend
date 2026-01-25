@@ -1,6 +1,14 @@
+import { useEffect } from "react";
 import "./MoviesCard.css";
 
 function MoviesCard(props) {
+  let isLiked;
+
+  if (props.liked === null) {
+    return (isLiked = false);
+  } else {
+    isLiked = props.liked.some((i) => i.movieId === props.movies.movieId);
+  }
 
   function numberToHoursMinute(duration) {
     let result;
@@ -12,6 +20,14 @@ function MoviesCard(props) {
     result = hours + "ч " + minute + "м";
 
     return result;
+  }
+
+  function handleLikeMovie() {
+    props.onLikeMovies(props.movies);
+  }
+
+  function handleDislikeMovie() {
+    props.onDislikeMovies(props.movies);
   }
 
   return (
@@ -26,9 +42,17 @@ function MoviesCard(props) {
       <p className="subtitle movies-card-subtitle">
         {numberToHoursMinute(props.movies.duration)}
       </p>
-      <button
-        className="movies-card-like-button movies-card-like-active button-animation-graphic"
-      ></button>
+      {isLiked ? (
+        <button
+          onClick={handleDislikeMovie}
+          className="movies-card-like-button movies-card-like-active button-animation-graphic"
+        ></button>
+      ) : (
+        <button
+          onClick={handleLikeMovie}
+          className="movies-card-like-button button-animation-graphic"
+        ></button>
+      )}
     </li>
   );
 }

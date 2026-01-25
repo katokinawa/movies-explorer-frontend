@@ -3,9 +3,10 @@ import SearchForm from "./SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import Preloader from "../Movies/Preloader/Preloader";
 import * as MoviesApi from "../../utils/MoviesApi";
+import * as api from "../../utils/MainApi";
 import { useEffect, useState } from "react";
 
-function Movies({ loggedIn }) {
+function Movies({ loggedIn, onLikeMovies, onDislikeMovies, liked, setLikedMovies }) {
   const [result, setResult] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [info, setInfo] = useState("");
@@ -13,17 +14,34 @@ function Movies({ loggedIn }) {
 
   useEffect(() => {
     if (info !== "Ничего не найдено") {
+      const movFilterDurationRaw = JSON.parse(
+        localStorage.getItem("movFilterDuration")
+      );
+      const movFiltered = JSON.parse(localStorage.getItem("moviesFiltered"));
       if (localStorage.getItem("searchValue")) {
         setResult(
           localStorage.getItem("moviesFiltered") === null
-            ? JSON.parse(localStorage.getItem("movFilterDuration"))
-            : JSON.parse(localStorage.getItem("moviesFiltered"))
+            ? movFilterDurationRaw || []
+            : movFiltered || []
         );
       }
-      setResult([]);
-      setInfo("Ничего не найдено");
     }
-  }, []);
+  }, [info]);
+  // Блок с сохранёнными фильмами
+  useEffect(() => {
+    if (loggedIn) {
+      api
+        .getUserMovie()
+        .then((likeMovies) => {
+          setLikedMovies(likeMovies);
+        })
+        .catch(() =>
+          setInfo(
+            "Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз"
+          )
+        );
+    }
+  }, [loggedIn]);
 
   // Блок с фильтром
   useEffect(() => {
@@ -116,7 +134,12 @@ function Movies({ loggedIn }) {
       {isLoading ? (
         <Preloader />
       ) : info === "" ? (
-        <MoviesCardList movies={result} />
+        <MoviesCardList
+          onLikeMovies={onLikeMovies}
+          onDislikeMovies={onDislikeMovies}
+          movies={result}
+          liked={liked}
+        />
       ) : (
         <p className="subtitle movies__subtitle">{info}</p>
       )}
