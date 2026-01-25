@@ -1,7 +1,3 @@
-.burger {
-    
-}
-
 .burger-button {
     width: 38px;
     min-height: 38px;
@@ -11,4 +7,9 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
+    place-self: center end;
+}
+
+.burgen-button__hidden {
+    display: none;
 }
