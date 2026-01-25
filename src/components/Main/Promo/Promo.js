@@ -11,8 +11,8 @@ function Promo() {
       <p className="subtitle promo__subtitle">
         Листайте ниже, чтобы узнать больше про этот проект и его создателя.
       </p>
-      <button className="promo__button">
-        <p className="subtitle promo__text-button">Узнать больше</p>
+      <button className="promo__button subtitle promo__text-button">
+        Узнать больше
       </button>
     </section>
   );
