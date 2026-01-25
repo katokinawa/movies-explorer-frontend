@@ -11,7 +11,7 @@ import Footer from "../Footer/Footer";
 function Main() {
   return (
     <main className="content">
-      <Header />
+      <Header colorGrey="header__color_grey" />
       <Promo />
       <AboutProject />
       <Techs />
