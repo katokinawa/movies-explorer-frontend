@@ -1,37 +1,50 @@
 import "./Movies.css";
 import SearchForm from "./SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
+import Preloader from "../Movies/Preloader/Preloader";
 import { useState } from "react";
 
-function Movies() {
+function Movies(props) {
   const [result, setResult] = useState([]);
-  const [isLoading, setIsLoading] = useState(false)
-
+  const [isLoading, setIsLoading] = useState(false);
+  const [info, setInfo] = useState('')
+  
   function onSubmit(value) {
     setIsLoading(true);
-    const movies = JSON.parse(localStorage.getItem('allMovies'));
+    setInfo('');
+
+    const movies = JSON.parse(localStorage.getItem("allMovies"));
 
     const moviesFiltered = movies.filter((movie) => {
-      if(movie.nameRU.toLowerCase().match(value) || movie.nameEN.toLowerCase().match(value)){
+      if (
+        movie.nameRU.toLowerCase().match(value) ||
+        movie.nameEN.toLowerCase().match(value)
+      ) {
         return true;
       }
       return false;
-    })
-    setResult(moviesFiltered);
+    });
+
+    if(moviesFiltered.length === 0) {
+      setInfo('Ничего не найдено')
+    } else {
+      setResult(moviesFiltered)
+    }
     setTimeout(() => {
       setIsLoading(false);
-    }, "1000")
-
+    }, "1000");
   }
 
   return (
     <main className="movies">
       <SearchForm onSubmit={onSubmit} />
-      <MoviesCardList movies={result} isLoading={isLoading} />
+      {isLoading ? (
+        <Preloader />
+      ) : info === '' ? (
+        <MoviesCardList movies={result} />
+      ) : <p className="subtitle movies__subtitle">{info}</p>}
       <section className="movies-button-wrapper button-animation">
-        <button className="movies-button">
-          Ещё
-        </button>
+        <button className="movies-button">Ещё</button>
       </section>
     </main>
   );
