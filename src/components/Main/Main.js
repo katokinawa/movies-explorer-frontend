@@ -15,7 +15,8 @@ import Footer from "../Footer/Footer";
 function Main() {
   return (
     <main className="content">
-      <Register />
+      <Header />
+      <Profile />
       {/* <Promo />
       <AboutProject />
       <Techs />
