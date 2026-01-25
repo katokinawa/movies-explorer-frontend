@@ -39,6 +39,7 @@ function Profile({ updateProfile, logout, user, message, errorColor }) {
             id="username"
             type="text"
             name="name"
+            pattern="[- А-Яа-яA-Za-zёЁ]+$"
             value={values.name}
             onChange={handleChange}
             className="username profile__input username-input"

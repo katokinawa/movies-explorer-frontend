@@ -11,6 +11,20 @@ function Movies({ loggedIn }) {
   const [info, setInfo] = useState("");
   const BASE_URL = "https://api.nomoreparties.co/";
 
+  useEffect(() => {
+    if (info !== "Ничего не найдено") {
+      if (localStorage.getItem("searchValue")) {
+        setResult(
+          localStorage.getItem("moviesFiltered") === null
+            ? JSON.parse(localStorage.getItem("movFilterDuration"))
+            : JSON.parse(localStorage.getItem("moviesFiltered"))
+        );
+      }
+      setResult([]);
+      setInfo("Ничего не найдено");
+    }
+  }, []);
+
   // Блок с фильтром
   useEffect(() => {
     if (loggedIn) {
@@ -34,8 +48,7 @@ function Movies({ loggedIn }) {
           return arrMovies;
         })
         .then((movies) => {
-          const rawMovies = JSON.stringify(movies);
-          localStorage.setItem("arrMovies", rawMovies);
+          localStorage.setItem("arrMovies", JSON.stringify(movies));
         })
         .catch(() =>
           setInfo(
@@ -48,7 +61,9 @@ function Movies({ loggedIn }) {
   function onSubmit(value) {
     setIsLoading(true);
     setInfo("");
-
+    localStorage.removeItem("moviesFiltered");
+    localStorage.removeItem("movFilterDuration");
+    const checkbox = localStorage.getItem("checkboxState");
     const movies = JSON.parse(localStorage.getItem("arrMovies"));
 
     const moviesFiltered = movies.filter((movie) => {
@@ -61,10 +76,34 @@ function Movies({ loggedIn }) {
       return false;
     });
 
+    function moviesFilteredDuration() {
+      const movFilterDuration = moviesFiltered.filter((movie) => {
+        if (movie.duration <= 40) {
+          return true;
+        }
+        return false;
+      });
+
+      if (movFilterDuration.length === 0) {
+        setInfo("Ничего не найдено");
+      } else {
+        localStorage.setItem(
+          "movFilterDuration",
+          JSON.stringify(movFilterDuration)
+        );
+        setResult(movFilterDuration);
+      }
+    }
+
     if (moviesFiltered.length === 0) {
       setInfo("Ничего не найдено");
     } else {
-      setResult(moviesFiltered);
+      if (checkbox === "true") {
+        moviesFilteredDuration();
+      } else {
+        localStorage.setItem("moviesFiltered", JSON.stringify(moviesFiltered));
+        setResult(moviesFiltered);
+      }
     }
     setTimeout(() => {
       setIsLoading(false);
@@ -81,9 +120,14 @@ function Movies({ loggedIn }) {
       ) : (
         <p className="subtitle movies__subtitle">{info}</p>
       )}
-      <section className="movies-button-wrapper button-animation">
-        <button className="movies-button">Ещё</button>
-      </section>
+
+      {!isLoading && result.length > 3 ? (
+        <section className="movies-button-wrapper button-animation">
+          <button className="movies-button">Ещё</button>
+        </section>
+      ) : (
+        <section className="movies__space"></section>
+      )}
     </main>
   );
 }

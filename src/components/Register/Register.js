@@ -7,8 +7,8 @@ function Register({ onRegister, message, errorColor, setMessage }) {
   const { values, handleChange, errors, isValid } = useFormWithValidation();
 
   useEffect(() => {
-    setMessage('')
-  }, []) 
+    setMessage("");
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,6 +32,7 @@ function Register({ onRegister, message, errorColor, setMessage }) {
               id="username"
               type="text"
               name="name"
+              pattern="[- А-Яа-яA-Za-zёЁ]+$"
               value={values.name}
               onChange={handleChange}
               className="username register__input username-input"

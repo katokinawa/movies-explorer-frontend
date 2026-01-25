@@ -99,6 +99,10 @@ function App() {
   }
 
   function handleLogout() {
+    localStorage.removeItem("moviesFiltered");
+    localStorage.removeItem("movFilterDuration");
+    localStorage.removeItem("searchValue");
+    localStorage.removeItem("checkboxState");
     api.deleteToken();
     localStorage.removeItem("jwt");
     history("/signin");
@@ -110,7 +114,7 @@ function App() {
       <div className="page">
         <CurrentUserContext.Provider value={currentUser}>
           {isMainHeaderVisible.includes(location.pathname) ? (
-            <Header/>
+            <Header />
           ) : isOtherHeaderVisible.includes(location.pathname) ? (
             <Header loggedIn={loggedIn} />
           ) : (

@@ -52,3 +52,19 @@
   line-height: 18px;
   text-align: center;
 }
+
+.movies__space {
+  min-height: 160px;
+}
+
+@media screen and (min-width: 768px) {
+  .movies__space {
+    min-height: 170px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .movies__space {
+    min-height: 150px;
+  }
+}
