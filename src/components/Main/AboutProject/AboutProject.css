@@ -57,7 +57,8 @@
   .about-project__text-wrapper {
     margin: 70px 0 87px;
     display: grid;
-    grid-template-columns: 333px 320px;
+    column-gap: 30px;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 65px;
     grid-template-areas: "title-one title-two";
   }
@@ -67,6 +68,7 @@
   .about-project__text-wrapper {
     margin: 70px 0 99px;
     display: grid;
+    column-gap: 18px;
     grid-template-columns: 572px 550px;
     grid-template-rows: 1fr 60px;
     grid-template-areas: "title-one title-two";
@@ -165,7 +167,7 @@
   .about-project__graphic-wrapper {
     min-width: 668px;
     display: grid;
-    grid-template-columns: 140px 528px;
+    grid-template-columns: 140px 1fr;
     grid-template-rows: 1fr 40px;
   }
 }
