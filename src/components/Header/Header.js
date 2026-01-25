@@ -16,10 +16,10 @@ function Header(props) {
       }
     >
       <NavLink to="/" className="header__logo"></NavLink>
-      {props.isLoggedIn && <Burger isOpen={!isOpen} setIsOpen={setIsOpen} />}
+      {props.isLoggedIn && <Burger isOpen={isOpen} setIsOpen={setIsOpen} />}
       {props.isLoggedIn ? (
         <Navigation
-        isOpen={!isOpen}
+        isOpen={isOpen}
         setIsOpen={setIsOpen}
         />
       ) : (
