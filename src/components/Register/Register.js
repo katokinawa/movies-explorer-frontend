@@ -32,7 +32,7 @@ function Register({ onRegister, message, errorColor, setMessage }) {
               id="username"
               type="text"
               name="name"
-              pattern="[- А-Яа-яA-Za-zёЁ]+$"
+              pattern="[А-Яа-яA-Za-zёЁ\s-]+"
               value={values.name}
               onChange={handleChange}
               className="username register__input username-input"
@@ -53,7 +53,7 @@ function Register({ onRegister, message, errorColor, setMessage }) {
             id="email"
             type="email"
             name="email"
-            pattern="[a-z0-9.-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}"
             value={values.email}
             onChange={handleChange}
             className="email register__input email-input"

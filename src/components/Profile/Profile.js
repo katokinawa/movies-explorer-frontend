@@ -42,7 +42,7 @@ function Profile({ updateProfile, logout, user, message, loggedIn, errorColor, c
             id="username"
             type="text"
             name="name"
-            pattern="[- А-Яа-яA-Za-zёЁ]+$"
+            pattern="[А-Яа-яA-Za-zёЁ\s-]+"
             value={values.name || ''}
             onChange={handleChange}
             className="username profile__input username-input"
