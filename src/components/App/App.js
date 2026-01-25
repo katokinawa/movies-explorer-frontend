@@ -13,16 +13,49 @@ import Login from "../Login/Login";
 import SavedMovies from "../SavedMovies/SavedMovies";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-import movies from "../../utils/movies";
 import * as api from "../../utils/MainApi";
-import * as BeatfilmMoviesApi from "../../utils/MoviesApi";
+import * as MoviesApi from "../../utils/MoviesApi";
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(true);
-  const [currentUser, setCurrentUser] = useState({});
-
-  const location = useLocation();
+  // Функциональные константы
   const history = useNavigate();
+  const location = useLocation();
+  const BASE_URL = "https://api.nomoreparties.co/";
+
+  // Хуки
+  const [loggedIn, setLoggedIn] = useState(true); // Хардкод на true
+  const [currentUser, setCurrentUser] = useState({});
+  const [movies, setMovies] = useState([]);
+
+  // Блок с фильтром
+  useEffect(() => {
+    MoviesApi.getMovies()
+      .then((movies) => {
+        const allMovies = movies.map((movie) => {
+          return {
+            movieId: movie.id,
+            country: movie.country,
+            director: movie.director,
+            duration: movie.duration,
+            year: movie.year,
+            description: movie.description,
+            trailerLink: movie.trailerLink,
+            nameRU: movie.nameRU,
+            nameEN: movie.nameEN,
+            image: BASE_URL + movie.image.url,
+            thumbnail: BASE_URL + movie.image.formats.thumbnail.url,
+          };
+        });
+        return allMovies;
+      })
+      .then((movies) => {
+        const rawMovies = JSON.stringify(movies);
+        localStorage.setItem("allMovies", rawMovies);
+      })
+      .catch((err) => err);
+  }, []);
+
+  // БЛОК С ЛОГИНОМ, РЕГИСТРАЦИЕЙ, РЕДАКТИРОВАНИЕМ ПРОФИЛЯ
   const isMainHeaderVisible = ["/"];
   const isOtherHeaderVisible = ["/movies", "/saved-movies", "/profile"];
   const isFooterVisible = ["/", "/movies", "/saved-movies"];
@@ -72,28 +105,13 @@ function App() {
       .catch((err) => err);
   }
 
-  function handleMovieLike(movies) {
-    // // Снова проверяем, есть ли уже лайк на этой карточке
-    // const isLiked = movies.likes.some((i) => i === currentUser._id);
-    // // Отправляем запрос в API и получаем обновлённые данные карточки
-    // api
-    //   .like(card._id, !isLiked)
-    //   .then((newCard) => {
-    //     setCards((state) =>
-    //       state.map((cardForLike) =>
-    //         cardForLike._id === card._id ? newCard : cardForLike
-    //       )
-    //     );
-    //   })
-    //   .catch((err) => console.error(err));
-  }
-
   function handleLogout() {
     localStorage.removeItem("jwt");
     setLoggedIn(false);
     history("/signin");
   }
 
+  // Разметка
   return (
     <div className="body">
       <div className="page">
@@ -113,7 +131,6 @@ function App() {
                 <ProtectedRoute
                   loggedIn={loggedIn}
                   element={Movies}
-                  movies={movies}
                 />
               }
             />
@@ -123,7 +140,6 @@ function App() {
                 <ProtectedRoute
                   loggedIn={loggedIn}
                   element={SavedMovies}
-                  movies={movies}
                 />
               }
             />
