@@ -5,7 +5,7 @@ import Preloader from "../Movies/Preloader/Preloader";
 import * as MoviesApi from "../../utils/MoviesApi";
 import { useEffect, useState } from "react";
 
-function Movies({setLoggedIn}) {
+function Movies({ loggedIn }) {
   const [result, setResult] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [info, setInfo] = useState("");
@@ -13,9 +13,10 @@ function Movies({setLoggedIn}) {
 
   // Блок с фильтром
   useEffect(() => {
+    if (loggedIn) {
       MoviesApi.getMovies()
         .then((movies) => {
-          const allMovies = movies.map((movie) => {
+          const arrMovies = movies.map((movie) => {
             return {
               movieId: movie.id,
               country: movie.country,
@@ -30,20 +31,25 @@ function Movies({setLoggedIn}) {
               thumbnail: BASE_URL + movie.image.formats.thumbnail.url,
             };
           });
-          return allMovies;
+          return arrMovies;
         })
         .then((movies) => {
           const rawMovies = JSON.stringify(movies);
-          localStorage.setItem("allMovies", rawMovies);
+          localStorage.setItem("arrMovies", rawMovies);
         })
-        .catch((err) => err);
-  }, []);
+        .catch(() =>
+          setInfo(
+            "Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз"
+          )
+        );
+    }
+  }, [loggedIn]);
 
   function onSubmit(value) {
     setIsLoading(true);
     setInfo("");
 
-    const movies = JSON.parse(localStorage.getItem("allMovies"));
+    const movies = JSON.parse(localStorage.getItem("arrMovies"));
 
     const moviesFiltered = movies.filter((movie) => {
       if (
