@@ -1,0 +1,40 @@
+.filter-checkbox {
+    position: relative;
+  }
+  .filter-checkbox__invisible-checkbox {
+    position: absolute;
+    width: 1px; /* если у элемента не будет размеров, некоторые браузеры посчитают, что его вообще нет */
+    height: 1px;
+    display: none;
+    overflow: hidden; /* без этого свойства тоже сработает, но так наверняка. Оно скрывает элементы, выходящие за границы родителя */
+    clip-path: inset(0 0 0 0);
+  }
+  
+  .filter-checkbox__visible-checkbox {
+    width: 36px;
+    height: 20px;
+    background: #ebebeb;
+    border-radius: 20px;
+    display: flex;
+    transition: background-color 0.3s ease;
+    
+  }
+  
+  .filter-checkbox__circle-inner {
+    margin: 2px;
+    width: 16px;
+    height: 16px;
+    background: #f5f5f5;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .filter-checkbox__invisible-checkbox:checked + .filter-checkbox__visible-checkbox {
+    flex-direction: row-reverse;
+    background-color: #2BE080;
+  }
+  
+  .filter-checkbox__invisible-checkbox:disabled + .filter-checkbox__visible-checkbox {
+    background-color: #ebebeb;
+  }
+  
