@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 function Profile({ updateProfile, logout, user, message, errorColor }) {
   const { values, setValues, handleChange, errors, isValid, setIsValid } =
-  useFormWithValidation();
+    useFormWithValidation();
 
   useEffect(() => {
     if (user) {
@@ -66,7 +66,15 @@ function Profile({ updateProfile, logout, user, message, errorColor }) {
           />
           <span className="profile__error">{errors.password || ""}</span>
         </div>
-        <p className={errorColor ? "subtitle profile__error profile__error-red" : "subtitle profile__error profile__error-green"}>{message}</p>
+        <p
+          className={
+            errorColor
+              ? "subtitle profile__error profile__error-red"
+              : "subtitle profile__error profile__error-green"
+          }
+        >
+          {message}
+        </p>
         <div className="profile__button-wrapper">
           <button
             type="submit"

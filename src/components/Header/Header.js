@@ -8,9 +8,7 @@ function Header(props) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header
-      className={props.loggedIn ? "header" : `header header_color_grey`}
-    >
+    <header className={props.loggedIn ? "header" : `header header_color_grey`}>
       <Link to="/" className="header__logo button-animation-graphic"></Link>
       {props.loggedIn && <Burger isOpen={isOpen} setIsOpen={setIsOpen} />}
       {props.loggedIn ? (
