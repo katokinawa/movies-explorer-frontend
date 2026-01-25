@@ -44,6 +44,7 @@ function Profile({ isLoggedIn }) {
           <button
             type="text"
             name="edit"
+            onClick={() => isLoggedIn(false)}
             className="profile__button profile__button-color_red"
           >
             Выйти из аккаунта

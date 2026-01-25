@@ -12,7 +12,7 @@ function Register() {
         <Link to="/" className="register__logo"></Link>
         <h1 className="title register__title">Добро пожаловать!</h1>
       </div>
-      <form onSubmit={handleSubmit} className="register__form" noValidate>
+      <form onSubmit={handleSubmit} className="register__form">
         <div className="register__input-wrapper">
           <p className="subtitle register-subtitle register-subtitle-color-grey">
             Имя
@@ -57,10 +57,6 @@ function Register() {
             maxLength="40"
             required
           />
-          <span
-            id="password-error"
-            className="password-error register__error"
-          ></span>
         </div>
 
         <button type="submit" name="edit" className="title register__button">

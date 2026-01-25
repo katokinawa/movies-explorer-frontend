@@ -21,7 +21,7 @@
   margin: 59px 0 0;
   width: 292px;
   min-height: 352px;
-  background-image: url(../../../images/YourOpponentIsAStudent.jpg);
+  background-image: url(../../../images/student.jpg);
   background-size: cover;
   cursor: pointer;
   border-radius: 10px;
@@ -102,7 +102,7 @@
 
 .aboutme__text-wrapper {
   width: 292px;
-  margin: 0 0 103px;
+  margin: 0 0 55px;
   min-height: 204px;
   display: flex;
   flex-direction: column;

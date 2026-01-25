@@ -153,6 +153,13 @@
   cursor: pointer;
 }
 
+@media screen and (min-width: 767px) {
+  .navigation__close-button {
+    top: 22px;
+    right: 22px;
+  }
+}
+
 @media screen and (min-width: 1279px) {
   .navigation__close-button {
     display: none;
@@ -186,7 +193,7 @@
 @media screen and (min-width: 1279px) {
   .navigation__movies {
     position: absolute;
-    top: -136px;
+    top: -147px;
     right: 435px;
   }
 }
@@ -195,7 +202,7 @@
   .navigation__save-movies {
     width: 142px;
     position: absolute;
-    top: -136px;
+    top: -147px;
     right: 276px;
   }
 }
@@ -204,7 +211,7 @@
   .navigation__account-wrapper {
     margin: 0;
     position: absolute;
-    top: -143px;
+    top: -154px;
     right: -570px;
   }
 }
