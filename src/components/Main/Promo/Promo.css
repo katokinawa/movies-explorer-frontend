@@ -6,13 +6,13 @@
   align-items: center;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .promo {
     min-height: 850px;
   }
 }
 
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .promo {
     min-height: 574px;
     display: grid;
@@ -33,7 +33,7 @@
   margin: 70px 0 44px;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .promo-image {
     width: 310px;
     min-height: 304px;
@@ -41,7 +41,7 @@
   }
 }
 
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .promo-image {
     grid-area: img;
     place-self: start end;
@@ -58,7 +58,7 @@
   text-align: center;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .promo__title {
     width: 680px;
     font-size: 40px;
@@ -67,7 +67,7 @@
   }
 }
 
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .promo__title {
     width: 640px;
     font-size: 50px;
@@ -78,7 +78,7 @@
   }
 }
 
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .promo__span {
     display: block;
   }
@@ -95,13 +95,13 @@
   opacity: 0.5;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .promo__subtitle {
     margin: 22px auto 0;
   }
 }
 
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .promo__subtitle {
     width: 310px;
     margin: 35px 0 0 70px;
@@ -131,13 +131,13 @@
   cursor: pointer;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .promo__button {
     margin: 92px 0 76px;
   }
 }
 
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .promo__button {
     margin: 50px 0 0 70px;
     grid-area: button;
