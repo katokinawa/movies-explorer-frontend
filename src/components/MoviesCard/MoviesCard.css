@@ -15,7 +15,7 @@
   position: relative;
   list-style-type: none;
   min-height: 232px;
-  width: 320px;
+  max-width: 320px;
   background-color: #f9f9f9;
   display: flex;
   flex-direction: column;
@@ -24,14 +24,14 @@
 
 @media screen and (min-width: 767px) {
   .movies-card__item {
-    width: 708px;
+    min-width: 708px;
     min-height: 134px;
   }
 }
 
 @media screen and (min-width: 1279px) {
   .movies-card__item {
-    width: 1140px;
+    min-width: 1140px;
   }
 }
 
@@ -59,7 +59,7 @@
 .movies-card__title {
   position: absolute;
   bottom: 35px;
-  left: 22px;
+  left: 12px;
   font-weight: 500;
   font-size: 12px;
   line-height: 15px;
@@ -78,7 +78,7 @@
 .movies-card__subtitle {
   position: absolute;
   bottom: 13px;
-  left: 22px;
+  left: 12px;
   font-weight: 400;
   font-size: 11px;
   line-height: 13px;
@@ -95,7 +95,7 @@
 .movies-card__like-button {
   position: absolute;
   bottom: 36px;
-  right: 26px;
+  right: 16px;
   background-color: #f9f9f9;
   width: 14px;
   min-height: 12px;

@@ -17,7 +17,9 @@ import Footer from "../Footer/Footer";
 function Main() {
   return (
     <main className="content">
-      <Error />
+      <Header />
+      <Movies />  
+      <Footer />
     </main>
   );
 }

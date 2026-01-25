@@ -1,5 +1,5 @@
 .header {
-  background-color: #5c5c5c;
+  background-color: transparent;
   display: grid;
   grid-template-columns: 1fr;
   grid-auto-columns: 1fr;
@@ -37,7 +37,6 @@
   justify-content: flex-end;
   align-items: center;
   gap: 14px;
-  margin: 6px 0 0;
 }
 
 @media screen and (min-width: 767px) {
@@ -46,11 +45,30 @@
   }
 }
 
-.header__subtitle {
+.header__subtitle-signup {
   font-size: 10px;
   font-weight: 500;
   line-height: 16px;
+  color: #000;
   cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+@media screen and (min-width: 767px) {
+  .header__subtitle-signup {
+    font-size: 12px;
+  }
+}
+
+.header__subtitle {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  color: #000;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
 }
 
 @media screen and (min-width: 767px) {
@@ -59,13 +77,18 @@
   }
 }
 
-.header__button {
+.header__subtitle-font_weight {
+  font-weight: 500;
+}
+
+.header__button-login {
   font-size: 10px;
   font-weight: 500;
   line-height: 16px;
   color: #000;
   width: 54px;
   min-height: 25px;
+  border: none;
   background-color: #2be080;
   border-radius: 3px;
   text-align: center;
@@ -76,9 +99,44 @@
 }
 
 @media screen and (min-width: 767px) {
-  .header__button {
+  .header__button-login {
     font-size: 12px;
     width: 76px;
     min-height: 28px;
+  }
+}
+
+.header__account-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 17px;
+}
+
+.header__button-account {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: #000;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.header__icon-account {
+  border: none;
+  outline: none;
+  background-color: #fff;
+  width: 27px;
+  min-height: 30px;
+  background-image: url(../../images/account.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}
+
+@media screen and (min-width: 767px) {
+  .header__button-account {
   }
 }

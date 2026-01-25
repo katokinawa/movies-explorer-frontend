@@ -1,12 +1,12 @@
 .portfolio {
-  min-height: 373px;
+  min-height: 295px;
   width: 292px;
   margin: 0 auto;
 }
 
 @media screen and (min-width: 767px) {
   .portfolio {
-    min-height: 469px;
+    min-height: 390px;
     width: 668px;
   }
 }

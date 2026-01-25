@@ -5,8 +5,20 @@ function Header() {
     <header className="header page__header">
       <div className="header__logo"></div>
       <div className="header__sidebar">
-        <p className="subtitle header__subtitle">Регистрация</p>
-        <p className="subtitle header__button">Войти</p>
+        <button className="subtitle header__subtitle header__subtitle-font_weight">
+          Фильмы
+        </button>
+        <button className="subtitle header__subtitle">
+          Сохранённые фильмы
+        </button>
+        <button className="subtitle header__subtitle-signup">
+          Регистрация
+        </button>
+        <button className="subtitle header__button-login">Войти</button>
+        <div className="header__account-wrapper">
+          <button className="subtitle header__button-account">Аккаунт</button>
+          <div className="header__icon-account"></div>
+        </div>
       </div>
     </header>
   );

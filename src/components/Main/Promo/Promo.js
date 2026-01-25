@@ -5,7 +5,7 @@ function Promo() {
     <section className="promo">
       <div className="promo-image"></div>
       <h1 className="title promo__title">
-        Учебный проект студента факультета Веб-разработки.
+        Учебный проект студента факультета <span className="promo__span">Веб-разработки.</span>
       </h1>
       <p className="subtitle promo__subtitle">
         Листайте ниже, чтобы узнать больше про этот проект и его создателя.

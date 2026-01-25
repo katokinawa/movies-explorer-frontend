@@ -1,5 +1,5 @@
 .movies_button-wrapper {
-  min-height: 195px;
+  min-height: 186px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,6 +12,7 @@
 }
 
 .movies_button {
+  margin: 70px 0 0;
   font-weight: 500;
   font-size: 12px;
   line-height: 15px;
@@ -27,5 +28,11 @@
 @media screen and (min-width: 768px) {
   .movies_button {
     width: 320px;
+  }
+}
+
+@media screen and (min-width: 1279px) {
+  .movies_button {
+    margin: 60px 0 80px;
   }
 }
