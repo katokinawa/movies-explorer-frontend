@@ -1,20 +1,19 @@
 .aboutme {
-  min-height: 901px;
+  min-height: 833px;
   padding: 0 18px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 @media screen and (min-width: 768px) {
   .aboutme {
-    min-height: 602px;
+    min-height: 513px;
+    padding: 0 50px 0;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .aboutme {
-    min-height: 653px;
+    min-height: 542px;
+    padding: 0 70px 0;
   }
 }
 
