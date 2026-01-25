@@ -11,7 +11,7 @@ function Promo() {
         Листайте ниже, чтобы узнать больше про этот проект и его создателя.
       </p>
       <div className="promo__button">
-        <p className="subtitle promo__subtitle_button">Узнать больше</p>
+        <p className="subtitle promo__text-button">Узнать больше</p>
       </div>
     </section>
   );

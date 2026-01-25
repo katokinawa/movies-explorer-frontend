@@ -17,7 +17,7 @@
   }
 }
 
-.img_student {
+.img-student {
   margin: 59px 0 0;
   width: 292px;
   min-height: 352px;
@@ -28,7 +28,7 @@
 }
 
 @media screen and (min-width: 767px) {
-  .img_student {
+  .img-student {
     margin: 0;
     grid-area: img;
     width: 255px;
@@ -37,7 +37,7 @@
 }
 
 @media screen and (min-width: 1279px) {
-  .img_student {
+  .img-student {
     width: 270px;
     min-height: 327px;
   }

@@ -2,12 +2,14 @@ import "./NavTab.css";
 
 function NavTab() {
   return (
-      <section className="header__sidebar">
-        <p className="subtitle header__subtitle">Регистрация</p>
-        <div className="header__button">
-          <p className="subtitle header__subtitle_black">Войти</p>
+    <section className="navtab">
+      <div className="navtab__sidebar">
+        <p className="subtitle navtab__subtitle">Регистрация</p>
+        <div className="navtab__button">
+          <p className="subtitle navtab__text-button">Войти</p>
         </div>
-      </section>
+      </div>
+    </section>
   );
 }
 

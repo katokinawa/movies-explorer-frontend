@@ -6,7 +6,7 @@ function AboutMe() {
       <h2 className="title main-title">Студент</h2>
       <div className="undertitle-line"></div>
       <div className="aboutme__text-wrapper">
-        <div className="img_student"></div>
+        <div className="img-student"></div>
         <h3 className="title aboutme__title">Даниил</h3>
         <p className="subtitle aboutme__subtitle">
           Фронтенд-разработчик, 22 года
