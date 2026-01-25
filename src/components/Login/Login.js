@@ -31,7 +31,7 @@ function Login({ onLogin, message, errorColor, setMessage }) {
             id="email"
             type="email"
             name="email"
-            pattern="[a-z0-9.-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            pattern="[a-z0-9-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
             value={values.email || ""}
             onChange={handleChange}
             className="email login__input email-input"
