@@ -93,6 +93,7 @@
   background-image: url(../../images/like-deactive.svg);
   background-size: contain;
   background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 767px) {

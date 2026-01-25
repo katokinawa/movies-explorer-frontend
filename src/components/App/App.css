@@ -73,3 +73,13 @@
     width: 1140px;
   }
 }
+
+.button-animation:hover {
+  color: #000;
+  transition: color 0.8s linear;
+}
+
+.button-animation-graphic:hover {
+  opacity: 0.4;
+  transition: opacity 0.8s linear;
+}

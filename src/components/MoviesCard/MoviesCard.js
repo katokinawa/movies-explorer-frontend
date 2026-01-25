@@ -26,7 +26,7 @@ function MoviesCard(props) {
         {numberToHoursMinute(props.movies.duration)}
       </p>
       <button
-        className="movies-card-like-button movies-card-like-active"
+        className="movies-card-like-button movies-card-like-active button-animation-graphic"
       ></button>
     </li>
   );

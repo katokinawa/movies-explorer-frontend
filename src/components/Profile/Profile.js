@@ -38,14 +38,14 @@ function Profile({ isLoggedIn }) {
           />
         </div>
         <div className="profile__button-wrapper">
-          <button type="submit" name="edit" className="profile__button">
+          <button type="submit" name="edit" className="profile__button button-animation-graphic">
             Редактировать
           </button>
           <button
             type="text"
             name="edit"
             onClick={() => isLoggedIn(false)}
-            className="profile__button profile__button-color_red"
+            className="profile__button profile__button-color_red button-animation-graphic"
           >
             Выйти из аккаунта
           </button>

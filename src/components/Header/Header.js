@@ -11,7 +11,7 @@ function Header(props) {
     <header
       className={props.isLoggedIn ? "header" : `header header_color_grey`}
     >
-      <Link to="/" className="header__logo"></Link>
+      <Link to="/" className="header__logo button-animation-graphic"></Link>
       {props.isLoggedIn && <Burger isOpen={isOpen} setIsOpen={setIsOpen} />}
       {props.isLoggedIn ? (
         <Navigation isOpen={isOpen} setIsOpen={setIsOpen} />
@@ -22,8 +22,8 @@ function Header(props) {
               to="/signup"
               className={({ isActive }) =>
                 isActive
-                  ? "subtitle header__subtitle-signup header__subtitle-font_weight"
-                  : "subtitle header__subtitle-signup"
+                  ? "subtitle header__subtitle-signup header__subtitle-font_weight button-animation-graphic"
+                  : "subtitle header__subtitle-signup button-animation-graphic"
               }
             >
               Регистрация
@@ -34,8 +34,8 @@ function Header(props) {
               to="/signin"
               className={({ isActive }) =>
                 isActive
-                  ? "subtitle header__button-login header__subtitle-font_weight"
-                  : "subtitle header__button-login"
+                  ? "subtitle header__button-login header__subtitle-font_weight button-animation-graphic"
+                  : "subtitle header__button-login button-animation-graphic"
               }
             >
               Войти
