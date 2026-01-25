@@ -1,8 +1,27 @@
 import "./Profile.css";
+import { useState } from "react";
 
-function Profile({ isLoggedIn }) {
+function Profile({ updateProfile, logout }) {
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("")
+
+  const handleSetName = (e) => {
+    setName(e.target.value);
+  };
+
+  const handleSetEmail = (e) => {
+    setEmail(e.target.value);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!email || !name) {
+      return;
+    }
+    updateProfile({
+      name: name,
+      email: email,
+    });
   };
 
   return (
@@ -16,6 +35,8 @@ function Profile({ isLoggedIn }) {
             id="username"
             type="text"
             name="name"
+            value={name}
+            onChange={handleSetName}
             className="username profile__input username-input"
             minLength="2"
             maxLength="40"
@@ -29,6 +50,8 @@ function Profile({ isLoggedIn }) {
             id="email"
             type="text"
             name="email"
+            value={email}
+            onChange={handleSetEmail}
             className="email profile__input email-input"
             minLength="2"
             maxLength="40"
@@ -42,7 +65,7 @@ function Profile({ isLoggedIn }) {
           <button
             type="button"
             name="edit"
-            onClick={() => isLoggedIn(false)}
+            onClick={logout}
             className="profile__button profile__button-color_red button-animation-graphic"
           >
             Выйти из аккаунта

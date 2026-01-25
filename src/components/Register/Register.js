@@ -1,9 +1,27 @@
 import "./Register.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
-function Register() {
+function Register({onRegister}) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("")
+
+  const handleSetEmail = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handleSetPassword = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleSetName = (e) => {
+    setName(e.target.value);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    onRegister({ name, email, password });
   };
 
   return (
@@ -22,6 +40,8 @@ function Register() {
             id="username"
             type="text"
             name="name"
+            value={name}
+            onChange={handleSetName}
             className="username register__input username-input"
             minLength="2"
             maxLength="40"
@@ -37,6 +57,8 @@ function Register() {
             id="email"
             type="text"
             name="email"
+            value={email}
+            onChange={handleSetEmail}
             className="email register__input email-input"
             minLength="2"
             maxLength="40"
@@ -52,6 +74,8 @@ function Register() {
             id="password"
             type="password"
             name="password"
+            value={password}
+            onChange={handleSetPassword}
             className="password register__input-password password-input"
             minLength="2"
             maxLength="40"
