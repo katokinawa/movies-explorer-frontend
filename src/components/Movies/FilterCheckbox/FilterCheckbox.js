@@ -2,7 +2,7 @@ import "./FilterCheckbox.css";
 import { useState } from "react";
 
 function FilterCheckbox() {
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(localStorage.getItem("checkboxState") === "true" ? true : false)
 
   return (
     <section>

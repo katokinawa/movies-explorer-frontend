@@ -31,7 +31,7 @@ function App() {
 
   // БЛОК С ЛОГИНОМ, РЕГИСТРАЦИЕЙ, РЕДАКТИРОВАНИЕМ ПРОФИЛЯ
   const isMainHeaderVisible = ["/"];
-  const isOtherHeaderVisible = ["/movies", "/saved-movies", "/profile"];
+  const isOtherHeaderVisible = ["/movies", "/saved-movies", "/profile", `${loggedIn && location.pathname === "/" ? "/" : ''}`];
   const isFooterVisible = ["/", "/movies", "/saved-movies"];
 
   function haandleResize() {
@@ -131,7 +131,7 @@ function App() {
   }
 
   function handleLike(movie) {
-    api
+    return api
       .likeMovie(movie)
       .then((res) => {
         setLikedMovies([...liked, res]);
@@ -142,7 +142,7 @@ function App() {
   }
 
   function handleDislike(movieForDelete) {
-    Promise.resolve(
+    return Promise.resolve(
       liked.find((movies) => {
         return movies.movieId === movieForDelete.movieId;
       })
@@ -177,7 +177,7 @@ function App() {
       <div className="page">
         <CurrentUserContext.Provider value={currentUser}>
           {isMainHeaderVisible.includes(location.pathname) ? (
-            <Header />
+            <Header loggedIn={loggedIn} />
           ) : isOtherHeaderVisible.includes(location.pathname) ? (
             <Header loggedIn={loggedIn} />
           ) : (
