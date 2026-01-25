@@ -1,57 +1,51 @@
 .navtab__sidebar {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 14px;
-  }
-  
-  @media screen and (min-width: 767px) {
-    .navtab__sidebar {
-      gap: 30px;
-    }
-  }
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 14px;
+  margin: 6px 0 0;
+}
 
+@media screen and (min-width: 767px) {
+  .navtab__sidebar {
+    gap: 30px;
+  }
+}
+
+.navtab__subtitle {
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 16px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 767px) {
   .navtab__subtitle {
-    font-size: 10px;
-    font-weight: 500;
-    line-height: 16px;
-    cursor: pointer;
+    font-size: 12px;
   }
-  
-  @media screen and (min-width: 767px) {
-    .navtab__subtitle {
-      font-size: 12px;
-    }
-  }
+}
 
-  .navtab__text-button {
-    font-size: 10px;
-    font-weight: 500;
-    line-height: 16px;
-    color: #000;
-    margin: 5px 0;
-  }
-  
-  @media screen and (min-width: 767px) {
-    .navtab__text-button {
-      font-size: 12px;
-      margin: 8px 0;
-    }
-  }
+.navtab__button {
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #000;
+  width: 54px;
+  min-height: 25px;
+  background-color: #2be080;
+  border-radius: 3px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+@media screen and (min-width: 767px) {
   .navtab__button {
-    width: 54px;
-    min-height: 26px;
-    background-color: #2be080;
-    border-radius: 3px;
-    text-align: center;
-    cursor: pointer;
+    font-size: 12px;
+    width: 76px;
+    min-height: 28px;
   }
-  
-  @media screen and (min-width: 767px) {
-    .navtab__button {
-      width: 76px;
-      min-height: 32px;
-    }
-  }
+}

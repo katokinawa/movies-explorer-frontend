@@ -16,9 +16,7 @@ function SearchForm() {
             className="search-form__input"
             required
           />
-          <button type="submit" className="search-form__submit-button">
-            <div className="search-from__submit-img"></div>
-          </button>
+          <button type="submit" className="search-form__submit-button"></button>
           <div className="vertical-line"></div>
         </form>
 
