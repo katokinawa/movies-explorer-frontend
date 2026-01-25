@@ -10,10 +10,10 @@ const MOCK_MOVIES = [
     nameRU: "Солярис",
     nameEN: "Solaris",
     image: {
-      url: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800",
+      url: "https://images.pexels.com/photos/249128/pexels-photo-249128.jpeg?auto=compress&cs=tinysrgb&w=800",
       formats: {
         thumbnail: {
-          url: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=300"
+          url: "https://images.pexels.com/photos/249128/pexels-photo-249128.jpeg?auto=compress&cs=tinysrgb&w=300"
         }
       }
     }
@@ -29,10 +29,10 @@ const MOCK_MOVIES = [
     nameRU: "Начало",
     nameEN: "Inception",
     image: {
-      url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800",
+      url: "https://images.pexels.com/photos/3802508/pexels-photo-3802508.jpeg?auto=compress&cs=tinysrgb&w=800",
       formats: {
         thumbnail: {
-          url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=300"
+          url: "https://images.pexels.com/photos/3802508/pexels-photo-3802508.jpeg?auto=compress&cs=tinysrgb&w=300"
         }
       }
     }
@@ -48,10 +48,10 @@ const MOCK_MOVIES = [
     nameRU: "На игле",
     nameEN: "Trainspotting",
     image: {
-      url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800",
+      url: "https://images.pexels.com/photos/33129/popcorn-movie-party-entertainment.jpg?auto=compress&cs=tinysrgb&w=800",
       formats: {
         thumbnail: {
-          url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=300"
+          url: "https://images.pexels.com/photos/33129/popcorn-movie-party-entertainment.jpg?auto=compress&cs=tinysrgb&w=300"
         }
       }
     }
@@ -67,10 +67,10 @@ const MOCK_MOVIES = [
     nameRU: "Побег из Шоушенка",
     nameEN: "The Shawshank Redemption",
     image: {
-      url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800",
+      url: "https://images.pexels.com/photos/1200450/pexels-photo-1200450.jpeg?auto=compress&cs=tinysrgb&w=800",
       formats: {
         thumbnail: {
-          url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=300"
+          url: "https://images.pexels.com/photos/1200450/pexels-photo-1200450.jpeg?auto=compress&cs=tinysrgb&w=300"
         }
       }
     }
@@ -86,10 +86,10 @@ const MOCK_MOVIES = [
     nameRU: "Крестный отец",
     nameEN: "The Godfather",
     image: {
-      url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800",
+      url: "https://images.pexels.com/photos/269140/pexels-photo-269140.jpeg?auto=compress&cs=tinysrgb&w=800",
       formats: {
         thumbnail: {
-          url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=300"
+          url: "https://images.pexels.com/photos/269140/pexels-photo-269140.jpeg?auto=compress&cs=tinysrgb&w=300"
         }
       }
     }
@@ -105,10 +105,10 @@ const MOCK_MOVIES = [
     nameRU: "Криминальное чтиво",
     nameEN: "Pulp Fiction",
     image: {
-      url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800",
+      url: "https://images.pexels.com/photos/7991319/pexels-photo-7991319.jpeg?auto=compress&cs=tinysrgb&w=800",
       formats: {
         thumbnail: {
-          url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=300"
+          url: "https://images.pexels.com/photos/7991319/pexels-photo-7991319.jpeg?auto=compress&cs=tinysrgb&w=300"
         }
       }
     }
@@ -124,10 +124,10 @@ const MOCK_MOVIES = [
     nameRU: "Список Шиндлера",
     nameEN: "Schindler's List",
     image: {
-      url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800",
+      url: "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=800",
       formats: {
         thumbnail: {
-          url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=300"
+          url: "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=300"
         }
       }
     }
@@ -143,10 +143,10 @@ const MOCK_MOVIES = [
     nameRU: "Бегущий по лезвию",
     nameEN: "Blade Runner",
     image: {
-      url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800",
+      url: "https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?auto=compress&cs=tinysrgb&w=800",
       formats: {
         thumbnail: {
-          url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=300"
+          url: "https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?auto=compress&cs=tinysrgb&w=300"
         }
       }
     }
@@ -162,10 +162,10 @@ const MOCK_MOVIES = [
     nameRU: "Космическая одиссея 2001",
     nameEN: "2001: A Space Odyssey",
     image: {
-      url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800",
+      url: "https://images.pexels.com/photos/2150/sky-space-dark-galaxy.jpg?auto=compress&cs=tinysrgb&w=800",
       formats: {
         thumbnail: {
-          url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=300"
+          url: "https://images.pexels.com/photos/2150/sky-space-dark-galaxy.jpg?auto=compress&cs=tinysrgb&w=300"
         }
       }
     }
@@ -181,10 +181,10 @@ const MOCK_MOVIES = [
     nameRU: "Славные парни",
     nameEN: "Goodfellas",
     image: {
-      url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800",
+      url: "https://images.pexels.com/photos/1438761/pexels-photo-1438761.jpeg?auto=compress&cs=tinysrgb&w=800",
       formats: {
         thumbnail: {
-          url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=300"
+          url: "https://images.pexels.com/photos/1438761/pexels-photo-1438761.jpeg?auto=compress&cs=tinysrgb&w=300"
         }
       }
     }
@@ -200,10 +200,10 @@ const MOCK_MOVIES = [
     nameRU: "Семь",
     nameEN: "Se7en",
     image: {
-      url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800",
+      url: "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=800",
       formats: {
         thumbnail: {
-          url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=300"
+          url: "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=300"
         }
       }
     }
@@ -214,15 +214,15 @@ const MOCK_MOVIES = [
     director: "Кристофер Нолан",
     duration: 152,
     year: "2008",
-    description: "Супергеройский фильм о Бэтмене, который противостоет Джокеру, хаотичному преступнику.",
+    description: "Супергеройский фильм о Бэтмене, который противостоит Джокеру, хаотичному преступнику.",
     trailerLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     nameRU: "Темный рыцарь",
     nameEN: "The Dark Knight",
     image: {
-      url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800",
+      url: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800",
       formats: {
         thumbnail: {
-          url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=300"
+          url: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=300"
         }
       }
     }
@@ -238,10 +238,10 @@ const MOCK_MOVIES = [
     nameRU: "Сияние",
     nameEN: "The Shining",
     image: {
-      url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800",
+      url: "https://images.pexels.com/photos/1631677/pexels-photo-1631677.jpeg?auto=compress&cs=tinysrgb&w=800",
       formats: {
         thumbnail: {
-          url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=300"
+          url: "https://images.pexels.com/photos/1631677/pexels-photo-1631677.jpeg?auto=compress&cs=tinysrgb&w=300"
         }
       }
     }
@@ -257,10 +257,10 @@ const MOCK_MOVIES = [
     nameRU: "Форрест Гамп",
     nameEN: "Forrest Gump",
     image: {
-      url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800",
+      url: "https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=800",
       formats: {
         thumbnail: {
-          url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=300"
+          url: "https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=300"
         }
       }
     }
@@ -276,10 +276,10 @@ const MOCK_MOVIES = [
     nameRU: "Синий бархат",
     nameEN: "Blue Velvet",
     image: {
-      url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800",
+      url: "https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&w=800",
       formats: {
         thumbnail: {
-          url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=300"
+          url: "https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&w=300"
         }
       }
     }
@@ -295,10 +295,10 @@ const MOCK_MOVIES = [
     nameRU: "Звездные войны",
     nameEN: "Star Wars",
     image: {
-      url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800",
+      url: "https://images.pexels.com/photos/2150/sky-space-dark-galaxy.jpg?auto=compress&cs=tinysrgb&w=800",
       formats: {
         thumbnail: {
-          url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=300"
+          url: "https://images.pexels.com/photos/2150/sky-space-dark-galaxy.jpg?auto=compress&cs=tinysrgb&w=300"
         }
       }
     }
@@ -314,10 +314,10 @@ const MOCK_MOVIES = [
     nameRU: "Психо",
     nameEN: "Psycho",
     image: {
-      url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800",
+      url: "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=800",
       formats: {
         thumbnail: {
-          url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=300"
+          url: "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=300"
         }
       }
     }
@@ -333,10 +333,10 @@ const MOCK_MOVIES = [
     nameRU: "Гражданин Кейн",
     nameEN: "Citizen Kane",
     image: {
-      url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800",
+      url: "https://images.pexels.com/photos/269140/pexels-photo-269140.jpeg?auto=compress&cs=tinysrgb&w=800",
       formats: {
         thumbnail: {
-          url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=300"
+          url: "https://images.pexels.com/photos/269140/pexels-photo-269140.jpeg?auto=compress&cs=tinysrgb&w=300"
         }
       }
     }
@@ -352,10 +352,10 @@ const MOCK_MOVIES = [
     nameRU: "12 разгневанных мужчин",
     nameEN: "12 Angry Men",
     image: {
-      url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800",
+      url: "https://images.pexels.com/photos/1200450/pexels-photo-1200450.jpeg?auto=compress&cs=tinysrgb&w=800",
       formats: {
         thumbnail: {
-          url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=300"
+          url: "https://images.pexels.com/photos/1200450/pexels-photo-1200450.jpeg?auto=compress&cs=tinysrgb&w=300"
         }
       }
     }
@@ -371,10 +371,10 @@ const MOCK_MOVIES = [
     nameRU: "Бразилия",
     nameEN: "Brazil",
     image: {
-      url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800",
+      url: "https://images.pexels.com/photos/33129/popcorn-movie-party-entertainment.jpg?auto=compress&cs=tinysrgb&w=800",
       formats: {
         thumbnail: {
-          url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=300"
+          url: "https://images.pexels.com/photos/33129/popcorn-movie-party-entertainment.jpg?auto=compress&cs=tinysrgb&w=300"
         }
       }
     }

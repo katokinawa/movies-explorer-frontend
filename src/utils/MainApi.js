@@ -21,8 +21,8 @@ const MOCK_SAVED_MOVIES = [
     trailerLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     nameRU: "Солярис",
     nameEN: "Solaris",
-    image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800",
-    thumbnail: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=300"
+    image: "https://images.pexels.com/photos/249128/pexels-photo-249128.jpeg?auto=compress&cs=tinysrgb&w=800",
+    thumbnail: "https://images.pexels.com/photos/249128/pexels-photo-249128.jpeg?auto=compress&cs=tinysrgb&w=300"
   },
   {
     _id: "mock-movie-2",
@@ -35,8 +35,8 @@ const MOCK_SAVED_MOVIES = [
     trailerLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     nameRU: "Начало",
     nameEN: "Inception",
-    image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800",
-    thumbnail: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=300"
+    image: "https://images.pexels.com/photos/3802508/pexels-photo-3802508.jpeg?auto=compress&cs=tinysrgb&w=800",
+    thumbnail: "https://images.pexels.com/photos/3802508/pexels-photo-3802508.jpeg?auto=compress&cs=tinysrgb&w=300"
   },
   {
     _id: "mock-movie-3",
@@ -49,8 +49,8 @@ const MOCK_SAVED_MOVIES = [
     trailerLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     nameRU: "На игле",
     nameEN: "Trainspotting",
-    image: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=800",
-    thumbnail: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=300"
+    image: "https://images.pexels.com/photos/33129/popcorn-movie-party-entertainment.jpg?auto=compress&cs=tinysrgb&w=800",
+    thumbnail: "https://images.pexels.com/photos/33129/popcorn-movie-party-entertainment.jpg?auto=compress&cs=tinysrgb&w=300"
   }
 ];
 

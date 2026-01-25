@@ -23,7 +23,6 @@ function Movies({
   const [result, setResult] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [info, setInfo] = useState("");
-  const BASE_URL = "https://api.nomoreparties.co/";
 
   useEffect(() => {
     setChecked(false);
@@ -77,8 +76,8 @@ function Movies({
               trailerLink: movie.trailerLink,
               nameRU: movie.nameRU,
               nameEN: movie.nameEN,
-              image: BASE_URL + movie.image.url,
-              thumbnail: BASE_URL + movie.image.formats.thumbnail.url,
+              image: movie.image.url,
+              thumbnail: movie.image.formats.thumbnail.url,
             };
           });
           return arrMovies;
@@ -86,7 +85,8 @@ function Movies({
         .then((movies) => {
           localStorage.setItem("arrMovies", JSON.stringify(movies));
           if (!localStorage.getItem("movieSearchValue")) {
-            setInfo("Страница поиска фильмов, пожалуйста, введите запрос");
+            setResult(movies.slice(0, moviesListNumber));
+            setInfo("");
           }
         })
         .catch(() => {
@@ -160,15 +160,19 @@ function Movies({
           movies.length + addMore
         ),
       ]);
-    }
-
-    if (localStorage.getItem("movFilterDuration")) {
+    } else if (localStorage.getItem("movFilterDuration")) {
       setResult((movies) => [
         ...movies,
         ...JSON.parse(localStorage.getItem("movFilterDuration")).slice(
           movies.length,
           movies.length + addMore
         ),
+      ]);
+    } else {
+      const allMovies = JSON.parse(localStorage.getItem("arrMovies")) || [];
+      setResult((movies) => [
+        ...movies,
+        ...allMovies.slice(movies.length, movies.length + addMore),
       ]);
     }
 
