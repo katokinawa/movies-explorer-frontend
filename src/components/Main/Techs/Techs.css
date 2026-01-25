@@ -1,6 +1,7 @@
 .techs {
   min-height: 651px;
-
+  min-width: 284px;
+  padding: 0 18px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,7 +22,7 @@
 
 .techs__main-title {
   margin: 68px 0 0;
-  width: 284px;
+  min-width: 284px;
   color: #000;
   font-weight: 400;
   font-size: 18px;
@@ -32,7 +33,7 @@
 @media screen and (min-width: 768px) {
   .techs__main-title {
     margin: 90px 0 0;
-    width: 668px;
+    min-width: 668px;
     font-size: 22px;
     line-height: 27px;
   }
@@ -41,7 +42,7 @@
 @media screen and (min-width: 1280px) {
   .techs__main-title {
     margin: 100px 0 0;
-    width: 1140px;
+    min-width: 1140px;
   }
 }
 
@@ -69,7 +70,7 @@
 }
 
 .techs__subtitle {
-  width: 292px;
+  min-width: 292px;
   color: #000;
   font-weight: 400;
   font-size: 11px;
@@ -94,13 +95,13 @@
 }
 
 .techs__graphic-wrapper {
-  width: 178px;
-  max-height: 315px;
-  margin: 50px 0;
-  padding: 0;
   display: flex;
   flex-direction: row;
   align-items: center;
+  min-width: 178px;
+  max-height: 315px;
+  margin: 50px 0;
+  padding: 0 55px 0;
   flex-wrap: wrap;
   list-style-type: none;
   gap: 10px;
@@ -108,14 +109,14 @@
 
 @media screen and (min-width: 768px) {
   .techs__graphic-wrapper {
-    width: 648px;
+    min-width: 648px;
     margin: 83px 0;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .techs__graphic-wrapper {
-    width: 690px;
+    min-width: 690px;
     margin: 102px 0;
     gap: 16px;
   }
@@ -140,7 +141,7 @@
 
 .techs__graphic {
   text-align: center;
-  width: 84px;
+  min-width: 84px;
   min-height: 57px;
   background-color: #e8e8e8;
   border-radius: 10px;

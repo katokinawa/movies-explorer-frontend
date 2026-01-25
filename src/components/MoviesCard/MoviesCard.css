@@ -2,7 +2,7 @@
   position: relative;
   list-style-type: none;
   min-height: 232px;
-  max-width: 320px;
+  max-min-width: 320px;
   background-color: #f9f9f9;
   display: flex;
   flex-direction: column;
@@ -30,14 +30,14 @@
 
 .movies-card-image {
   display: block;
-  width: 300px;
+  min-width: 300px;
   height: 168px;
   z-index: 1;
 }
 
 @media screen and (min-width: 768px) {
   .movies-card-image {
-    width: 220px;
+    min-width: 220px;
     height: 122px;
     position: absolute;
     top: 6px;
@@ -86,7 +86,7 @@
   bottom: 36px;
   right: 16px;
   background-color: #f9f9f9;
-  width: 14px;
+  min-width: 14px;
   min-height: 12px;
   border: none;
   outline: none;

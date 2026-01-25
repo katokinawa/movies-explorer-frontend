@@ -1,5 +1,6 @@
 .aboutme {
   min-height: 901px;
+  padding: 0 18px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,7 +39,7 @@
 
 @media screen and (min-width: 1280px) {
   .img-student {
-    width: 270px;
+    min-width: 270px;
     min-height: 327px;
   }
 }
@@ -101,7 +102,7 @@
 }
 
 .aboutme__text-wrapper {
-  width: 292px;
+  min-width: 292px;
   margin: 0 0 55px;
   min-height: 204px;
   display: flex;
@@ -112,7 +113,7 @@
 @media screen and (min-width: 768px) {
   .aboutme__text-wrapper {
     margin: 65px 0 0;
-    width: 668px;
+    min-width: 668px;
     gap: 0;
     column-gap: 49px;
     display: grid;
@@ -127,7 +128,7 @@
 
 @media screen and (min-width: 1280px) {
   .aboutme__text-wrapper {
-    width: 1140px;
+    min-width: 1140px;
     column-gap: 270px;
     grid-template-columns: 600px 270px;
     grid-template-rows: 75px 45px 188px;
@@ -135,7 +136,7 @@
 }
 
 .aboutme__subtitle-url {
-  width: 292px;
+  min-width: 292px;
   text-align: start;
   color: #000;
   font-weight: 500;
@@ -146,12 +147,12 @@
 
 @media screen and (min-width: 768px) {
   .aboutme__subtitle-url {
-    width: 668px;
+    min-width: 668px;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .aboutme__subtitle-url {
-    width: 1140px;
+    min-width: 1140px;
   }
 }
