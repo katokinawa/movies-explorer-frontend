@@ -19,8 +19,16 @@ function Movies({
   const BASE_URL = "https://api.nomoreparties.co/";
 
   useEffect(() => {
-    if (info !== "Ничего не найдено") {
-      if (localStorage.getItem("searchValue")) {
+    localStorage.getItem("checkbox");
+    localStorage.getItem("movieSearchValue");
+    localStorage.removeItem("savedMovieSearchValue");
+  });
+
+  useEffect(() => {
+    if (info === "Ничего не найдено") {
+      localStorage.removeItem("movieSearchValue");
+    } else {
+      if (localStorage.getItem("movieSearchValue")) {
         setResult(
           localStorage.getItem("moviesFiltered") === null
             ? JSON.parse(localStorage.getItem("movFilterDuration")) || []
@@ -29,6 +37,7 @@ function Movies({
       }
     }
   }, [info]);
+
   // Блок с сохранёнными фильмами
   useEffect(() => {
     if (loggedIn) {
@@ -132,7 +141,10 @@ function Movies({
 
   return (
     <main className="movies">
-      <SearchForm onSubmit={onSubmit} />
+      <SearchForm
+        onSubmit={onSubmit}
+        placeholderMovies={localStorage.getItem("searchValue")}
+      />
       {isLoading ? (
         <Preloader />
       ) : info === "" ? (

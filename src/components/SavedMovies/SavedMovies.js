@@ -14,7 +14,14 @@ function SavedMovies({
 }) {
   const [info, setInfo] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [result, setResult] = useState([])
+  const [result, setResult] = useState([]);
+
+  useEffect(() => {
+    localStorage.removeItem("checkbox");
+    localStorage.removeItem("savedMovieSearchValue");
+    setResult(false);
+  }, []);
+
   useEffect(() => {
     if (loggedIn) {
       setIsLoading(true);
@@ -36,7 +43,7 @@ function SavedMovies({
   function onSubmit(value) {
     setIsLoading(true);
     setInfo("");
-    setLikedMovies([]);
+
     localStorage.removeItem("movLikedFiltered");
     localStorage.removeItem("movLikedFilterDuration");
     const checkbox = localStorage.getItem("checkboxState");
@@ -77,7 +84,10 @@ function SavedMovies({
       if (checkbox === "true") {
         moviesFilteredDuration();
       } else {
-        localStorage.setItem("movLikedFiltered", JSON.stringify(movLikedFiltered));
+        localStorage.setItem(
+          "movLikedFiltered",
+          JSON.stringify(movLikedFiltered)
+        );
         setResult(movLikedFiltered);
       }
     }
@@ -93,8 +103,8 @@ function SavedMovies({
         <Preloader />
       ) : info === "" ? (
         <MoviesCardList
-          movies={liked === [] ? result : liked}
-          liked={liked === [] ? result : liked}
+          movies={result ? result : liked}
+          liked={result ? result : liked}
           onLikeMovies={onLikeMovies}
           onDislikeMovies={onDislikeMovies}
         />

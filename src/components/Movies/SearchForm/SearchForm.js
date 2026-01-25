@@ -1,14 +1,30 @@
 import "./SearchForm.css";
 import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 import { useRef } from "react";
+import { useLocation } from "react-router-dom";
 
 function SearchForm({ onSubmit }) {
+  const location = useLocation();
   const searchValue = useRef();
 
   function handleSearch(e) {
-    e.preventDefault()
-    localStorage.setItem('searchValue', searchValue.current.value);
-    onSubmit(localStorage.getItem('searchValue'))
+    e.preventDefault();
+    if (location.pathname === "/movies") {
+      localStorage.setItem(
+        "movieSearchValue",
+        searchValue.current.value.toLowerCase()
+      );
+    }
+
+    localStorage.setItem(
+      "savedMovieSearchValue",
+      searchValue.current.value.toLowerCase()
+    );
+    onSubmit(
+      location.pathname === "/movies"
+        ? localStorage.getItem("movieSearchValue")
+        : localStorage.getItem("savedMovieSearchValue")
+    );
   }
   return (
     <section className="search-form">
@@ -17,14 +33,21 @@ function SearchForm({ onSubmit }) {
           <div className="search-form__loupe-img"></div>
           <label htmlFor="search"></label>
           <input
-            placeholder={localStorage.getItem('searchValue')}
+            placeholder={
+              location.pathname === "/movies"
+                ? localStorage.getItem("movieSearchValue")
+                : localStorage.getItem("savedMovieSearchValue")
+            }
             type="text"
             name="search"
             ref={searchValue}
             className="search-form__input"
             required
           />
-          <button type="submit" className="search-form__submit-button button-animation-graphic"></button>
+          <button
+            type="submit"
+            className="search-form__submit-button button-animation-graphic"
+          ></button>
           <div className="vertical-line"></div>
         </form>
 
