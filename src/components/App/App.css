@@ -26,3 +26,23 @@
   padding: 0;
   color: #fff;
 }
+
+.undertitle-line {
+  width: 284px;
+  margin: 27px 0 21px;
+  border-top: 2px solid #000;
+}
+
+@media screen and (min-width: 767px) {
+  .undertitle-line {
+    width: 668px;
+    margin: 20px 0 70px;
+  }
+}
+
+@media screen and (min-width: 1279px) {
+  .undertitle-line {
+    width: 1140px;
+    margin: 22px 0 70px;
+  }
+}
