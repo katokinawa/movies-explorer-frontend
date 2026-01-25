@@ -21,6 +21,7 @@ function App() {
   const location = useLocation();
 
   // Хуки
+  const [checked, setChecked] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [message, setMessage] = useState("");
   const [errorColor, setErrorColor] = useState(false);
@@ -94,7 +95,7 @@ function App() {
       })
       .catch(() => {
         setErrorColor(true);
-        setMessage("Что-то пошло не так...");
+        setMessage("Некорректные/используемые данные для регистрации");
       });
   }
 
@@ -110,7 +111,7 @@ function App() {
       })
       .catch(() => {
         setErrorColor(true);
-        setMessage("Что-то пошло не так...");
+        setMessage("Что-то не так с сервером...");
       });
   }
 
@@ -131,7 +132,7 @@ function App() {
       })
       .catch(() => {
         setErrorColor(true);
-        setMessage("Что-то пошло не так...");
+        setMessage("Неверный логин или пароль");
       });
   }
 
@@ -142,30 +143,30 @@ function App() {
         setLikedMovies([...liked, res]);
       })
       .catch(() => {
-        setMessage("Что-то пошло не так...");
+        throw(new Error("Что-то пошло не так..."));
       });
   }
 
   function handleDislike(movieForDelete) {
-    return Promise.resolve(
-      liked.find((movies) => {
-        return movies.movieId === movieForDelete.movieId;
-      })
-    )
+    const { movieId } = movieForDelete;
+    return Promise.resolve(liked.find((movies) => movies.movieId === movieId))
       .then((res) => {
         if (res !== undefined && res._id) {
           return res._id;
         } else {
-          setMessage("Что-то пошло не так...");
+          throw(new Error("Что-то пошло не так..."));
         }
       })
       .then((res) => {
-        api.dislikeMovie(res).then((res) => {
-          liked.filter((movies) => movies._id !== res._id);
+        return api.dislikeMovie(res);
+      })
+      .then((res) => {
+        api.getUserMovie().then((likeMovies) => {
+          setLikedMovies(likeMovies);
         });
       })
       .catch(() => {
-        setMessage("Что-то пошло не так...");
+        throw(new Error("Что-то пошло не так..."));
       });
   }
 
@@ -175,7 +176,6 @@ function App() {
     localStorage.removeItem("jwt");
     history("/signin");
   }
-
   // Разметка
   return (
     <div className="body">
@@ -201,6 +201,8 @@ function App() {
                   setLikedMovies={setLikedMovies}
                   addMore={addMore}
                   element={Movies}
+                  setChecked={setChecked}
+                  checked={checked}
                   setMoviesListNumber={setMoviesListNumber}
                   onLikeMovies={handleLike}
                   onDislikeMovies={handleDislike}
@@ -219,6 +221,8 @@ function App() {
                   onLikeMovies={handleLike}
                   onDislikeMovies={handleDislike}
                   element={SavedMovies}
+                  setChecked={setChecked}
+                  checked={checked}
                 />
               }
             />

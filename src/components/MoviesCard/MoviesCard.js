@@ -56,11 +56,10 @@ function MoviesCard({
         <button
           type="button"
           onClick={handleLikeStatus}
-          className={
-            isLiked
-              ? "movies-card-like-active button-animation-graphic"
-              : "movies-card-like-button button-animation-graphic"
+          className={`button-animation-graphic movies-card-button ${
+            isLiked ? "movies-card-like-active" : ""
           }
+          `}
           isDisabled={likeStatus}
         />
       )}
@@ -68,11 +67,10 @@ function MoviesCard({
         <button
           type="button"
           onClick={handleLikeStatus}
-          className={
-            isLiked
-              ? "movies-card-like-active button-animation-graphic"
-              : "movies-card-like-button button-animation-graphic"
+          className={`button-animation-graphic movies-card-button ${
+            isLiked ? "movies-card-like-deactive" : ""
           }
+          `}
           isDisabled={likeStatus}
         />
       )}

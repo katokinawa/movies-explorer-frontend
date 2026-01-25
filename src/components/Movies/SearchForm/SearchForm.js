@@ -1,25 +1,32 @@
 import "./SearchForm.css";
 import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 
-function SearchForm({ onSubmit }) {
+function SearchForm({ onSubmit, setChecked, checked }) {
   const location = useLocation();
-  const searchValue = useRef();
+
+  const [movieSearchValue, setMovieSearchValue] = useState(
+    location.pathname === "/movies"
+      ? localStorage.getItem("movieSearchValue")
+      : localStorage.getItem("savedMovieSearchValue")
+  );
+
+  function handleChangeInput(e) {
+    setMovieSearchValue(e.target.value);
+  }
 
   function handleSearch(e) {
     e.preventDefault();
     if (location.pathname === "/movies") {
-      localStorage.setItem(
-        "movieSearchValue",
-        searchValue.current.value.toLowerCase()
-      );
+      const value = movieSearchValue.toLowerCase();
+      localStorage.setItem("movieSearchValue", value);
+    }
+    if (location.pathname === "/saved-movies") {
+      const value = movieSearchValue.toLowerCase();
+      localStorage.setItem("savedMovieSearchValue", value);
     }
 
-    localStorage.setItem(
-      "savedMovieSearchValue",
-      searchValue.current.value.toLowerCase()
-    );
     onSubmit(
       location.pathname === "/movies"
         ? localStorage.getItem("movieSearchValue")
@@ -33,14 +40,10 @@ function SearchForm({ onSubmit }) {
           <div className="search-form__loupe-img"></div>
           <label htmlFor="search"></label>
           <input
-            placeholder={
-              location.pathname === "/movies"
-                ? localStorage.getItem("movieSearchValue")
-                : localStorage.getItem("savedMovieSearchValue")
-            }
+            value={movieSearchValue}
             type="text"
             name="search"
-            ref={searchValue}
+            onChange={handleChangeInput}
             className="search-form__input"
             required
           />
@@ -52,7 +55,11 @@ function SearchForm({ onSubmit }) {
         </form>
 
         <div className="checkbox-wrapper">
-          <FilterCheckbox onSubmit={onSubmit} />
+          <FilterCheckbox
+            onSubmit={onSubmit}
+            setChecked={setChecked}
+            checked={checked}
+          />
           <p className="subtitle search-form__subtitle">Короткометражки</p>
         </div>
       </div>
