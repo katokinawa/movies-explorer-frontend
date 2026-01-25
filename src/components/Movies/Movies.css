@@ -43,3 +43,28 @@
     margin: 60px 0 80px;
   }
 }
+
+.movies__subtitle {
+  margin: 30px 0 0;
+  color: #000;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.movies__space {
+  min-height: 160px;
+}
+
+@media screen and (min-width: 768px) {
+  .movies__space {
+    min-height: 170px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .movies__space {
+    min-height: 150px;
+  }
+}

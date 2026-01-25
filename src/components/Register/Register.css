@@ -80,6 +80,10 @@
   margin: 0 0 26px;
 }
 
+.register__input-wrapper-margin {
+  margin: 0;
+}
+
 .register-subtitle {
   font-weight: 400;
   font-size: 10px;
@@ -155,12 +159,19 @@
   min-height: 45px;
   border-radius: 3px;
   background: #2be080;
-  margin: 212px 0 0;
+  margin: 236px 0 0;
+}
+
+.register__button:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  opacity: 0.5;
+  cursor: default;
 }
 
 @media screen and (min-width: 768px) {
   .register__button {
-    margin: 124px 0 0;
+    margin: 146px 0 0;
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
@@ -201,4 +212,27 @@
 
 .register-subtitle-color-grey {
   color: #a0a0a0;
+}
+
+.register__error {
+  width: 260px;
+  color: #000;
+  display: block;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+@media screen and (min-width: 768px) {
+  .register__error {
+    width: 396px;
+  }
+}
+
+.register__error-red {
+  color: #ee3465;
+}
+
+.register__error-green {
+  color: #2be080;
 }

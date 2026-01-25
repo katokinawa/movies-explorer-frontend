@@ -26,11 +26,14 @@
 
 .profile__input-wrapper {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  border-bottom: 1px solid #e8e8e8;
-  padding: 0 0 14px;
-  margin: 0 0 17px;
+  flex-direction: column;
+  margin: 0 0 18px;
+  min-width: 260px;
+  position: relative;
+}
+
+.profile__input-wrapper-margin {
+  margin: 0;
 }
 
 .profile__title {
@@ -43,7 +46,7 @@
 
 @media screen and (min-width: 768px) {
   .profile__title {
-    margin: 233px 0 96px;
+    margin: 233px 0 93px;
   }
 }
 
@@ -58,6 +61,14 @@
   font-weight: 500;
   font-size: 11px;
   line-height: 13px;
+  position: absolute;
+}
+
+@media screen and (min-width: 768px) {
+  .profile__subtitle {
+    top: 1px;
+    left: 0;
+  }
 }
 
 .profile__input {
@@ -67,12 +78,24 @@
   font-weight: 400;
   font-size: 11px;
   line-height: 13px;
-  min-width: 223px;
+  min-width: 100%;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 0 0 15px 0;
+}
+
+.profile__input-border {
+  border-bottom: none;
+}
+
+@media screen and (min-width: 768px) {
+  .profile__input-border {
+    border-bottom: 1px solid #e8e8e8;
+  }
 }
 
 @media screen and (min-width: 768px) {
   .profile__input {
-    min-width: 373px;
+    min-width: 410px;
   }
 }
 
@@ -85,6 +108,12 @@
   font-size: 12px;
   line-height: 15px;
   cursor: pointer;
+}
+
+.profile__button:disabled {
+  color: #666666;
+  opacity: 0.5;
+  cursor: default;
 }
 
 @media screen and (min-width: 768px) {
@@ -115,4 +144,37 @@
   .profile__button-wrapper {
     margin: 186px 0 0;
   }
+}
+
+.profile__error {
+  min-width: 223px;
+}
+
+@media screen and (min-width: 768px) {
+  .profile__error {
+    width: 373px;
+  }
+}
+
+.profile__error {
+  width: 260px;
+  color: #000;
+  display: block;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+@media screen and (min-width: 768px) {
+  .profile__error {
+    width: 396px;
+  }
+}
+
+.profile__error-red {
+  color: #ee3465;
+}
+
+.profile__error-green {
+  color: #2be080;
 }

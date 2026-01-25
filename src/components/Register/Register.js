@@ -1,9 +1,18 @@
 import "./Register.css";
 import { Link } from "react-router-dom";
+import useFormWithValidation from "../../utils/useFormWithValidation";
+import { useEffect } from "react";
 
-function Register() {
+function Register({ onRegister, message, errorColor, setMessage }) {
+  const { values, handleChange, errors, isValid } = useFormWithValidation();
+
+  useEffect(() => {
+    setMessage("");
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    onRegister(values);
   };
 
   return (
@@ -13,21 +22,28 @@ function Register() {
         <h1 className="title register__title">Добро пожаловать!</h1>
       </div>
       <form onSubmit={handleSubmit} className="register__form">
-        <div className="register__input-wrapper">
-          <p className="subtitle register-subtitle register-subtitle-color-grey">
-            Имя
-          </p>
-          <label htmlFor="username"></label>
-          <input
-            id="username"
-            type="text"
-            name="name"
-            className="username register__input username-input"
-            minLength="2"
-            maxLength="40"
-            required
-          />
+        <div className="register__wrapper">
+          <div className="register__input-wrapper">
+            <p className="subtitle register-subtitle register-subtitle-color-grey">
+              Имя
+            </p>
+            <label htmlFor="username"></label>
+            <input
+              id="username"
+              type="text"
+              name="name"
+              pattern="[- А-Яа-яA-Za-zёЁ]+$"
+              value={values.name}
+              onChange={handleChange}
+              className="username register__input username-input"
+              minLength="2"
+              maxLength="40"
+              required
+            />
+          </div>
+          <span className="register__error">{errors.name || ""}</span>
         </div>
+
         <div className="register__input-wrapper">
           <p className="subtitle register-subtitle register-subtitle-color-grey">
             E-mail
@@ -35,15 +51,19 @@ function Register() {
           <label htmlFor="email"></label>
           <input
             id="email"
-            type="text"
+            type="email"
             name="email"
+            value={values.email}
+            onChange={handleChange}
             className="email register__input email-input"
             minLength="2"
             maxLength="40"
             required
           />
+          <span className="register__error">{errors.email || ""}</span>
         </div>
-        <div className="register__input-wrapper">
+
+        <div className="register__input-wrapper register__input-wrapper-margin">
           <p className="subtitle register-subtitle register-subtitle-color-grey">
             Пароль
           </p>
@@ -52,14 +72,30 @@ function Register() {
             id="password"
             type="password"
             name="password"
+            value={values.password}
+            onChange={handleChange}
             className="password register__input-password password-input"
             minLength="2"
             maxLength="40"
             required
           />
+          <span className="register__error">{errors.password || ""}</span>
         </div>
-
-        <button type="submit" name="edit" className="title register__button button-animation">
+        <p
+          className={
+            errorColor
+              ? "subtitle register__error register__error-red"
+              : "subtitle register__error register__error-green"
+          }
+        >
+          {message}
+        </p>
+        <button
+          type="submit"
+          name="edit"
+          disabled={!isValid}
+          className="title register__button button-animation"
+        >
           Зарегистрироваться
         </button>
         <div className="register__button-wrapper">
