@@ -40,7 +40,7 @@ function Profile({ isLoggedIn }) {
             Редактировать
           </button>
           <button
-            type="text"
+            type="button"
             name="edit"
             onClick={() => isLoggedIn(false)}
             className="profile__button profile__button-color_red button-animation-graphic"
