@@ -5,30 +5,31 @@
   grid-auto-flow: column;
 }
 
-.logo {
+.header__logo {
   width: 38px;
-  height: 38px;
+  min-height: 38px;
   background-image: url(../../images/logo.svg);
   background-size: cover;
+  cursor: pointer;
 }
 
 .page__header {
-  padding: 18px 14px 18px 14px;
+  padding: 18px 14px;
 }
 
 @media screen and (min-width: 767px) {
   .page__header {
-    padding: 18px 30px 18px 30px;
+    padding: 18px 30px;
   }
 }
 
 @media screen and (min-width: 1279px) {
   .page__header {
-    padding: 18px 70px 18px 70px;
+    padding: 18px 70px;
   }
 }
 
-.sidebar {
+.header__sidebar {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -37,35 +38,23 @@
 }
 
 @media screen and (min-width: 767px) {
-  .sidebar {
+  .header__sidebar {
     gap: 30px;
   }
 }
 
-.title {
-  margin: 0;
-  padding: 0;
-  color: #fff;
-}
-
-.subtitle {
-  margin: 0;
-  padding: 0;
-  color: #FFF;
-}
-
-.button {
-  min-width: 54px;
+.header__button {
+  width: 54px;
   min-height: 26px;
-  background-color: #2BE080;
+  background-color: #2be080;
   border-radius: 3px;
   text-align: center;
   cursor: pointer;
 }
 
 @media screen and (min-width: 767px) {
-  .button {
-    min-width: 76px;
+  .header__button {
+    width: 76px;
     min-height: 32px;
   }
 }
@@ -74,6 +63,7 @@
   font-size: 10px;
   font-weight: 500;
   line-height: 16px;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 767px) {
@@ -87,12 +77,12 @@
   font-weight: 500;
   line-height: 16px;
   color: #000;
-  margin: 5px 0 5px 0;
+  margin: 5px 0;
 }
 
 @media screen and (min-width: 767px) {
   .header__subtitle_black {
     font-size: 12px;
-    margin: 8px 0 8px 0;
+    margin: 8px 0;
   }
 }
