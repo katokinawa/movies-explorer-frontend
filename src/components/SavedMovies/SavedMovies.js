@@ -107,6 +107,7 @@ function SavedMovies({
           movies={result ? result : liked}
           liked={result ? result : liked}
           onLikeMovies={onLikeMovies}
+          buttonType="disliked"
           onDislikeMovies={onDislikeMovies}
           moviesListNumber={moviesListNumber}
         />

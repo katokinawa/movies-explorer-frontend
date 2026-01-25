@@ -165,12 +165,7 @@ function App() {
   }
 
   function handleLogout() {
-    localStorage.removeItem("moviesFiltered");
-    localStorage.removeItem("movFilterDuration");
-    localStorage.removeItem("searchValue");
-    localStorage.removeItem("checkboxState");
-    localStorage.removeItem("saveMovies");
-    localStorage.removeItem("checkboxState");
+    localStorage.clear();
     api.deleteToken();
     localStorage.removeItem("jwt");
     history("/signin");
