@@ -5,8 +5,8 @@ function SearchForm() {
   return (
     <section className="search-form">
       <div className="search-form__wrapper">
-        <div className="search-form__loupe-img"></div>
         <form className="search-form__form" noValidate>
+          <div className="search-form__loupe-img"></div>
           <label htmlFor="search"></label>
           <input
             id="search"
@@ -19,13 +19,13 @@ function SearchForm() {
           <button type="submit" className="search-form__submit-button">
             <div className="search-from__submit-img"></div>
           </button>
+          <div className="vertical-line"></div>
         </form>
-        <div className="vertical-line"></div>
+
         <div className="search-from__checkbox-wrapper">
           <FilterCheckbox />
+          <p className="subtitle search-form__subtitle">Короткометражки</p>
         </div>
-
-        <p className="subtitle search-form__subtitle">Короткометражки</p>
       </div>
       <div className="underform-line"></div>
     </section>
