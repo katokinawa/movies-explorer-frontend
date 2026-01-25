@@ -5,7 +5,7 @@ import Preloader from "../Movies/Preloader/Preloader";
 import * as MoviesApi from "../../utils/MoviesApi";
 import { useEffect, useState } from "react";
 
-function Movies({loggedIn}) {
+function Movies({setLoggedIn}) {
   const [result, setResult] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [info, setInfo] = useState("");
@@ -13,7 +13,6 @@ function Movies({loggedIn}) {
 
   // Блок с фильтром
   useEffect(() => {
-    if (loggedIn) {
       MoviesApi.getMovies()
         .then((movies) => {
           const allMovies = movies.map((movie) => {
@@ -38,8 +37,7 @@ function Movies({loggedIn}) {
           localStorage.setItem("allMovies", rawMovies);
         })
         .catch((err) => err);
-    }
-  }, [loggedIn]);
+  }, []);
 
   function onSubmit(value) {
     setIsLoading(true);

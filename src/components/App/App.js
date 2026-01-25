@@ -21,9 +21,8 @@ function App() {
   const location = useLocation();
 
   // Хуки
-  const [loggedIn, setLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
-
+  
   // БЛОК С ЛОГИНОМ, РЕГИСТРАЦИЕЙ, РЕДАКТИРОВАНИЕМ ПРОФИЛЯ
   const isMainHeaderVisible = ["/"];
   const isOtherHeaderVisible = ["/movies", "/saved-movies", "/profile"];
@@ -35,21 +34,17 @@ function App() {
       api
         .getUser()
         .then((res) => {
-          setLoggedIn(true);
           setCurrentUser(res);
-          history("/movies");
         })
         .catch((err) => err);
     }
-  }, [history]);
+  }, []);
 
   function handleRegister(data) {
     api
       .register(data)
       .then(() => {
         handleLogin(data);
-        setLoggedIn(true);
-        history("/movies");
       })
       .catch((err) => err);
   }
@@ -69,7 +64,6 @@ function App() {
       .then((res) => {
         if (res.token) {
           localStorage.setItem("jwt", res.token);
-          setLoggedIn(true);
           history("/movies");
         }
       })
@@ -77,8 +71,8 @@ function App() {
   }
 
   function handleLogout() {
+    api.deleteToken();
     localStorage.removeItem("jwt");
-    setLoggedIn(false);
     history("/signin");
   }
 
@@ -88,9 +82,9 @@ function App() {
       <div className="page">
         <CurrentUserContext.Provider value={currentUser}>
           {isMainHeaderVisible.includes(location.pathname) ? (
-            <Header />
+            <Header loggedIn={false} />
           ) : isOtherHeaderVisible.includes(location.pathname) ? (
-            <Header loggedIn={loggedIn} />
+            <Header loggedIn={true} />
           ) : (
             ""
           )}
@@ -98,12 +92,12 @@ function App() {
             <Route path="/" element={<Main />} />
             <Route
               path="/movies"
-              element={<ProtectedRoute loggedIn={loggedIn} element={Movies} />}
+              element={<ProtectedRoute user={currentUser} element={Movies} />}
             />
             <Route
               path="/saved-movies"
               element={
-                <ProtectedRoute loggedIn={loggedIn} element={SavedMovies} />
+                <ProtectedRoute user={currentUser} element={SavedMovies} />
               }
             />
             <Route
@@ -111,7 +105,7 @@ function App() {
               element={
                 <ProtectedRoute
                   element={Profile}
-                  loggedIn={loggedIn}
+                  user={currentUser}
                   logout={handleLogout}
                   updateProfile={handeUpdateProfile}
                 />
