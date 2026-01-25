@@ -23,15 +23,11 @@ function AboutProject() {
       </div>
       <div className="about-project__graphic-wrapper">
         <div className="about-project__graphic-backend">
-          <p className="subtitle about-project__graphic-text-inner">
-            1 неделя
-          </p>
+          <p className="subtitle about-project__graphic-text-inner">1 неделя</p>
         </div>
         <p className="subtitle about-project__graphic-text">Back-end</p>
         <div className="about-project__graphic-frontend">
-          <p className="subtitle about-project__graphic-text-inner">
-            4 недели
-          </p>
+          <p className="subtitle about-project__graphic-text-inner">4 недели</p>
         </div>
         <p className="subtitle about-project__graphic-text">Front-end</p>
       </div>

@@ -16,8 +16,8 @@
 }
 
 @media screen and (min-width: 1279px) {
-    .movies-card__list {
-      min-height: 1239px;
-      padding: 70px 0 0;
-    }
+  .movies-card__list {
+    min-height: 1239px;
+    padding: 70px 0 0;
   }
+}

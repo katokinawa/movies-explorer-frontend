@@ -1,11 +1,13 @@
 import "./Header.css";
-import NavTab from "../NavTab/NavTab";
 
 function Header() {
   return (
     <header className="header page__header">
       <div className="header__logo"></div>
-      <NavTab />
+      <div className="header__sidebar">
+        <p className="subtitle header__subtitle">Регистрация</p>
+        <p className="subtitle header__button">Войти</p>
+      </div>
     </header>
   );
 }
