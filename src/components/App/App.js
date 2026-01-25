@@ -22,12 +22,13 @@ function App() {
 
   // Хуки
   const [currentUser, setCurrentUser] = useState({});
-  
+
   // БЛОК С ЛОГИНОМ, РЕГИСТРАЦИЕЙ, РЕДАКТИРОВАНИЕМ ПРОФИЛЯ
   const isMainHeaderVisible = ["/"];
   const isOtherHeaderVisible = ["/movies", "/saved-movies", "/profile"];
   const isFooterVisible = ["/", "/movies", "/saved-movies"];
-
+  const [message, setMessage] = useState("");
+  const [errorColor, setErrorColor] = useState(false)
   useEffect(() => {
     const token = localStorage.getItem("jwt");
     if (token) {
@@ -46,16 +47,23 @@ function App() {
       .then(() => {
         handleLogin(data);
       })
-      .catch((err) => err);
+      .catch((err) => {
+        setErrorColor(true);
+        setMessage(err)
+      })
   }
 
   function handeUpdateProfile(data) {
     api
       .updateProfile(data)
       .then(() => {
-        history("/profile");
+        setMessage("Данные обновлены.");
+        setTimeout(() => {
+          setErrorColor(false);
+          setMessage("");
+        }, 2000);
       })
-      .catch((err) => err);
+      .catch((err) => setMessage(err));
   }
 
   function handleLogin(data) {
@@ -64,10 +72,18 @@ function App() {
       .then((res) => {
         if (res.token) {
           localStorage.setItem("jwt", res.token);
-          history("/movies");
+          setMessage("Успешный вход!");
+          setTimeout(() => {
+            history("/movies");
+            setErrorColor(false);
+            setMessage("");
+          }, 1000);
         }
       })
-      .catch((err) => err);
+      .catch((err) => {
+        setErrorColor(true);
+        setMessage(err);
+      });
   }
 
   function handleLogout() {
@@ -106,15 +122,22 @@ function App() {
                 <ProtectedRoute
                   element={Profile}
                   user={currentUser}
+                  message={message}
+                  errorColor={errorColor}
                   logout={handleLogout}
                   updateProfile={handeUpdateProfile}
                 />
               }
             />
-            <Route path="/signin" element={<Login onLogin={handleLogin} />} />
+            <Route
+              path="/signin"
+              element={<Login message={message} setMessage={setMessage} errorColor={errorColor} onLogin={handleLogin} />}
+            />
             <Route
               path="/signup"
-              element={<Register onRegister={handleRegister} />}
+              element={
+                <Register message={message} setMessage={setMessage} errorColor={errorColor} onRegister={handleRegister} />
+              }
             />
             <Route path="*" element={<Error />} />
           </Routes>
