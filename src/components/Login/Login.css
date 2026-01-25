@@ -129,11 +129,13 @@
   margin: 14px 0 0;
   display: flex;
   justify-content: center;
+  gap: 7px;
 }
 
 @media screen and (min-width: 767px) {
   .login__button-wrapper {
     margin: 15px 0 0;
+    gap: 6px;
   }
 }
 
@@ -167,7 +169,7 @@
   }
 }
 
-.login__button-color_green {
+.login-button-color-green {
   color: #2be080;
   outline: none;
   border: none;
@@ -179,7 +181,7 @@
 }
 
 @media screen and (min-width: 767px) {
-  .login__button-color_green {
+  .login-button-color-green {
     font-size: 14px;
     line-height: 17px;
   }
@@ -198,6 +200,6 @@
   }
 }
 
-.login__subtitle-color_grey {
+.login-subtitle-color-grey {
   color: #a0a0a0;
 }

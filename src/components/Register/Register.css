@@ -80,7 +80,7 @@
   margin: 0 0 26px;
 }
 
-.register__subtitle {
+.register-subtitle {
   font-weight: 400;
   font-size: 10px;
   line-height: 12px;
@@ -128,11 +128,13 @@
   margin: 14px 0 0;
   display: flex;
   justify-content: center;
+  gap: 7px;
 }
 
 @media screen and (min-width: 767px) {
   .register__button-wrapper {
     margin: 15px 0 0;
+    gap: 6px;
   }
 }
 
@@ -166,7 +168,7 @@
   }
 }
 
-.register__button-color_green {
+.register-button-color-green {
   color: #2be080;
   outline: none;
   border: none;
@@ -178,25 +180,25 @@
 }
 
 @media screen and (min-width: 767px) {
-  .register__button-color_green {
+  .register-button-color-green {
     font-size: 14px;
     line-height: 17px;
   }
 }
 
-.register__subtitle-answer {
+.register-subtitle-answer {
   font-weight: 400;
   font-size: 12px;
   line-height: 15px;
 }
 
 @media screen and (min-width: 767px) {
-  .register__subtitle-answer {
+  .register-subtitle-answer {
     font-size: 14px;
     line-height: 17px;
   }
 }
 
-.register__subtitle-color_grey {
+.register-subtitle-color-grey {
   color: #a0a0a0;
 }

@@ -56,12 +56,7 @@
   }
 }
 
-@media screen and (min-width: 1279px) {
-  .error__subtitle {
-  }
-}
-
-.error__text_green {
+.error-text-green {
   border: none;
   background-color: transparent;
   color: #2be080;
@@ -72,7 +67,7 @@
 }
 
 @media screen and (min-width: 767px) {
-  .error__text_green {
+  .error-text-green {
     font-size: 14px;
     line-height: 17px;
   }
