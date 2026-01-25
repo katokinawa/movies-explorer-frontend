@@ -2,10 +2,10 @@ import "./Register.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-function Register({onRegister}) {
+function Register({ onRegister }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [name, setName] = useState("")
+  const [name, setName] = useState("");
 
   const handleSetEmail = (e) => {
     setEmail(e.target.value);
@@ -21,7 +21,7 @@ function Register({onRegister}) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onRegister({ name, email, password });
+    onRegister({ name: name, email: email, password: password });
   };
 
   return (
@@ -83,7 +83,11 @@ function Register({onRegister}) {
           />
         </div>
 
-        <button type="submit" name="edit" className="title register__button button-animation">
+        <button
+          type="submit"
+          name="edit"
+          className="title register__button button-animation"
+        >
           Зарегистрироваться
         </button>
         <div className="register__button-wrapper">
