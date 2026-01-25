@@ -97,7 +97,21 @@ function Movies({
     }
   }, [loggedIn]);
 
+  const resetSearch = () => {
+    localStorage.removeItem("movieSearchValue");
+    localStorage.removeItem("moviesFiltered");
+    localStorage.removeItem("movFilterDuration");
+    const allMovies = JSON.parse(localStorage.getItem("arrMovies")) || [];
+    setResult(allMovies.slice(0, moviesListNumber));
+    setInfo("");
+    setIsLoading(false);
+  };
+
   function onSubmit(value) {
+    if (!value || value.trim() === "") {
+      resetSearch();
+      return;
+    }
     setIsLoading(true);
     setInfo("");
     localStorage.getItem("movieSearchValue");
@@ -185,6 +199,7 @@ function Movies({
         onSubmit={onSubmit}
         setChecked={setChecked}
         checked={checked}
+        onReset={resetSearch}
       />
       {isLoading ? (
         <Preloader />

@@ -43,6 +43,16 @@ function SavedMovies({
   }, [setLikedMovies, setInfo, setIsLoading]);
 
   function onSubmit(value) {
+    if (!value || value.trim() === "") {
+      localStorage.removeItem("savedMovieSearchValue");
+      localStorage.removeItem("movLikedFiltered");
+      localStorage.removeItem("movLikedFilterDuration");
+      setResult(false);
+      setInfo("");
+      setIsLoading(false);
+      return;
+    }
+    
     setIsLoading(true);
     setInfo("");
 
@@ -98,12 +108,22 @@ function SavedMovies({
     }, "1000");
   }
 
+  const resetSearch = () => {
+    localStorage.removeItem("savedMovieSearchValue");
+    localStorage.removeItem("movLikedFiltered");
+    localStorage.removeItem("movLikedFilterDuration");
+    setResult(false);
+    setInfo("");
+    setIsLoading(false);
+  };
+
   return (
     <main className="saved-movies">
       <SearchForm
         onSubmit={onSubmit}
         setChecked={setChecked}
         checked={checked}
+        onReset={resetSearch}
       />
       {isLoading ? (
         <Preloader />

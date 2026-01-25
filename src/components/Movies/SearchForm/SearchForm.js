@@ -3,7 +3,7 @@ import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 
-function SearchForm({ onSubmit, setChecked, checked }) {
+function SearchForm({ onSubmit, setChecked, checked, onReset }) {
   const location = useLocation();
 
   const [movieSearchValue, setMovieSearchValue] = useState(
@@ -11,6 +11,25 @@ function SearchForm({ onSubmit, setChecked, checked }) {
       ? localStorage.getItem("movieSearchValue")
       : localStorage.getItem("savedMovieSearchValue")
   );
+
+  const prevValueRef = useRef(movieSearchValue);
+
+  useEffect(() => {
+    const prevValue = prevValueRef.current;
+    const currentValue = movieSearchValue;
+    
+    if (prevValue !== currentValue && (!currentValue || currentValue.trim() === "")) {
+      if (location.pathname === "/movies") {
+        localStorage.removeItem("movieSearchValue");
+        if (onReset) onReset();
+      } else if (location.pathname === "/saved-movies") {
+        localStorage.removeItem("savedMovieSearchValue");
+        if (onReset) onReset();
+      }
+    }
+    
+    prevValueRef.current = currentValue;
+  }, [movieSearchValue, location.pathname, onReset]);
 
   function handleChangeInput(e) {
     setMovieSearchValue(e.target.value);
@@ -40,12 +59,11 @@ function SearchForm({ onSubmit, setChecked, checked }) {
           <div className="search-form__loupe-img"></div>
           <label htmlFor="search"></label>
           <input
-            value={movieSearchValue}
+            value={movieSearchValue || ""}
             type="text"
             name="search"
             onChange={handleChangeInput}
             className="search-form__input"
-            required
           />
           <button
             type="submit"
