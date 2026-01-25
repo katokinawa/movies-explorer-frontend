@@ -6,7 +6,13 @@ import * as MoviesApi from "../../utils/MoviesApi";
 import * as api from "../../utils/MainApi";
 import { useEffect, useState } from "react";
 
-function Movies({ loggedIn, onLikeMovies, onDislikeMovies, liked, setLikedMovies }) {
+function Movies({
+  loggedIn,
+  onLikeMovies,
+  onDislikeMovies,
+  liked,
+  setLikedMovies,
+}) {
   const [result, setResult] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [info, setInfo] = useState("");
@@ -14,15 +20,11 @@ function Movies({ loggedIn, onLikeMovies, onDislikeMovies, liked, setLikedMovies
 
   useEffect(() => {
     if (info !== "Ничего не найдено") {
-      const movFilterDurationRaw = JSON.parse(
-        localStorage.getItem("movFilterDuration")
-      );
-      const movFiltered = JSON.parse(localStorage.getItem("moviesFiltered"));
       if (localStorage.getItem("searchValue")) {
         setResult(
           localStorage.getItem("moviesFiltered") === null
-            ? movFilterDurationRaw || []
-            : movFiltered || []
+            ? JSON.parse(localStorage.getItem("movFilterDuration")) || []
+            : JSON.parse(localStorage.getItem("moviesFiltered")) || []
         );
       }
     }
@@ -68,11 +70,11 @@ function Movies({ loggedIn, onLikeMovies, onDislikeMovies, liked, setLikedMovies
         .then((movies) => {
           localStorage.setItem("arrMovies", JSON.stringify(movies));
         })
-        .catch(() =>
+        .catch(() => {
           setInfo(
             "Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз"
-          )
-        );
+          );
+        });
     }
   }, [loggedIn]);
 

@@ -25,8 +25,8 @@ function App() {
   const [message, setMessage] = useState("");
   const [errorColor, setErrorColor] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
-  const [liked, setLikedMovies] = useState(null);
-
+  const [liked, setLikedMovies] = useState([]);
+  console.log(liked);
   // БЛОК С ЛОГИНОМ, РЕГИСТРАЦИЕЙ, РЕДАКТИРОВАНИЕМ ПРОФИЛЯ
   const isMainHeaderVisible = ["/"];
   const isOtherHeaderVisible = ["/movies", "/saved-movies", "/profile"];
@@ -180,6 +180,9 @@ function App() {
                   loggedIn={loggedIn}
                   user={currentUser}
                   liked={liked}
+                  setLikedMovies={setLikedMovies}
+                  onLikeMovies={handleLike}
+                  onDislikeMovies={handleDislike}
                   element={SavedMovies}
                 />
               }
