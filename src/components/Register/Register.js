@@ -7,7 +7,7 @@ function Register() {
   };
 
   return (
-    <section className="register">
+    <main className="register">
       <div className="register__head-wrapper">
         <Link to="/" className="register__logo button-animation-graphic"></Link>
         <h1 className="title register__title">Добро пожаловать!</h1>
@@ -74,7 +74,7 @@ function Register() {
           </Link>
         </div>
       </form>
-    </section>
+    </main>
   );
 }
 
