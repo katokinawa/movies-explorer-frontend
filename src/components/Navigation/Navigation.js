@@ -1,15 +1,19 @@
 import "./Navigation.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
-function Navigation(props) {
+function Navigation({ isOpen, setIsOpen }) {
   return (
-    <nav className={`navigation ${props.isOpen ? "navigation_opened" : ""}`}>
-      <button onClick={() => props.setIsOpen(false)} className="navigation__close-button"></button>
+    <nav className={`navigation ${isOpen ? "navigation_opened" : ""}`}>
+      <button
+        onClick={() => setIsOpen(false)}
+        className="navigation__close-button"
+      ></button>
       <ul className="navigation__sidebar">
         <li>
           <NavLink
             to="/"
-            className={(props.isOpen)
+            className={
+              isOpen
                 ? "subtitle navigation__subtitle"
                 : "subtitle navigation__subtitle navigation__subtitle_hidden"
             }
@@ -17,7 +21,7 @@ function Navigation(props) {
             Главная
           </NavLink>
         </li>
-        <li>
+        <li className="navigation__movies">
           <NavLink
             to="/movies"
             className={({ isActive }) =>
@@ -29,12 +33,12 @@ function Navigation(props) {
             Фильмы
           </NavLink>
         </li>
-        <li>
+        <li className="navigation__save-movies">
           <NavLink
             to="/saved-movies"
             className={({ isActive }) =>
               isActive
-                ? "subtitle navigation__subtitle navigation__subtitle-font_weight"
+                ? "subtitle navigation__subtitle navigation__link-is-active"
                 : "subtitle navigation__subtitle"
             }
           >
@@ -42,16 +46,9 @@ function Navigation(props) {
           </NavLink>
         </li>
         <li className="navigation__account-wrapper">
-          <NavLink
-            to="/profile"
-            className={({ isActive }) =>
-              isActive
-                ? "subtitle navigation__button-account navigation__subtitle-font_weight"
-                : "subtitle navigation__button-account"
-            }
-          >
+          <Link to="/profile" className="subtitle navigation__button-account">
             Аккаунт
-          </NavLink>
+          </Link>
           <div className="navigation__icon-account"></div>
         </li>
       </ul>

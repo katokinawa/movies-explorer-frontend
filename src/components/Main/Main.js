@@ -9,8 +9,8 @@ import Footer from "../Footer/Footer";
 
 function Main(props) {
   return (
-    <main className="content">
-      <Header isLoggedIn={props.isLoggedIn} colorGrey="header__color_grey" />
+    <main>
+      <Header isLoggedIn={props.isLoggedIn} />
       <Promo />
       <AboutProject />
       <Techs />
